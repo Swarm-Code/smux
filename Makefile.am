@@ -1,19 +1,19 @@
 # Obvious program stuff.
-bin_PROGRAMS = tmux
-CLEANFILES = tmux.1.mdoc tmux.1.man cmd-parse.c
+bin_PROGRAMS = smux
+CLEANFILES = smux.1.mdoc smux.1.man cmd-parse.c
 
 # Distribution tarball options.
 EXTRA_DIST = \
 	CHANGES README README.ja COPYING example_tmux.conf \
 	osdep-*.c mdoc2man.awk tmux.1
-dist_EXTRA_tmux_SOURCES = compat/*.[ch]
+dist_EXTRA_smux_SOURCES = compat/*.[ch]
 
 # Preprocessor flags.
 AM_CPPFLAGS += @XOPEN_DEFINES@ \
-	-DTMUX_VERSION='"@VERSION@"' \
-	-DTMUX_CONF='"$(sysconfdir)/tmux.conf:~/.tmux.conf:$$XDG_CONFIG_HOME/tmux/tmux.conf:~/.config/tmux/tmux.conf"' \
-	-DTMUX_LOCK_CMD='"@DEFAULT_LOCK_CMD@"' \
-	-DTMUX_TERM='"@DEFAULT_TERM@"'
+	-DSMUX_VERSION='"@VERSION@"' \
+	-DSMUX_CONF='"$(sysconfdir)/smux.conf:~/.smux.conf:$$XDG_CONFIG_HOME/smux/smux.conf:~/.config/smux/smux.conf"' \
+	-DSMUX_LOCK_CMD='"@DEFAULT_LOCK_CMD@"' \
+	-DSMUX_TERM='"@DEFAULT_TERM@"'
 
 # Additional object files.
 LDADD = $(LIBOBJS)
@@ -68,11 +68,11 @@ endif
 
 # Set flags for Cygwin.
 if IS_CYGWIN
-AM_CPPFLAGS += -DTMUX_SOCK_PERM=0
+AM_CPPFLAGS += -DSMUX_SOCK_PERM=0
 endif
 
 # List of sources.
-dist_tmux_SOURCES = \
+dist_smux_SOURCES = \
 	alerts.c \
 	arguments.c \
 	attributes.c \
@@ -95,6 +95,7 @@ dist_tmux_SOURCES = \
 	cmd-if-shell.c \
 	cmd-join-pane.c \
 	cmd-kill-pane.c \
+	cmd-kill-project.c \
 	cmd-kill-server.c \
 	cmd-kill-session.c \
 	cmd-kill-window.c \
@@ -102,12 +103,14 @@ dist_tmux_SOURCES = \
 	cmd-list-clients.c \
 	cmd-list-keys.c \
 	cmd-list-panes.c \
+	cmd-list-projects.c \
 	cmd-list-sessions.c \
 	cmd-list-windows.c \
 	cmd-load-buffer.c \
 	cmd-lock-server.c \
 	cmd-move-window.c \
 	cmd-new-session.c \
+	cmd-new-project.c \
 	cmd-new-window.c \
 	cmd-parse.y \
 	cmd-paste-buffer.c \
@@ -115,6 +118,7 @@ dist_tmux_SOURCES = \
 	cmd-queue.c \
 	cmd-refresh-client.c \
 	cmd-rename-session.c \
+	cmd-rename-project.c \
 	cmd-rename-window.c \
 	cmd-resize-pane.c \
 	cmd-resize-window.c \
@@ -140,6 +144,7 @@ dist_tmux_SOURCES = \
 	cmd-swap-pane.c \
 	cmd-swap-window.c \
 	cmd-switch-client.c \
+	cmd-switch-project.c \
 	cmd-unbind-key.c \
 	cmd-wait-for.c \
 	cmd.c \
@@ -173,6 +178,7 @@ dist_tmux_SOURCES = \
 	paste.c \
 	popup.c \
 	proc.c \
+	project.c \
 	regsub.c \
 	resize.c \
 	screen-redraw.c \
@@ -205,43 +211,43 @@ dist_tmux_SOURCES = \
 	window.c \
 	xmalloc.c \
 	xmalloc.h
-nodist_tmux_SOURCES = osdep-@PLATFORM@.c
+nodist_smux_SOURCES = osdep-@PLATFORM@.c
 
 # Add compat file for forkpty.
 if NEED_FORKPTY
-nodist_tmux_SOURCES += compat/forkpty-@PLATFORM@.c
+nodist_smux_SOURCES += compat/forkpty-@PLATFORM@.c
 endif
 
 # Add compat file for systemd.
 if HAVE_SYSTEMD
-nodist_tmux_SOURCES += compat/systemd.c
+nodist_smux_SOURCES += compat/systemd.c
 endif
 
 # Add compat file for utf8proc.
 if HAVE_UTF8PROC
-nodist_tmux_SOURCES += compat/utf8proc.c
+nodist_smux_SOURCES += compat/utf8proc.c
 endif
 
 # Enable sixel support.
 if ENABLE_SIXEL
-dist_tmux_SOURCES += image.c image-sixel.c
+dist_smux_SOURCES += image.c image-sixel.c
 endif
 
 if NEED_FUZZING
 check_PROGRAMS = fuzz/input-fuzzer
 fuzz_input_fuzzer_LDFLAGS = $(FUZZING_LIBS)
-fuzz_input_fuzzer_LDADD = $(LDADD) $(tmux_OBJECTS)
+fuzz_input_fuzzer_LDADD = $(LDADD) $(smux_OBJECTS)
 endif
 
-# Install tmux.1 in the right format.
+# Install smux.1 in the right format.
 install-exec-hook:
 	if test x@MANFORMAT@ = xmdoc; then \
 		sed -e "s|@SYSCONFDIR@|$(sysconfdir)|g" $(srcdir)/tmux.1 \
-			>$(srcdir)/tmux.1.mdoc; \
+			>$(srcdir)/smux.1.mdoc; \
 	else \
 		sed -e "s|@SYSCONFDIR@|$(sysconfdir)|g" $(srcdir)/tmux.1| \
-			$(AWK) -f $(srcdir)/mdoc2man.awk >$(srcdir)/tmux.1.man; \
+			$(AWK) -f $(srcdir)/mdoc2man.awk >$(srcdir)/smux.1.man; \
 	fi
 	$(mkdir_p) $(DESTDIR)$(mandir)/man1
-	$(INSTALL_DATA) $(srcdir)/tmux.1.@MANFORMAT@ \
-		$(DESTDIR)$(mandir)/man1/tmux.1
+	$(INSTALL_DATA) $(srcdir)/smux.1.@MANFORMAT@ \
+		$(DESTDIR)$(mandir)/man1/smux.1

@@ -213,6 +213,8 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
 	RB_INIT(&sessions);
+	RB_INIT(&projects);
+	next_project_id = 0;
 	key_bindings_init();
 	TAILQ_INIT(&message_log);
 	gettimeofday(&start_time, NULL);
@@ -311,6 +313,7 @@ server_send_exit(void)
 {
 	struct client	*c, *c1;
 	struct session	*s, *s1;
+	struct project	*p, *p1;
 
 	cmd_wait_for_flush();
 
@@ -326,6 +329,9 @@ server_send_exit(void)
 
 	RB_FOREACH_SAFE(s, sessions, &sessions, s1)
 		session_destroy(s, 1, __func__);
+
+	RB_FOREACH_SAFE(p, projects, &projects, p1)
+		project_destroy(p, 0, __func__);
 }
 
 /* Update socket execute permissions based on whether sessions are attached. */

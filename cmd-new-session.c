@@ -39,11 +39,11 @@ const struct cmd_entry cmd_new_session_entry = {
 	.name = "new-session",
 	.alias = "new",
 
-	.args = { "Ac:dDe:EF:f:n:Ps:t:x:Xy:", 0, -1, NULL },
-	.usage = "[-AdDEPX] [-c start-directory] [-e environment] [-F format] "
-		 "[-f flags] [-n window-name] [-s session-name] "
-		 CMD_TARGET_SESSION_USAGE " [-x width] [-y height] "
-		 "[shell-command [argument ...]]",
+	.args = { "Ac:dDe:EF:f:n:P:s:t:x:Xy:", 0, -1, NULL },
+	.usage = "[-AdDEX] [-c start-directory] [-e environment] [-F format] "
+		 "[-f flags] [-n window-name] [-P project-name] "
+		 "[-s session-name] " CMD_TARGET_SESSION_USAGE " [-x width] "
+		 "[-y height] [shell-command [argument ...]]",
 
 	.target = { 't', CMD_FIND_SESSION, CMD_FIND_CANFAIL },
 
@@ -275,7 +275,21 @@ cmd_new_session_exec(struct cmd *self, struct cmdq_item *item)
 		environ_put(env, av->string, 0);
 		av = args_next_value(av);
 	}
-	s = session_create(prefix, newname, cwd, env, oo, tiop);
+
+	/* Get project from -P flag. */
+	const char		*project_name;
+	struct project		*project = NULL;
+
+	project_name = args_get(args, 'P');
+	if (project_name != NULL) {
+		project = project_find(project_name);
+		if (project == NULL) {
+			cmdq_error(item, "project not found: %s", project_name);
+			goto fail;
+		}
+	}
+
+	s = session_create(prefix, newname, cwd, env, oo, tiop, project);
 
 	/* Spawn the initial window. */
 	sc.item = item;
@@ -331,15 +345,6 @@ cmd_new_session_exec(struct cmd *self, struct cmdq_item *item)
 		server_client_set_session(c, s);
 		if (~cmdq_get_flags(item) & CMDQ_STATE_REPEAT)
 			server_client_set_key_table(c, NULL);
-	}
-
-	/* Print if requested. */
-	if (args_has(args, 'P')) {
-		if ((template = args_get(args, 'F')) == NULL)
-			template = NEW_SESSION_TEMPLATE;
-		cp = format_single(item, template, c, s, s->curw, NULL);
-		cmdq_print(item, "%s", cp);
-		free(cp);
 	}
 
 	if (!detached)

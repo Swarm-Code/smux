@@ -127,6 +127,7 @@ struct format_entry {
 /* Format type. */
 enum format_type {
 	FORMAT_TYPE_UNKNOWN,
+	FORMAT_TYPE_PROJECT,
 	FORMAT_TYPE_SESSION,
 	FORMAT_TYPE_WINDOW,
 	FORMAT_TYPE_PANE
@@ -2647,6 +2648,15 @@ format_cb_window_format(struct format_tree *ft)
 	return (xstrdup("0"));
 }
 
+/* Callback for project_format. */
+static void *
+format_cb_project_format(struct format_tree *ft)
+{
+	if (ft->type == FORMAT_TYPE_PROJECT)
+		return (xstrdup("1"));
+	return (xstrdup("0"));
+}
+
 /* Callback for window_height. */
 static void *
 format_cb_window_height(struct format_tree *ft)
@@ -3328,6 +3338,9 @@ static const struct format_table_entry format_table[] = {
 	},
 	{ "pid", FORMAT_TABLE_STRING,
 	  format_cb_pid
+	},
+	{ "project_format", FORMAT_TABLE_STRING,
+	  format_cb_project_format
 	},
 	{ "scroll_region_lower", FORMAT_TABLE_STRING,
 	  format_cb_scroll_region_lower
@@ -5796,6 +5809,13 @@ static void
 format_defaults_session(struct format_tree *ft, struct session *s)
 {
 	ft->s = s;
+}
+
+/* Set format type to PROJECT. */
+void
+format_set_type_project(struct format_tree *ft)
+{
+	ft->type = FORMAT_TYPE_PROJECT;
 }
 
 /* Set default format keys for a client. */

@@ -53,6 +53,7 @@ extern const struct cmd_entry cmd_if_shell_entry;
 extern const struct cmd_entry cmd_join_pane_entry;
 extern const struct cmd_entry cmd_kill_pane_entry;
 extern const struct cmd_entry cmd_kill_server_entry;
+extern const struct cmd_entry cmd_kill_project_entry;
 extern const struct cmd_entry cmd_kill_session_entry;
 extern const struct cmd_entry cmd_kill_window_entry;
 extern const struct cmd_entry cmd_last_pane_entry;
@@ -63,6 +64,7 @@ extern const struct cmd_entry cmd_list_clients_entry;
 extern const struct cmd_entry cmd_list_commands_entry;
 extern const struct cmd_entry cmd_list_keys_entry;
 extern const struct cmd_entry cmd_list_panes_entry;
+extern const struct cmd_entry cmd_list_projects_entry;
 extern const struct cmd_entry cmd_list_sessions_entry;
 extern const struct cmd_entry cmd_list_windows_entry;
 extern const struct cmd_entry cmd_load_buffer_entry;
@@ -71,6 +73,7 @@ extern const struct cmd_entry cmd_lock_server_entry;
 extern const struct cmd_entry cmd_lock_session_entry;
 extern const struct cmd_entry cmd_move_pane_entry;
 extern const struct cmd_entry cmd_move_window_entry;
+extern const struct cmd_entry cmd_new_project_entry;
 extern const struct cmd_entry cmd_new_session_entry;
 extern const struct cmd_entry cmd_new_window_entry;
 extern const struct cmd_entry cmd_next_layout_entry;
@@ -80,6 +83,7 @@ extern const struct cmd_entry cmd_pipe_pane_entry;
 extern const struct cmd_entry cmd_previous_layout_entry;
 extern const struct cmd_entry cmd_previous_window_entry;
 extern const struct cmd_entry cmd_refresh_client_entry;
+extern const struct cmd_entry cmd_rename_project_entry;
 extern const struct cmd_entry cmd_rename_session_entry;
 extern const struct cmd_entry cmd_rename_window_entry;
 extern const struct cmd_entry cmd_resize_pane_entry;
@@ -114,6 +118,7 @@ extern const struct cmd_entry cmd_suspend_client_entry;
 extern const struct cmd_entry cmd_swap_pane_entry;
 extern const struct cmd_entry cmd_swap_window_entry;
 extern const struct cmd_entry cmd_switch_client_entry;
+extern const struct cmd_entry cmd_switch_project_entry;
 extern const struct cmd_entry cmd_unbind_key_entry;
 extern const struct cmd_entry cmd_unlink_window_entry;
 extern const struct cmd_entry cmd_wait_for_entry;
@@ -144,6 +149,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_if_shell_entry,
 	&cmd_join_pane_entry,
 	&cmd_kill_pane_entry,
+	&cmd_kill_project_entry,
 	&cmd_kill_server_entry,
 	&cmd_kill_session_entry,
 	&cmd_kill_window_entry,
@@ -155,6 +161,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_list_commands_entry,
 	&cmd_list_keys_entry,
 	&cmd_list_panes_entry,
+	&cmd_list_projects_entry,
 	&cmd_list_sessions_entry,
 	&cmd_list_windows_entry,
 	&cmd_load_buffer_entry,
@@ -163,6 +170,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_lock_session_entry,
 	&cmd_move_pane_entry,
 	&cmd_move_window_entry,
+	&cmd_new_project_entry,
 	&cmd_new_session_entry,
 	&cmd_new_window_entry,
 	&cmd_next_layout_entry,
@@ -172,6 +180,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_previous_layout_entry,
 	&cmd_previous_window_entry,
 	&cmd_refresh_client_entry,
+	&cmd_rename_project_entry,
 	&cmd_rename_session_entry,
 	&cmd_rename_window_entry,
 	&cmd_resize_pane_entry,
@@ -206,6 +215,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_swap_pane_entry,
 	&cmd_swap_window_entry,
 	&cmd_switch_client_entry,
+	&cmd_switch_project_entry,
 	&cmd_unbind_key_entry,
 	&cmd_unlink_window_entry,
 	&cmd_wait_for_entry,

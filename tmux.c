@@ -196,7 +196,7 @@ make_label(const char *label, char **cause)
 		label = "default";
 	uid = getuid();
 
-	expand_paths(TMUX_SOCK, &paths, &n, 1);
+	expand_paths(SMUX_SOCK, &paths, &n, 1);
 	if (n == 0) {
 		xasprintf(cause, "no suitable socket path");
 		return (NULL);
@@ -206,7 +206,7 @@ make_label(const char *label, char **cause)
 		free(paths[i]);
 	free(paths);
 
-	xasprintf(&base, "%s/tmux-%ld", path, (long)uid);
+	xasprintf(&base, "%s/smux-%ld", path, (long)uid);
 	free(path);
 	if (mkdir(base, S_IRWXU) != 0 && errno != EEXIST) {
 		xasprintf(cause, "couldn't create directory %s (%s)", base,
@@ -222,7 +222,7 @@ make_label(const char *label, char **cause)
 		xasprintf(cause, "%s is not a directory", base);
 		goto fail;
 	}
-	if (sb.st_uid != uid || (sb.st_mode & TMUX_SOCK_PERM) != 0) {
+	if (sb.st_uid != uid || (sb.st_mode & SMUX_SOCK_PERM) != 0) {
 		xasprintf(cause, "directory %s has unsafe permissions", base);
 		goto fail;
 	}
@@ -343,7 +343,7 @@ find_home(void)
 const char *
 getversion(void)
 {
-	return (TMUX_VERSION);
+	return (SMUX_VERSION);
 }
 
 int
@@ -377,7 +377,7 @@ main(int argc, char **argv)
 		environ_put(global_environ, *var, 0);
 	if ((cwd = find_cwd()) != NULL)
 		environ_set(global_environ, "PWD", 0, "%s", cwd);
-	expand_paths(TMUX_CONF, &cfg_files, &cfg_nfiles, 1);
+	expand_paths(SMUX_CONF, &cfg_files, &cfg_nfiles, 1);
 
 	while ((opt = getopt(argc, argv, "2c:CDdf:hlL:NqS:T:uUvV")) != -1) {
 		switch (opt) {

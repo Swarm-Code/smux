@@ -84,6 +84,29 @@ const struct cmd_entry cmd_customize_mode_entry = {
 	.exec = cmd_choose_tree_exec
 };
 
+/*
+ * Default templates for choose-tree display formats.
+ * These define how projects, sessions, and windows appear in the tree.
+ */
+
+#define CHOOSE_TREE_PROJECT_TEMPLATE				\
+	"#{project_name}: #{project_sessions} sessions "	\
+	"(created #{t:project_created})"
+
+#define CHOOSE_TREE_SESSION_TEMPLATE				\
+	"#{?session_project,[#{session_project}] ,}"		\
+	"#{session_windows} windows"				\
+	"#{?session_grouped, "					\
+		"(group #{session_group}: "			\
+		"#{session_group_list}),"			\
+	"}"							\
+	"#{?session_attached, (attached),}"
+
+#define CHOOSE_TREE_WINDOW_TEMPLATE				\
+	"#{?window_marked_flag,#[reverse],}"			\
+	"#{window_name}#{window_flags}"				\
+	"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: \"#{pane_title}\",}"
+
 static enum args_parse_type
 cmd_choose_tree_args_parse(__unused struct args *args, __unused u_int idx,
     __unused char **cause)

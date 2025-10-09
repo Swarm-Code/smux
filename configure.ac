@@ -1,6 +1,6 @@
 # configure.ac
 
-AC_INIT([tmux], next-3.6)
+AC_INIT([smux], next-3.6)
 AC_PREREQ([2.60])
 
 AC_CONFIG_AUX_DIR(etc)
@@ -52,7 +52,7 @@ AC_PROG_YACC
 PKG_PROG_PKG_CONFIG
 AC_USE_SYSTEM_EXTENSIONS
 
-# Default tmux.conf goes in /etc not ${prefix}/etc.
+# Default smux.conf goes in /etc not ${prefix}/etc.
 test "$sysconfdir" = '${prefix}/etc' && sysconfdir=/etc
 
 # Is this --enable-debug?

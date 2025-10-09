@@ -78,20 +78,20 @@ struct tmuxproc;
 struct winlink;
 
 /* Default configuration files and socket paths. */
-#ifndef TMUX_CONF
-#define TMUX_CONF "/etc/tmux.conf:~/.tmux.conf"
+#ifndef SMUX_CONF
+#define SMUX_CONF "/etc/smux.conf:~/.smux.conf"
 #endif
-#ifndef TMUX_SOCK
-#define TMUX_SOCK "$TMUX_TMPDIR:" _PATH_TMP
+#ifndef SMUX_SOCK
+#define SMUX_SOCK "$SMUX_TMPDIR:" _PATH_TMP
 #endif
-#ifndef TMUX_SOCK_PERM
-#define TMUX_SOCK_PERM (7 /* o+rwx */)
+#ifndef SMUX_SOCK_PERM
+#define SMUX_SOCK_PERM (7 /* o+rwx */)
 #endif
-#ifndef TMUX_TERM
-#define TMUX_TERM "screen"
+#ifndef SMUX_TERM
+#define SMUX_TERM "screen"
 #endif
-#ifndef TMUX_LOCK_CMD
-#define TMUX_LOCK_CMD "lock -np"
+#ifndef SMUX_LOCK_CMD
+#define SMUX_LOCK_CMD "lock -np"
 #endif
 
 /* Minimum layout cell size, NOT including border lines. */
@@ -1386,6 +1386,32 @@ struct session_group {
 };
 RB_HEAD(session_groups, session_group);
 
+/* Forward declaration for sessions RB tree (needed by project struct) */
+struct session;
+RB_HEAD(sessions, session);
+
+/* Project structure - organizational layer above sessions */
+struct project {
+	u_int		 id;		/* Unique numeric ID from next_project_id */
+
+	char		*name;		/* Project name (RB tree key, dynamically allocated) */
+	const char	*cwd;		/* Project base working directory */
+
+	struct timeval	 creation_time;	/* When project was created */
+	struct timeval	 activity_time;	/* Current activity time */
+
+	struct sessions	 sessions;	/* RB tree of sessions in this project */
+	struct session	*curs;		/* Current/active session in project */
+
+	struct environ	*environ;	/* Project environment variables */
+
+	int		 references;	/* Reference count for cleanup */
+	int		 flags;		/* Project flags */
+
+	RB_ENTRY(project) entry;	/* Entry for global projects RB tree */
+};
+RB_HEAD(projects, project);
+
 struct session {
 	u_int		 id;
 
@@ -1419,10 +1445,12 @@ struct session {
 
 	int		 references;
 
+	struct project	*project;     /* Parent project (NULL if none) */
+	RB_ENTRY(session) pentry;     /* Entry for project's sessions tree */
+
 	TAILQ_ENTRY(session) gentry;
 	RB_ENTRY(session)    entry;
 };
-RB_HEAD(sessions, session);
 
 /* Mouse button masks. */
 #define MOUSE_MASK_BUTTONS 195
@@ -2345,6 +2373,7 @@ void		 format_defaults_pane(struct format_tree *,
 		     struct window_pane *);
 void		 format_defaults_paste_buffer(struct format_tree *,
 		     struct paste_buffer *);
+void		 format_set_type_project(struct format_tree *);
 void		 format_lost_client(struct client *);
 char		*format_grid_word(struct grid *, u_int, u_int);
 char		*format_grid_hyperlink(struct grid *, u_int, u_int,
@@ -3450,6 +3479,23 @@ void	control_notify_session_window_changed(struct session *);
 void	control_notify_paste_buffer_changed(const char *);
 void	control_notify_paste_buffer_deleted(const char *);
 
+/* project.c */
+extern struct projects projects;
+extern u_int next_project_id;
+int	project_cmp(struct project *, struct project *);
+RB_PROTOTYPE(projects, project, entry, project_cmp);
+int		 project_alive(struct project *);
+struct project	*project_find(const char *);
+struct project	*project_find_by_id_str(const char *);
+struct project	*project_find_by_id(u_int);
+struct project	*project_create(const char *, const char *, const char *,
+		     struct environ *);
+void		 project_destroy(struct project *, int, const char *);
+void		 project_add_ref(struct project *, const char *);
+void		 project_remove_ref(struct project *, const char *);
+struct session	*project_attach_session(struct project *, struct session *);
+int		 project_detach_session(struct project *, struct session *);
+
 /* session.c */
 extern struct sessions sessions;
 extern struct session_groups session_groups;
@@ -3463,7 +3509,8 @@ struct session	*session_find(const char *);
 struct session	*session_find_by_id_str(const char *);
 struct session	*session_find_by_id(u_int);
 struct session	*session_create(const char *, const char *, const char *,
-		     struct environ *, struct options *, struct termios *);
+		     struct environ *, struct options *, struct termios *,
+		     struct project *);
 void		 session_destroy(struct session *, int,	 const char *);
 void		 session_add_ref(struct session *, const char *);
 void		 session_remove_ref(struct session *, const char *);

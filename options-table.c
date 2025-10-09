@@ -345,7 +345,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "default-terminal",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_SERVER,
-	  .default_str = TMUX_TERM,
+	  .default_str = SMUX_TERM,
 	  .text = "Default for the 'TERM' environment variable."
 	},
 
@@ -694,7 +694,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "lock-command",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_SESSION,
-	  .default_str = TMUX_LOCK_CMD,
+	  .default_str = SMUX_LOCK_CMD,
 	  .text = "Shell command to run to lock a client."
 	},
 

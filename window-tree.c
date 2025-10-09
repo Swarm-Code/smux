@@ -33,6 +33,12 @@ static void		 window_tree_update(struct window_mode_entry *);
 static void		 window_tree_key(struct window_mode_entry *,
 			     struct client *, struct session *,
 			     struct winlink *, key_code, struct mouse_event *);
+static void		 window_tree_build_session(struct session *, void *,
+			     struct mode_tree_sort_criteria *, const char *,
+			     struct mode_tree_item *);
+static void		 window_tree_build_project(struct project *, void *,
+			     struct mode_tree_sort_criteria *, const char *,
+			     struct mode_tree_item *);
 
 #define WINDOW_TREE_DEFAULT_COMMAND "switch-client -Zt '%%'"
 
@@ -45,13 +51,15 @@ static void		 window_tree_key(struct window_mode_entry *,
 		"#{?window_marked_flag,#[reverse],}" \
 		"#{window_name}#{window_flags}" \
 		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: \"#{pane_title}\",}" \
+	",project_format," \
+		"#[bold,fg=magenta]PROJECT:#[default] #[fg=cyan]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default]" \
 	"," \
-		"#{session_windows} windows" \
+		"#[fg=yellow]SESSION:#[default] #{session_windows} windows" \
 		"#{?session_grouped, " \
 			"(group #{session_group}: " \
 			"#{session_group_list})," \
 		"}" \
-		"#{?session_attached, (attached),}" \
+		"#{?session_attached, #[fg=green](attached)#[default],}" \
 	"}"
 
 #define WINDOW_TREE_DEFAULT_KEY_FORMAT \
@@ -103,6 +111,7 @@ static struct mode_tree_sort_criteria *window_tree_sort;
 
 enum window_tree_type {
 	WINDOW_TREE_NONE,
+	WINDOW_TREE_PROJECT,
 	WINDOW_TREE_SESSION,
 	WINDOW_TREE_WINDOW,
 	WINDOW_TREE_PANE,
@@ -110,6 +119,7 @@ enum window_tree_type {
 
 struct window_tree_itemdata {
 	enum window_tree_type	type;
+	int			project;
 	int			session;
 	int			winlink;
 	int			pane;
@@ -148,8 +158,25 @@ static void
 window_tree_pull_item(struct window_tree_itemdata *item, struct session **sp,
     struct winlink **wlp, struct window_pane **wp)
 {
+	struct project	*p;
+
 	*wp = NULL;
 	*wlp = NULL;
+
+	if (item->type == WINDOW_TREE_PROJECT) {
+		p = project_find_by_id(item->project);
+		if (p == NULL) {
+			*sp = NULL;
+			return;
+		}
+		*sp = RB_MIN(sessions, &p->sessions);
+		if (*sp == NULL)
+			return;
+		*wlp = (*sp)->curw;
+		*wp = (*wlp)->window->active;
+		return;
+	}
+
 	*sp = session_find_by_id(item->session);
 	if (*sp == NULL)
 		return;
@@ -194,6 +221,39 @@ static void
 window_tree_free_item(struct window_tree_itemdata *item)
 {
 	free(item);
+}
+
+static int
+window_tree_cmp_project(const void *a0, const void *b0)
+{
+	const struct project *const	*a = a0;
+	const struct project *const	*b = b0;
+	const struct project		*pa = *a;
+	const struct project		*pb = *b;
+	int				 result = 0;
+
+	switch (window_tree_sort->field) {
+	case WINDOW_TREE_BY_INDEX:
+		result = pa->id - pb->id;
+		break;
+	case WINDOW_TREE_BY_TIME:
+		if (timercmp(&pa->activity_time, &pb->activity_time, >)) {
+			result = -1;
+			break;
+		}
+		if (timercmp(&pa->activity_time, &pb->activity_time, <)) {
+			result = 1;
+			break;
+		}
+		/* FALLTHROUGH */
+	case WINDOW_TREE_BY_NAME:
+		result = strcmp(pa->name, pb->name);
+		break;
+	}
+
+	if (window_tree_sort->reversed)
+		result = -result;
+	return (result);
 }
 
 static int
@@ -409,8 +469,54 @@ empty:
 }
 
 static void
+window_tree_build_project(struct project *p, void *modedata,
+    struct mode_tree_sort_criteria *sort_crit, const char *filter,
+    struct mode_tree_item *parent)
+{
+	struct window_tree_modedata	*data = modedata;
+	struct window_tree_itemdata	*item;
+	struct mode_tree_item		*mti;
+	struct session			*s;
+	char				*text;
+	u_int				 n_sessions;
+	struct format_tree		*ft;
+
+	/* Create project item. */
+	item = window_tree_add_item(data);
+	item->type = WINDOW_TREE_PROJECT;
+	item->project = p->id;
+	item->session = -1;
+	item->winlink = -1;
+	item->pane = -1;
+
+	/* Format project text - set type to PROJECT */
+	ft = format_create(NULL, NULL, FORMAT_NONE, 0);
+	format_set_type_project(ft);
+
+	/* Count sessions for display */
+	n_sessions = 0;
+	RB_FOREACH(s, sessions, &p->sessions)
+		n_sessions++;
+
+	format_add(ft, "project_name", "%s", p->name);
+	format_add(ft, "project_sessions", "%u", n_sessions);
+	text = format_expand(ft, data->format);
+	format_free(ft);
+
+	/* Projects are expanded by default to show sessions */
+	mti = mode_tree_add(data->data, parent, item, (uint64_t)p, p->name, text, 1);
+	free(text);
+
+	/* Build all sessions in this project as children. */
+	RB_FOREACH(s, sessions, &p->sessions) {
+		window_tree_build_session(s, modedata, sort_crit, filter, mti);
+	}
+}
+
+static void
 window_tree_build_session(struct session *s, void *modedata,
-    struct mode_tree_sort_criteria *sort_crit, const char *filter)
+    struct mode_tree_sort_criteria *sort_crit, const char *filter,
+    struct mode_tree_item *parent)
 {
 	struct window_tree_modedata	*data = modedata;
 	struct window_tree_itemdata	*item;
@@ -436,7 +542,7 @@ window_tree_build_session(struct session *s, void *modedata,
 		expanded = 0;
 	else
 		expanded = 1;
-	mti = mode_tree_add(data->data, NULL, item, (uint64_t)s, s->name, text,
+	mti = mode_tree_add(data->data, parent, item, (uint64_t)s, s->name, text,
 	    expanded);
 	free(text);
 
@@ -480,9 +586,33 @@ window_tree_build(void *modedata, struct mode_tree_sort_criteria *sort_crit,
 	data->item_list = NULL;
 	data->item_size = 0;
 
+	/* Phase 1: Build all projects with their sessions (if not filtering to window/pane only) */
+	if (data->type == WINDOW_TREE_NONE || data->type == WINDOW_TREE_SESSION || data->type == WINDOW_TREE_PROJECT) {
+		struct project *p, **pl;
+		u_int pn;
+
+		pl = NULL;
+		pn = 0;
+		RB_FOREACH(p, projects, &projects) {
+			pl = xreallocarray(pl, pn + 1, sizeof *pl);
+			pl[pn++] = p;
+		}
+		window_tree_sort = sort_crit;
+		qsort(pl, pn, sizeof *pl, window_tree_cmp_project);
+
+		for (i = 0; i < pn; i++)
+			window_tree_build_project(pl[i], modedata, sort_crit, filter, NULL);
+		free(pl);
+	}
+
+	/* Phase 2: Build orphan sessions (sessions without project) */
 	l = NULL;
 	n = 0;
 	RB_FOREACH(s, sessions, &sessions) {
+		/* Skip sessions that belong to a project (already built in Phase 1) */
+		if (s->project != NULL)
+			continue;
+
 		if (data->squash_groups &&
 		    (sg = session_group_contains(s)) != NULL) {
 			if ((sg == current && s != data->fs.s) ||
@@ -496,11 +626,15 @@ window_tree_build(void *modedata, struct mode_tree_sort_criteria *sort_crit,
 	qsort(l, n, sizeof *l, window_tree_cmp_session);
 
 	for (i = 0; i < n; i++)
-		window_tree_build_session(l[i], modedata, sort_crit, filter);
+		window_tree_build_session(l[i], modedata, sort_crit, filter, NULL);
 	free(l);
 
 	switch (data->type) {
 	case WINDOW_TREE_NONE:
+		break;
+	case WINDOW_TREE_PROJECT:
+		if (data->fs.s != NULL && data->fs.s->project != NULL)
+			*tag = (uint64_t)data->fs.s->project;
 		break;
 	case WINDOW_TREE_SESSION:
 		*tag = (uint64_t)data->fs.s;
@@ -823,6 +957,9 @@ window_tree_draw(void *modedata, void *itemdata, struct screen_write_ctx *ctx,
 	switch (item->type) {
 	case WINDOW_TREE_NONE:
 		break;
+	case WINDOW_TREE_PROJECT:
+		/* Projects display as text only, no special drawing needed. */
+		break;
 	case WINDOW_TREE_SESSION:
 		window_tree_draw_session(modedata, sp, ctx, sx, sy);
 		break;
@@ -850,6 +987,13 @@ window_tree_search(__unused void *modedata, void *itemdata, const char *ss)
 	switch (item->type) {
 	case WINDOW_TREE_NONE:
 		return (0);
+	case WINDOW_TREE_PROJECT:
+		{
+			struct project *pr = project_find_by_id(item->project);
+			if (pr == NULL)
+				return (0);
+			return (strstr(pr->name, ss) != NULL);
+		}
 	case WINDOW_TREE_SESSION:
 		if (s == NULL)
 			return (0);
@@ -900,13 +1044,30 @@ window_tree_get_key(void *modedata, void *itemdata, u_int line)
 
 	ft = format_create(NULL, NULL, FORMAT_NONE, 0);
 	window_tree_pull_item(item, &s, &wl, &wp);
-	if (item->type == WINDOW_TREE_SESSION)
+	if (item->type == WINDOW_TREE_PROJECT) {
+		struct project *pr = project_find_by_id(item->project);
+		if (pr != NULL) {
+			/* Count sessions in project manually. */
+			u_int n_sessions = 0;
+			struct session *s_iter;
+			RB_FOREACH(s_iter, sessions, &pr->sessions)
+				n_sessions++;
+			format_add(ft, "line", "%u", line);
+			format_add(ft, "project_name", "%s", pr->name);
+			format_add(ft, "project_id", "#%u", pr->id);
+			format_add(ft, "project_sessions", "%u", n_sessions);
+			format_add_tv(ft, "project_created", &pr->creation_time);
+		} else {
+			format_add(ft, "line", "%u", line);
+		}
+	} else if (item->type == WINDOW_TREE_SESSION)
 		format_defaults(ft, NULL, s, NULL, NULL);
 	else if (item->type == WINDOW_TREE_WINDOW)
 		format_defaults(ft, NULL, s, wl, NULL);
 	else
 		format_defaults(ft, NULL, s, wl, wp);
-	format_add(ft, "line", "%u", line);
+	if (item->type != WINDOW_TREE_PROJECT)
+		format_add(ft, "line", "%u", line);
 
 	expanded = format_expand(ft, data->key_format);
 	key = key_string_lookup_string(expanded);
@@ -1082,6 +1243,12 @@ window_tree_get_target(struct window_tree_itemdata *item,
 	switch (item->type) {
 	case WINDOW_TREE_NONE:
 		break;
+	case WINDOW_TREE_PROJECT:
+		/* For projects, target the first session in the project */
+		if (s == NULL)
+			break;
+		xasprintf(&target, "=%s:", s->name);
+		break;
 	case WINDOW_TREE_SESSION:
 		if (s == NULL)
 			break;
@@ -1175,6 +1342,13 @@ window_tree_kill_each(__unused void *modedata, void *itemdata,
 
 	switch (item->type) {
 	case WINDOW_TREE_NONE:
+		break;
+	case WINDOW_TREE_PROJECT:
+		{
+			struct project *pr = project_find_by_id(item->project);
+			if (pr != NULL)
+				project_destroy(pr, 1, __func__);
+		}
 		break;
 	case WINDOW_TREE_SESSION:
 		if (s != NULL) {
@@ -1351,6 +1525,13 @@ again:
 		window_tree_pull_item(item, &ns, &nwl, &nwp);
 		switch (item->type) {
 		case WINDOW_TREE_NONE:
+			break;
+		case WINDOW_TREE_PROJECT:
+			{
+				struct project *pr = project_find_by_id(item->project);
+				if (pr != NULL)
+					xasprintf(&prompt, "Kill project %s? ", pr->name);
+			}
 			break;
 		case WINDOW_TREE_SESSION:
 			if (ns == NULL)

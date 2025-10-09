@@ -109,13 +109,15 @@ session_find_by_id(u_int id)
 /* Create a new session. */
 struct session *
 session_create(const char *prefix, const char *name, const char *cwd,
-    struct environ *env, struct options *oo, struct termios *tio)
+    struct environ *env, struct options *oo, struct termios *tio,
+    struct project *project)
 {
 	struct session	*s;
 
 	s = xcalloc(1, sizeof *s);
 	s->references = 1;
 	s->flags = 0;
+	s->project = NULL;
 
 	s->cwd = xstrdup(cwd);
 
@@ -147,6 +149,10 @@ session_create(const char *prefix, const char *name, const char *cwd,
 		} while (RB_FIND(sessions, &sessions, s) != NULL);
 	}
 	RB_INSERT(sessions, &sessions, s);
+
+	/* Attach to project if specified. */
+	if (project != NULL)
+		project_attach_session(project, s);
 
 	log_debug("new session %s $%u", s->name, s->id);
 
@@ -204,6 +210,10 @@ session_destroy(struct session *s, int notify, const char *from)
 	if (s->curw == NULL)
 		return;
 	s->curw = NULL;
+
+	/* Detach from project if attached. */
+	if (s->project != NULL)
+		project_detach_session(s->project, s);
 
 	RB_REMOVE(sessions, &sessions, s);
 	if (notify)
