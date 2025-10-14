@@ -97,6 +97,7 @@ extern const struct cmd_entry cmd_select_layout_entry;
 extern const struct cmd_entry cmd_select_pane_entry;
 extern const struct cmd_entry cmd_select_window_entry;
 extern const struct cmd_entry cmd_send_keys_entry;
+extern const struct cmd_entry cmd_send_line_entry;
 extern const struct cmd_entry cmd_send_prefix_entry;
 extern const struct cmd_entry cmd_server_access_entry;
 extern const struct cmd_entry cmd_set_buffer_entry;
@@ -194,6 +195,7 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_select_pane_entry,
 	&cmd_select_window_entry,
 	&cmd_send_keys_entry,
+	&cmd_send_line_entry,
 	&cmd_send_prefix_entry,
 	&cmd_server_access_entry,
 	&cmd_set_buffer_entry,

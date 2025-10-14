@@ -56,7 +56,7 @@ const struct cmd_entry cmd_send_prefix_entry = {
 	.exec = cmd_send_keys_exec
 };
 
-static struct cmdq_item *
+struct cmdq_item *
 cmd_send_keys_inject_key(struct cmdq_item *item, struct cmdq_item *after,
     struct args *args, key_code key)
 {
@@ -100,7 +100,7 @@ cmd_send_keys_inject_key(struct cmdq_item *item, struct cmdq_item *after,
 	return (after);
 }
 
-static struct cmdq_item *
+struct cmdq_item *
 cmd_send_keys_inject_string(struct cmdq_item *item, struct cmdq_item *after,
     struct args *args, int i)
 {
