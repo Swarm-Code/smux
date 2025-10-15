@@ -402,6 +402,7 @@ proc_fork_and_daemon(int *fd)
 		fflush(stderr);
 		return (0);
 	default:
+		system("touch /tmp/proc_fork_and_daemon_PARENT_CASE");
 		fprintf(stderr, "DEBUG: Parent process (PID=%d) got child PID=%d\n", getpid(), pid);
 		fflush(stderr);
 		close(pair[1]);
