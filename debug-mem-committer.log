@@ -9475,3 +9475,15 @@ tool_input: {
   "command": "pkill smux && sudo -S make install <<< \"Luis2901\"",
   "description": "Kill server and install corrected version"
 }
+
+=== 2025-10-15T20:47:40.394Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "pkill smux",
+  "description": "Kill all smux processes"
+}
