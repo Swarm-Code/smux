@@ -367,9 +367,13 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
-		printf("DEBUG: Child process in proc_fork_and_daemon - about to call daemon()\n");
+		printf("DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
+		fflush(stdout);
+		printf("DEBUG: Child process about to close pair[0]\n");
 		fflush(stdout);
 		close(pair[0]);
+		printf("DEBUG: Child process closed pair[0], setting fd\n");
+		fflush(stdout);
 		*fd = pair[1];
 		printf("DEBUG: Child process calling daemon(1, 0)\n");
 		fflush(stdout);
