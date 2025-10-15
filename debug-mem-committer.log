@@ -6151,3 +6151,14 @@ tool_input: {
   "command": "timeout 5s smux source-file premium-minimal.conf",
   "description": "Apply our enhanced theme with improved choose-tree formatting"
 }
+
+=== 2025-10-15T18:17:42.306Z ===
+Tool: Write
+File: /home/alejandro/Swarm/smux/test-fresh-restart.sh
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/test-fresh-restart.sh",
+  "content": "#!/bin/bash\n# Test Enhanced Selector After Fresh Restart\n\necho \"🚀 Fresh Smux Restart - Enhanced Selector Test\"\necho \"==============================================\"\necho \"\"\necho \"✅ smux successfully restarted (tmux preserved)\"\necho \"\"\n\necho \"📊 Current Session Structure:\"\necho \"=============================\"\ntimeout 5s smux list-sessions\necho \"\"\n\necho \"📁 Current Project Structure:\
