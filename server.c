@@ -213,8 +213,8 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
 	RB_INIT(&sessions);
-	/* RB_INIT(&projects); */ /* Temporarily disabled for debugging */
-	/* next_project_id = 0; */ /* Temporarily disabled for debugging */
+	RB_INIT(&projects);
+	next_project_id = 0;
 	/* plugin_init(); */ /* Temporarily disabled for debugging */
 	key_bindings_init();
 	TAILQ_INIT(&message_log);
