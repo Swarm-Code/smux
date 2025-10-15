@@ -646,6 +646,9 @@ plugin_source_all(struct session *s)
 			}
 		}
 	}
+
+	/* Reset the flag when done */
+	sourcing_in_progress = 0;
 }
 
 /* Plugin command implementations */
