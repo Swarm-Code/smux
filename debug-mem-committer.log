@@ -8494,3 +8494,15 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/test-choose-tree-output.sh",
   "content": "#!/bin/bash\n# Direct test of choose-tree output to verify PROJECT labels\n\necho \"🔍 Testing Enhanced Choose-Tree Output - Verifying PROJECT Labels\"\necho \"=================================================================\"\necho \"\"\n\necho \"📊 Current Projects:\"\nsmux list-projects\necho \"\"\n\necho \"📊 Current Sessions:\"\nsmux list-sessions\necho \"\"\n\necho \"🎯 Testing Choose-Tree Display Form
+
+=== 2025-10-15T20:04:02.452Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "chmod +x test-choose-tree-output.sh && ./test-choose-tree-output.sh",
+  "description": "Run direct format string test"
+}
