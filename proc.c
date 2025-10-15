@@ -396,12 +396,12 @@ proc_fork_and_daemon(int *fd)
 		fflush(stderr);
 		return (0);
 	default:
-		printf("DEBUG: Parent process (PID=%d) got child PID=%d\n", getpid(), pid);
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Parent process (PID=%d) got child PID=%d\n", getpid(), pid);
+		fflush(stderr);
 		close(pair[1]);
 		*fd = pair[0];
-		printf("DEBUG: Parent process returning child PID=%d\n", pid);
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Parent process returning child PID=%d\n", pid);
+		fflush(stderr);
 		return (pid);
 	}
 }
