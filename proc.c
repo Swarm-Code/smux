@@ -396,9 +396,22 @@ proc_fork_and_daemon(int *fd)
 		*fd = pair[1];
 		fprintf(stderr, "DEBUG: Child process calling daemon(1, 0)\n");
 		fflush(stderr);
-		if (daemon(1, 0) != 0)
-			fatal("daemon failed");
-		fprintf(stderr, "DEBUG: Child process daemon() call completed successfully\n");
+
+		/* Manual daemonization instead of daemon(1, 0) */
+		fprintf(stderr, "DEBUG: Manual daemonization - calling setsid()\n");
+		fflush(stderr);
+		if (setsid() == -1)
+			fatal("setsid failed");
+
+		fprintf(stderr, "DEBUG: Manual daemonization - second fork to prevent reacquiring terminal\n");
+		fflush(stderr);
+		pid_t daemon_pid = fork();
+		if (daemon_pid < 0)
+			fatal("second fork failed");
+		if (daemon_pid > 0)
+			exit(0); /* First child exits */
+
+		fprintf(stderr, "DEBUG: Manual daemonization completed successfully\n");
 		fflush(stderr);
 		return (0);
 	default:
