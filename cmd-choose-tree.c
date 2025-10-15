@@ -106,8 +106,13 @@ const struct cmd_entry cmd_customize_mode_entry = {
 
 #define CHOOSE_TREE_WINDOW_TEMPLATE				\
 	"#{?window_marked_flag,#[reverse],}"			\
-	"#{window_name}#{window_flags}"				\
-	"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: \"#{pane_title}\",}"
+	"#[fg=#475266]    └─ #[fg=#565B66]🪟 "			\
+	"#{?window_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}"	\
+	"#{window_name}#[nobold]"				\
+	"#{?window_active,#[fg=#95E6CB] ●,#[fg=#565B66]}"	\
+	"#{window_flags} "					\
+	"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},#[fg=#565B66]: \"#{pane_title}\",}"	\
+	"#[default]"
 
 static enum args_parse_type
 cmd_choose_tree_args_parse(__unused struct args *args, __unused u_int idx,
