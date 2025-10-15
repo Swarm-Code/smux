@@ -363,7 +363,12 @@ proc_fork_and_daemon(int *fd)
 
 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pair) != 0)
 		fatal("socketpair failed");
-	switch (pid = fork()) {
+	printf("DEBUG: About to fork()\n");
+	fflush(stdout);
+	pid = fork();
+	printf("DEBUG: After fork(), PID=%d, returned pid=%d\n", getpid(), pid);
+	fflush(stdout);
+	switch (pid) {
 	case -1:
 		fatal("fork failed");
 	case 0:
