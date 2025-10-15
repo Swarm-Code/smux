@@ -231,11 +231,19 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	RB_INIT(&windows);
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
+	printf("DEBUG: Initializing data structures\n");
+	fflush(stdout);
 	RB_INIT(&sessions);
 	/* RB_INIT(&projects); */ /* Temporarily disabled to debug hang */
 	/* next_project_id = 0; */ /* Temporarily disabled to debug hang */
 	/* plugin_init(); */ /* Temporarily disabled to debug hang */
+
+	printf("DEBUG: Initializing key bindings\n");
+	fflush(stdout);
 	key_bindings_init();
+
+	printf("DEBUG: Initializing message log\n");
+	fflush(stdout);
 	TAILQ_INIT(&message_log);
 	gettimeofday(&start_time, NULL);
 
