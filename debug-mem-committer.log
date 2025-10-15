@@ -5846,3 +5846,15 @@ tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/THEMES.md",
   "old_string": "## Enhanced Session/Project Selector\n\nAll themes now include **enhanced selector styling** that matches the minimal dark aesthetic:\n\n### Selector Features\n- **Dark background**: `#0B0E14` (matches status bar)\n- **Light text**: `#BFBDB6` (matches status bar text)\n- **Accent cursor**: `#95E6CB` (matches prefix highlight)\n- **Consistent pane indicators**: Proper color coordination",
   "new_string": "## Enhanced Sessio
+
+=== 2025-10-15T18:10:28.609Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/premium-minimal.conf
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/premium-minimal.conf",
+  "old_string": "# Enhanced session/project selector styling\nset-option -g mode-style \"bg=#0B0E14,fg=#BFBDB6\"\nset-option -g prompt-cursor-colour \"#95E6CB\"\nset-option -g display-panes-active-colour \"#95E6CB\"\nset-option -g display-panes-colour \"#475266\"",
+  "new_string": "# Enhanced session/project selector styling with visual hierarchy\n# Includes built-in choose-tree formatting with:\n# - 📂 Projects: Bold accent col
