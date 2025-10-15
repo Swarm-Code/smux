@@ -6231,3 +6231,15 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/cmd-choose-tree.c",
   "old_string": "#define CHOOSE_TREE_WINDOW_TEMPLATE\t\t\t\t\\\n\t\"#{?window_marked_flag,#[reverse],}\"\t\t\t\\\n\t\"#[fg=#475266]    └─ #[fg=#565B66]🪟 \"\t\t\t\\\n\t\"#{?window_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}\"\t\\\n\t\"#{window_name}#[nobold]\"\t\t\t\t\\\n\t\"#{?window_active,#[fg=#95E6CB] ●,#[fg=#565B66]}\"\t\\\n\t\"#{window_flags} \"\t\t\t\t\t\\\n\t\"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_titl
+
+=== 2025-10-15T18:22:53.349Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "make clean && make",
+  "description": "Rebuild smux with enhanced explicit labels"
+}
