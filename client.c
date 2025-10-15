@@ -398,7 +398,11 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		proc_send(client_peer, msg, -1, NULL, 0);
 
 	/* Start main loop. */
+	printf("DEBUG: Starting client proc_loop - waiting for server response\n");
+	fflush(stdout);
 	proc_loop(client_proc, NULL);
+	printf("DEBUG: Client proc_loop exited\n");
+	fflush(stdout);
 
 	/* Run command if user requested exec, instead of exiting. */
 	if (client_exittype == MSG_EXEC) {
