@@ -531,8 +531,34 @@ plugin_update(struct plugin *plugin)
 int
 plugin_remove(struct plugin *plugin)
 {
-	/* TODO: Implement directory removal */
-	return 0;
+	char cmd[1024];
+	char plugin_dir[PATH_MAX];
+	int ret;
+
+	if (!plugin || !plugin->path || !plugin->name)
+		return -1;
+
+	snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
+
+	/* Check if plugin directory exists */
+	if (access(plugin_dir, F_OK) != 0) {
+		log_debug("Plugin %s directory does not exist: %s", plugin->name, plugin_dir);
+		return 0; /* Already removed */
+	}
+
+	/* Remove plugin directory */
+	snprintf(cmd, sizeof cmd, "rm -rf \"%s\" 2>/dev/null", plugin_dir);
+
+	log_debug("Removing plugin %s: %s", plugin->name, cmd);
+	ret = system(cmd);
+
+	if (ret == 0) {
+		log_debug("Successfully removed plugin %s", plugin->name);
+		return 0;
+	} else {
+		log_debug("Failed to remove plugin %s (exit code: %d)", plugin->name, ret);
+		return -1;
+	}
 }
 
 void
