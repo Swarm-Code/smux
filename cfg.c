@@ -94,7 +94,7 @@ start_cfg(void)
 		load_cfg(cfg_files[i], c, NULL, NULL, flags, NULL);
 
 	/* Load plugins after configuration is processed */
-	/* plugin_source_all(c ? c->session : NULL); */ /* Temporarily disabled to debug hang */
+	plugin_source_all(c ? c->session : NULL);
 
 	cmdq_append(NULL, cmdq_get_callback(cfg_done, NULL));
 }
