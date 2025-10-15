@@ -5506,3 +5506,15 @@ tool_input: {
   "command": "echo \"2\" | timeout 10s ./status-themes.sh 2>&1",
   "description": "Test theme selector by choosing option 2 (Premium Minimal)"
 }
+
+=== 2025-10-15T18:01:46.838Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "timeout 5s smux show-options -g window-status-current-format && echo \"---\" && timeout 10s ./test-selector.sh",
+  "description": "Verify premium theme and test selector functionality"
+}
