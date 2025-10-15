@@ -367,6 +367,14 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
+		{
+			FILE *debug_file = fopen("/tmp/smux_child_debug.log", "w");
+			if (debug_file) {
+				fprintf(debug_file, "DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
+				fflush(debug_file);
+				fclose(debug_file);
+			}
+		}
 		printf("DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
 		fflush(stdout);
 		printf("DEBUG: Child process about to close pair[0]\n");
