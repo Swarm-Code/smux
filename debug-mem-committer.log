@@ -6386,3 +6386,15 @@ tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md",
   "old_string": "### AFTER (Enhanced smux choose-tree):\n```\n📂 project1 - 3 sessions (Wed Oct 15 14:06:52 2025)\n  ├─ 🖥️ frontend - 2 windows ● ACTIVE\n    └─ 🪟 main ●\n    └─ 🪟 tests\n  ├─ 🖥️ backend - 1 windows\n    └─ 🪟 server\n🖥️ standalone-session - 1 windows\n  └─ 🪟 bash\n```",
   "new_string": "### AFTER (Enhanced smux choose-tree with explicit labels):\n```\nPROJECT 📂 enhanced-demo - 2 sessions (Wed Oct 
+
+=== 2025-10-15T18:34:05.285Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "ps aux | grep -E \"(tmux|smux)\" | grep -v grep",
+  "description": "Check current tmux and smux processes"
+}
