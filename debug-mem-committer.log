@@ -9774,3 +9774,14 @@ tool_input: {
   "command": "pkill smux && sudo -S make install <<< \"Luis2901\"",
   "description": "Kill smux and install simplified version"
 }
+
+=== 2025-10-15T21:12:28.182Z ===
+Tool: Write
+File: /home/alejandro/Swarm/smux/test-simplified-format.sh
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/test-simplified-format.sh",
+  "content": "#!/bin/bash\n# Test the simplified enhanced format\n\necho \"🧪 TESTING SIMPLIFIED ENHANCED FORMAT\"\necho \"=====================================\"\necho \"\"\n\necho \"📋 SIMPLIFICATION CHANGES:\"\necho \"==========================\"\necho \"✅ Removed complex tree connectors (├─ └─)\"\necho \"✅ Removed excessive formatting and colors\"\necho \"✅ Simplified to match original tmux style\"\necho \"✅ Kept enhanc
