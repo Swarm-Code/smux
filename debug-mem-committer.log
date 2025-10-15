@@ -3596,3 +3596,15 @@ tool_input: {
   "command": "rm -rf /tmp/smux-* && rm -f /tmp/proc_fork_and_daemon_* && rm -f /tmp/smux_child_debug.log",
   "description": "Clean up all temporary files and socket directories"
 }
+
+=== 2025-10-15T07:48:12.309Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "timeout 15s smux new-session -d -s debug-proper-install-test 2>&1",
+  "description": "Test smux with properly installed binary"
+}
