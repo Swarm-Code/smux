@@ -3343,3 +3343,15 @@ tool_input: {
   "command": "rm -f /tmp/smux_child_debug.log && make && timeout 15s smux new-session -d -s debug-file-test 2>&1",
   "description": "Test with file-based child process debug logging"
 }
+
+=== 2025-10-15T07:44:22.228Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "ps aux | grep smux | grep -v grep",
+  "description": "Check for running smux processes"
+}
