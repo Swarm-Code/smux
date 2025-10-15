@@ -140,6 +140,28 @@ cmd_set_option_exec(struct cmd *self, struct cmdq_item *item)
 	o = options_get_only(oo, name);
 	parent = options_get(oo, name);
 
+	/* Check for @plugin declarations and process them for tpm integration. */
+	if (*name == '@' && strcmp(name, "@plugin") == 0) {
+		if (value == NULL) {
+			cmdq_error(item, "@plugin requires a value");
+			goto fail;
+		}
+
+		/* Find current project context */
+		struct project *project = NULL;
+		if (target->s != NULL && target->s->project != NULL) {
+			project = target->s->project;
+		}
+
+		/* Parse and store plugin declaration */
+		if (plugin_parse_declaration(value, project) != 0) {
+			cmdq_error(item, "failed to parse plugin declaration: %s", value);
+			goto fail;
+		}
+
+		/* Continue with normal option processing to store the @plugin option */
+	}
+
 	/* Check that array options and indexes match up. */
 	if (idx != -1 && (*name == '@' || !options_is_array(parent))) {
 		cmdq_error(item, "not an array: %s", argument);
