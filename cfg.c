@@ -574,7 +574,10 @@ plugin_source_all(struct session *s)
 	struct plugin *plugin;
 	char plugin_dir[PATH_MAX];
 	char tmux_file[PATH_MAX];
+	char glob_pattern[PATH_MAX];
 	char cmd[1024];
+	glob_t glob_buf;
+	int i;
 
 	/* Source global plugins first */
 	RB_FOREACH(plugin, plugins, &plugins_global) {
@@ -582,16 +585,25 @@ plugin_source_all(struct session *s)
 			snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
 			snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
 
-			/* Check if plugin.tmux file exists */
+			/* Check if plugin.tmux file exists (standard naming) */
 			if (access(tmux_file, F_OK) == 0) {
 				snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
 				log_debug("Sourcing global plugin %s: %s", plugin->name, tmux_file);
 				system(cmd);
 			} else {
-				/* Try generic .tmux file */
-				snprintf(tmux_file, sizeof tmux_file, "%s/*.tmux", plugin_dir);
-				/* This is simplified - in practice we'd use glob() to find .tmux files */
-				log_debug("No .tmux file found for global plugin %s", plugin->name);
+				/* Use glob to find any .tmux file in the plugin directory */
+				snprintf(glob_pattern, sizeof glob_pattern, "%s/*.tmux", plugin_dir);
+				if (glob(glob_pattern, GLOB_ERR, NULL, &glob_buf) == 0) {
+					for (i = 0; i < (int)glob_buf.gl_pathc; i++) {
+						snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", glob_buf.gl_pathv[i]);
+						log_debug("Sourcing global plugin %s: %s", plugin->name, glob_buf.gl_pathv[i]);
+						system(cmd);
+						break; /* Only source the first .tmux file found */
+					}
+					globfree(&glob_buf);
+				} else {
+					log_debug("No .tmux file found for global plugin %s", plugin->name);
+				}
 			}
 		}
 	}
@@ -603,13 +615,25 @@ plugin_source_all(struct session *s)
 				snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
 				snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
 
-				/* Check if plugin.tmux file exists */
+				/* Check if plugin.tmux file exists (standard naming) */
 				if (access(tmux_file, F_OK) == 0) {
 					snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
 					log_debug("Sourcing project plugin %s: %s", plugin->name, tmux_file);
 					system(cmd);
 				} else {
-					log_debug("No .tmux file found for project plugin %s", plugin->name);
+					/* Use glob to find any .tmux file in the plugin directory */
+					snprintf(glob_pattern, sizeof glob_pattern, "%s/*.tmux", plugin_dir);
+					if (glob(glob_pattern, GLOB_ERR, NULL, &glob_buf) == 0) {
+						for (i = 0; i < (int)glob_buf.gl_pathc; i++) {
+							snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", glob_buf.gl_pathv[i]);
+							log_debug("Sourcing project plugin %s: %s", plugin->name, glob_buf.gl_pathv[i]);
+							system(cmd);
+							break; /* Only source the first .tmux file found */
+						}
+						globfree(&glob_buf);
+					} else {
+						log_debug("No .tmux file found for project plugin %s", plugin->name);
+					}
 				}
 			}
 		}
