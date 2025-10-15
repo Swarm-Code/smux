@@ -10,3 +10,15 @@ tool_input: {
   "command": "ls -la",
   "description": "List contents of current smux directory"
 }
+
+=== 2025-10-15T03:33:27.024Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/a201909a-e87b-4619-b5d7-abd23a1cb761.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "which smux",
+  "description": "Check if smux is currently installed"
+}
