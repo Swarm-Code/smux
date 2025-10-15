@@ -1,0 +1,191 @@
+507652 execve("./smux", ["./smux", "-f", "/dev/null", "new-session", "-d", "-s", "debug-strace"], 0x7fff84fe7008 /* 89 vars */) = 0
+507652 brk(NULL)                        = 0x55fb9b773000
+507652 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+507652 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+507652 fstat(3, {st_mode=S_IFREG|0644, st_size=177831, ...}) = 0
+507652 mmap(NULL, 177831, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe834603000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3
+507652 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+507652 fstat(3, {st_mode=S_IFREG|0755, st_size=453896, ...}) = 0
+507652 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe834601000
+507652 mmap(NULL, 453856, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe834592000
+507652 mmap(0x7fe83459f000, 290816, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd000) = 0x7fe83459f000
+507652 mmap(0x7fe8345e6000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x54000) = 0x7fe8345e6000
+507652 mmap(0x7fe8345fc000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6a000) = 0x7fe8345fc000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/usr/lib/libevent_core-2.1.so.7", O_RDONLY|O_CLOEXEC) = 3
+507652 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+507652 fstat(3, {st_mode=S_IFREG|0755, st_size=202720, ...}) = 0
+507652 mmap(NULL, 202320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe834560000
+507652 mmap(0x7fe834568000, 118784, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7fe834568000
+507652 mmap(0x7fe834585000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7fe834585000
+507652 mmap(0x7fe834590000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x30000) = 0x7fe834590000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/usr/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+507652 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+507652 fstat(3, {st_mode=S_IFREG|0755, st_size=1100400, ...}) = 0
+507652 mmap(NULL, 1102152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe834452000
+507652 mmap(0x7fe834461000, 569344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7fe834461000
+507652 mmap(0x7fe8344ec000, 466944, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9a000) = 0x7fe8344ec000
+507652 mmap(0x7fe83455e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10b000) = 0x7fe83455e000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/usr/lib/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3
+507652 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+507652 fstat(3, {st_mode=S_IFREG|0755, st_size=67904, ...}) = 0
+507652 mmap(NULL, 75912, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe83443f000
+507652 mmap(0x7fe834442000, 36864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7fe834442000
+507652 mmap(0x7fe83444b000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7fe83444b000
+507652 mmap(0x7fe83444e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7fe83444e000
+507652 mmap(0x7fe834450000, 6280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe834450000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+507652 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000x\2\0\0\0\0\0"..., 832) = 832
+507652 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 896, 64) = 896
+507652 fstat(3, {st_mode=S_IFREG|0755, st_size=2149728, ...}) = 0
+507652 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 896, 64) = 896
+507652 mmap(NULL, 2174000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe834200000
+507652 mmap(0x7fe834224000, 1515520, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7fe834224000
+507652 mmap(0x7fe834396000, 454656, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x196000) = 0x7fe834396000
+507652 mmap(0x7fe834405000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x204000) = 0x7fe834405000
+507652 mmap(0x7fe83440b000, 31792, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe83440b000
+507652 close(3)                         = 0
+507652 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe83443d000
+507652 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe83443a000
+507652 arch_prctl(ARCH_SET_FS, 0x7fe83443a740) = 0
+507652 set_tid_address(0x7fe83443aa10)  = 507652
+507652 set_robust_list(0x7fe83443aa20, 24) = 0
+507652 rseq(0x7fe83443a680, 0x20, 0, 0x53053053) = 0
+507652 mprotect(0x7fe834405000, 16384, PROT_READ) = 0
+507652 mprotect(0x7fe83444e000, 4096, PROT_READ) = 0
+507652 mprotect(0x7fe83455e000, 4096, PROT_READ) = 0
+507652 mprotect(0x7fe834590000, 4096, PROT_READ) = 0
+507652 mprotect(0x7fe8345fc000, 16384, PROT_READ) = 0
+507652 mprotect(0x55fb5f7cf000, 81920, PROT_READ) = 0
+507652 mprotect(0x7fe834670000, 8192, PROT_READ) = 0
+507652 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+507652 getrandom("\x5f\x57\xe0\x68\x53\x8c\x02\x33", 8, GRND_NONBLOCK) = 8
+507652 munmap(0x7fe834603000, 177831)   = 0
+507652 brk(NULL)                        = 0x55fb9b773000
+507652 brk(0x55fb9b794000)              = 0x55fb9b794000
+507652 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+507652 fstat(3, {st_mode=S_IFREG|0644, st_size=3063024, ...}) = 0
+507652 mmap(NULL, 3063024, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe833e00000
+507652 close(3)                         = 0
+507652 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+507652 fstat(3, {st_mode=S_IFREG|0644, st_size=3552, ...}) = 0
+507652 fstat(3, {st_mode=S_IFREG|0644, st_size=3552, ...}) = 0
+507652 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0"..., 4096) = 3552
+507652 lseek(3, -2260, SEEK_CUR)        = 1292
+507652 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0"..., 4096) = 2260
+507652 lseek(3, 3551, SEEK_SET)         = 3551
+507652 close(3)                         = 0
+507652 getcwd("/home/alejandro/Swarm/smux", 4096) = 27
+507652 readlink("/home", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm/smux", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm/smux", 0x7fff82cd0e60, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/etc", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/etc/smux.conf", 0x7fff82cd1e20, 1023) = -1 ENOENT (No such file or directory)
+507652 readlink("/home", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/.smux.conf", 0x7fff82cd1e20, 1023) = -1 ENOENT (No such file or directory)
+507652 readlink("/home", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/.config", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/.config/smux", 0x7fff82cd1e20, 1023) = -1 ENOENT (No such file or directory)
+507652 readlink("/home", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/.config", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/.config/smux", 0x7fff82cd1e20, 1023) = -1 ENOENT (No such file or directory)
+507652 access("/usr/bin/bash", X_OK)    = 0
+507652 getuid()                         = 1000
+507652 readlink("/tmp", 0x7fff82cd1e20, 1023) = -1 EINVAL (Invalid argument)
+507652 faccessat2(AT_FDCWD, "/tmp/", F_OK, AT_EACCESS) = 0
+507652 mkdir("/tmp/smux-1000", 0700)    = -1 EEXIST (File exists)
+507652 newfstatat(AT_FDCWD, "/tmp/smux-1000", {st_mode=S_IFDIR|0700, st_size=60, ...}, AT_SYMLINK_NOFOLLOW) = 0
+507652 getuid()                         = 1000
+507652 geteuid()                        = 1000
+507652 getgid()                         = 1000
+507652 getegid()                        = 1000
+507652 getuid()                         = 1000
+507652 geteuid()                        = 1000
+507652 getgid()                         = 1000
+507652 getegid()                        = 1000
+507652 getuid()                         = 1000
+507652 geteuid()                        = 1000
+507652 getgid()                         = 1000
+507652 getegid()                        = 1000
+507652 pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0
+507652 getpid()                         = 507652
+507652 getuid()                         = 1000
+507652 geteuid()                        = 1000
+507652 getgid()                         = 1000
+507652 getegid()                        = 1000
+507652 prctl(PR_SET_NAME, "smux: client") = 0
+507652 uname({sysname="Linux", nodename="swarm", ...}) = 0
+507652 getpid()                         = 507652
+507652 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, NULL, 8) = 0
+507652 rt_sigaction(SIGTSTP, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, NULL, 8) = 0
+507652 rt_sigaction(SIGTTIN, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, NULL, 8) = 0
+507652 rt_sigaction(SIGTTOU, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, NULL, 8) = 0
+507652 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, NULL, 8) = 0
+507652 rt_sigaction(SIGINT, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGHUP, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGCHLD, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGCONT, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGTERM, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGUSR1, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGUSR2, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 rt_sigaction(SIGWINCH, {sa_handler=0x7fe834581b20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe83423e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+507652 socket(AF_UNIX, SOCK_STREAM, 0)  = 5
+507652 connect(5, {sa_family=AF_UNIX, sun_path="/tmp/smux-1000/default"}, 110) = 0
+507652 fcntl(5, F_GETFL)                = 0x2 (flags O_RDWR)
+507652 fcntl(5, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+507652 brk(0x55fb9b7bd000)              = 0x55fb9b7bd000
+507652 getpid()                         = 507652
+507652 getsockopt(5, SOL_SOCKET, SO_PEERCRED, {pid=442313, uid=1000, gid=1000}, [12]) = 0
+507652 getcwd("/home/alejandro/Swarm/smux", 4096) = 27
+507652 readlink("/home", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm/smux", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 readlink("/home/alejandro/Swarm/smux", 0x7fff82cd0cf0, 1023) = -1 EINVAL (Invalid argument)
+507652 ioctl(0, TCGETS2, 0x7fff82cd30b0) = -1 ENOTTY (Inappropriate ioctl for device)
+507652 ioctl(0, TCGETS2, 0x7fff82cd3130) = -1 ENOTTY (Inappropriate ioctl for device)
+507652 close(2147483647)                = -1 EBADF (Bad file descriptor)
+507652 dup(0)                           = 6
+507652 dup(1)                           = 7
+507652 getpid()                         = 507652
+507652 sendmsg(5, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="o\0\0\0\30\0\0\0\10\0\0\0\377\377\377\377\0\0\1\30\0\0\0\0", iov_len=24}, {iov_base="o\0\0\0\30\0\0\0\10\0\0\0\377\377\377\377\0\0\1\30\0\0\0\0", iov_len=24}, {iov_base="e\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377xterm-256color\0", iov_len=31}, {iov_base="m\0\0\0\24\0\0\0\10\0\0\0\377\377\377\377\0\0\0\0", iov_len=20}, {iov_base="f\0\0\0\21\0\0\0\10\0\0\0\377\377\377\377\0", iov_len=17}, {iov_base="l\0\0\0+\0\0\0\10\0\0\0\377\377\377\377/home/alejandro/"..., iov_len=43}], msg_iovlen=6, msg_controllen=0, msg_flags=0}, 0) = 159
+507652 sendmsg(5, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="h\0\0\0\20\0\0\200\10\0\0\0\377\377\377\377", iov_len=16}], msg_iovlen=1, msg_control=[{cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, cmsg_data=[6]}], msg_controllen=24, msg_flags=0}, 0) = 16
+507652 close(6)                         = 0
+507652 sendmsg(5, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="n\0\0\0\20\0\0\200\10\0\0\0\377\377\377\377", iov_len=16}, {iov_base="k\0\0\0\24\0\0\0\10\0\0\0\377\377\377\377\4\277\7\0", iov_len=20}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377SHELL=/usr/bin/b"..., iov_len=36}, {iov_base="i\0\0\0+\0\0\0\10\0\0\0\377\377\377\377COREPACK_ENABLE_"..., iov_len=43}, {iov_base="i\0\0\0(\0\0\0\10\0\0\0\377\377\377\377WINDOWID=9446261"..., iov_len=40}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377COLORTERM=trueco"..., iov_len=36}, {iov_base="i\0\0\0&\0\0\0\10\0\0\0\377\377\377\377HYPRLAND_CMD=Hyp"..., iov_len=38}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XDG_CONFIG_DIRS="..., iov_len=41}, {iov_base="i\0\0\0*\0\0\0\10\0\0\0\377\377\377\377XDG_MENU_PREFIX="..., iov_len=42}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377XDG_BACKEND=wayl"..., iov_len=36}, {iov_base="i\0\0\0;\0\0\0\10\0\0\0\377\377\377\377XDG_DATA_HOME=/h"..., iov_len=59}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377INPUT_METHOD=fci"..., iov_len=35}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XCOMPOSEFILE=~/."..., iov_len=41}, {iov_base="i\0\0\08\0\0\0\10\0\0\0\377\377\377\377XDG_CONFIG_HOME="..., iov_len=56}, {iov_base="i\0\0\0B\0\0\0\10\0\0\0\377\377\377\377OMARCHY_PATH=/ho"..., iov_len=66}, {iov_base="i\0\0\0C\0\0\0\10\0\0\0\377\377\377\377MEMORY_PRESSURE_"..., iov_len=67}, {iov_base="i\0\0\0%\0\0\0\10\0\0\0\377\377\377\377XMODIFIERS=@im=f"..., iov_len=37}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377LIBVA_DRIVER_NAM"..., iov_len=41}, {iov_base="i\0\0\0005\0\0\0\10\0\0\0\377\377\377\377ELECTRON_OZONE_P"..., iov_len=53}, {iov_base="i\0\0\0P\0\0\0\10\0\0\0\377\377\377\377HL_INITIAL_WORKS"..., iov_len=80}, {iov_base="i\0\0\0 \0\0\0\10\0\0\0\377\377\377\377XCURSOR_SIZE=24\0", iov_len=32}, {iov_base="i\0\0\0\34\0\0\0\10\0\0\0\377\377\377\377EDITOR=nvim\0", iov_len=28}, {iov_base="i\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377XDG_SEAT=seat0\0", iov_len=31}, {iov_base="i\0\0\0/\0\0\0\10\0\0\0\377\377\377\377PWD=/home/alejan"..., iov_len=47}, {iov_base="i\0\0\0\"\0\0\0\10\0\0\0\377\377\377\377LOGNAME=alejandr"..., iov_len=34}, {iov_base="i\0\0\0-\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_DESK"..., iov_len=45}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_TYPE"..., iov_len=41}, {iov_base="i\0\0\0<\0\0\0\10\0\0\0\377\377\377\377PNPM_HOME=/home/"..., iov_len=60}, {iov_base="i\0\0\0&\0\0\0\10\0\0\0\377\377\377\377SYSTEMD_EXEC_PID"..., iov_len=38}, {iov_base="i\0\0\0005\0\0\0\10\0\0\0\377\377\377\377NoDefaultCurrent"..., iov_len=53}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377TERMINAL=alacrit"..., iov_len=35}, {iov_base="i\0\0\0\35\0\0\0\10\0\0\0\377\377\377\377CLAUDECODE=1\0", iov_len=29}, ...], msg_iovlen=92, msg_control=[{cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, cmsg_data=[7]}], msg_controllen=24, msg_flags=0}, 0) = 5062
+507652 close(7)                         = 0
+507652 poll([{fd=3, events=POLLIN}, {fd=5, events=POLLIN|POLLOUT}], 2, -1) = 1 ([{fd=5, revents=POLLOUT}])
+507652 sendmsg(5, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\310\0\0\0003\0\0\0\10\0\0\0\377\377\377\377\4\0\0\0new-session\0"..., iov_len=51}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 51
+507652 poll([{fd=3, events=POLLIN}, {fd=5, events=POLLIN}], 2, -1) = ? ERESTART_RESTARTBLOCK (Interrupted by signal)
+507652 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=507649, si_uid=1000} ---
+507652 write(4, "\17", 1)               = 1
+507652 rt_sigreturn({mask=[]})          = -1 EINTR (Interrupted system call)
+507652 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=507649, si_uid=1000} ---
+507652 write(4, "\22", 1)               = 1
+507652 rt_sigreturn({mask=[]})          = -1 EINTR (Interrupted system call)
+507652 poll([{fd=3, events=POLLIN}, {fd=5, events=POLLIN}], 2, -1) = 1 ([{fd=3, revents=POLLIN}])
+507652 read(3, "\17\22", 1024)          = 2
+507652 read(3, 0x7fe8345911a0, 1024)    = -1 EAGAIN (Resource temporarily unavailable)
+507652 fcntl(0, F_GETFL)                = 0x2 (flags O_RDWR)
+507652 fcntl(0, F_SETFL, O_RDWR)        = 0
+507652 fcntl(1, F_GETFL)                = 0x2 (flags O_RDWR)
+507652 fcntl(1, F_SETFL, O_RDWR)        = 0
+507652 fcntl(2, F_GETFL)                = 0x2 (flags O_RDWR)
+507652 fcntl(2, F_SETFL, O_RDWR)        = 0
+507652 exit_group(0)                    = ?
+507652 +++ exited with 0 +++
