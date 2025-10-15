@@ -733,6 +733,11 @@ cmd_install_plugins_exec(struct cmd *self, struct cmdq_item *item)
 	if (!quiet)
 		cmdq_print(item, "Installed %d plugins", installed);
 
+	/* Source all installed plugins */
+	if (installed > 0) {
+		plugin_source_all(cmd_find_current_session(cmdq_get_current(item)));
+	}
+
 	return (CMD_RETURN_NORMAL);
 }
 
