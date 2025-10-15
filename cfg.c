@@ -432,8 +432,65 @@ plugin_init(void)
 int
 plugin_install(struct plugin *plugin)
 {
-	/* TODO: Implement git clone functionality */
-	return 0;
+	char cmd[1024];
+	char plugin_dir[PATH_MAX];
+	const char *base_path;
+	int ret;
+
+	if (!plugin || !plugin->source || !plugin->path)
+		return -1;
+
+	base_path = plugin->path;
+	snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", base_path, plugin->name);
+
+	/* Create plugin base directory if it doesn't exist */
+	mkdir(base_path, 0755);
+
+	/* Check if plugin already exists */
+	if (access(plugin_dir, F_OK) == 0) {
+		log_debug("Plugin %s already exists at %s", plugin->name, plugin_dir);
+		return 0;
+	}
+
+	plugin_set_status(plugin, PLUGIN_STATUS_INSTALLING, NULL);
+
+	/* Construct git clone command */
+	if (strstr(plugin->source, "://") != NULL) {
+		/* Full git URL */
+		if (plugin->branch) {
+			snprintf(cmd, sizeof cmd,
+			    "git clone --depth 1 --branch %s --recursive --quiet \"%s\" \"%s\" 2>/dev/null",
+			    plugin->branch, plugin->source, plugin_dir);
+		} else {
+			snprintf(cmd, sizeof cmd,
+			    "git clone --depth 1 --recursive --quiet \"%s\" \"%s\" 2>/dev/null",
+			    plugin->source, plugin_dir);
+		}
+	} else {
+		/* GitHub shorthand (user/repo) */
+		if (plugin->branch) {
+			snprintf(cmd, sizeof cmd,
+			    "git clone --depth 1 --branch %s --recursive --quiet \"https://github.com/%s.git\" \"%s\" 2>/dev/null",
+			    plugin->branch, plugin->source, plugin_dir);
+		} else {
+			snprintf(cmd, sizeof cmd,
+			    "git clone --depth 1 --recursive --quiet \"https://github.com/%s.git\" \"%s\" 2>/dev/null",
+			    plugin->source, plugin_dir);
+		}
+	}
+
+	log_debug("Installing plugin %s: %s", plugin->name, cmd);
+	ret = system(cmd);
+
+	if (ret == 0) {
+		plugin_set_status(plugin, PLUGIN_STATUS_INSTALLED, NULL);
+		log_debug("Successfully installed plugin %s", plugin->name);
+		return 0;
+	} else {
+		plugin_set_status(plugin, PLUGIN_STATUS_ERROR, "Git clone failed");
+		log_debug("Failed to install plugin %s (exit code: %d)", plugin->name, ret);
+		return -1;
+	}
 }
 
 int
