@@ -231,3 +231,15 @@ tool_input: {
   "prompt": "Create a new output style based on user preferences",
   "subagent_type": "output-style-setup"
 }
+
+=== 2025-10-15T05:57:06.102Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/77cf3fdc-ce17-48f9-9b12-f5ef1691e2b1.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "ls -la",
+  "description": "List current directory contents"
+}
