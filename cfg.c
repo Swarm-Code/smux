@@ -589,7 +589,7 @@ plugin_source_all(struct session *s)
 			if (access(tmux_file, F_OK) == 0) {
 				snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", tmux_file);
 				log_debug("Sourcing global plugin %s: %s", plugin->name, tmux_file);
-				system(cmd);
+				/* system(cmd); */ /* Temporarily disabled to debug hang */
 			} else {
 				/* Use glob to find any .tmux file in the plugin directory */
 				snprintf(glob_pattern, sizeof glob_pattern, "%s/*.tmux", plugin_dir);
