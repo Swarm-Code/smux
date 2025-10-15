@@ -3534,6 +3534,25 @@ void		 project_remove_ref(struct project *, const char *);
 struct session	*project_attach_session(struct project *, struct session *);
 int		 project_detach_session(struct project *, struct session *);
 
+/* plugin.c - embedded in cfg.c */
+extern struct plugins plugins;
+int	plugin_cmp(struct plugin *, struct plugin *);
+RB_PROTOTYPE(plugins, plugin, entry, plugin_cmp);
+struct plugin	*plugin_find(const char *);
+struct plugin	*plugin_find_by_source(const char *);
+struct plugin	*plugin_create(const char *, const char *, const char *,
+		     struct project *);
+void		 plugin_destroy(struct plugin *);
+int		 plugin_parse_declaration(const char *, struct project *);
+int		 plugin_install(struct plugin *);
+int		 plugin_update(struct plugin *);
+int		 plugin_remove(struct plugin *);
+void		 plugin_source_all(void);
+void		 plugin_source(struct plugin *);
+char		*plugin_get_install_path(struct plugin *);
+void		 plugin_init_directories(void);
+void		 plugin_cleanup(void);
+
 /* session.c */
 extern struct sessions sessions;
 extern struct session_groups session_groups;
