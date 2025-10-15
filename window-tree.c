@@ -59,7 +59,7 @@ static void		 window_tree_build_project(struct project *, void *,
 		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},#[fg=#565B66]: \"#{pane_title}\",}" \
 		"#[default]" \
 	",project_format," \
-		"\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6,nobold] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\n" \
+		"\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6]#[nobold] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\n" \
 	"," \
 		"#{?session_project,#[fg=#475266]  ├─ ,}" \
 		"#[fg=#E6A95E,bold]SESSION #[fg=#BFBDB6,bold]🖥️  #{session_name}#[nobold] " \
