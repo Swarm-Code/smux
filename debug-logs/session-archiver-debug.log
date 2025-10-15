@@ -2123,3 +2123,15 @@ You are an advanced AI agent operating within..."
 [2025-10-15T06:28:15.700Z] ✅ Session commit created
 [2025-10-15T06:28:15.700Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T06:28:34.520Z] === SESSION ARCHIVER START ===
+[2025-10-15T06:28:34.521Z] 📋 Processing session: d9d55975
+[2025-10-15T06:28:34.521Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T06:28:34.521Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T06:28:34.525Z] 📊 Parsing 637 transcript lines, checking recent 150
+[2025-10-15T06:28:34.525Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T06:28:34.526Z] 💬 User prompt: ""
+[2025-10-15T06:28:34.526Z] 🔧 Tool: Edit
+[2025-10-15T06:28:34.534Z] 💾 Commit created: Message 1
+[2025-10-15T06:28:34.535Z] ✅ Session commit created
+[2025-10-15T06:28:34.535Z] === SESSION ARCHIVER COMPLETE ===
+
