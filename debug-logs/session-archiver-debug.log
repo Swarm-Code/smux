@@ -12360,3 +12360,16 @@ CONTEXT:
 [2025-10-15T20:42:27.628Z] ✅ Session commit created
 [2025-10-15T20:42:27.628Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T20:42:32.514Z] === SESSION ARCHIVER START ===
+[2025-10-15T20:42:32.514Z] 📋 Processing session: d9d55975
+[2025-10-15T20:42:32.515Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T20:42:32.515Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T20:42:32.530Z] 📊 Parsing 4402 transcript lines, checking recent 150
+[2025-10-15T20:42:32.530Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T20:42:32.530Z] ✅ Found user text: "Still dont see debug and trace..."
+[2025-10-15T20:42:32.546Z] 💬 User prompt: "Still dont see debug and trace"
+[2025-10-15T20:42:32.546Z] 🔧 Tool: Bash
+[2025-10-15T20:42:32.558Z] 💾 Commit created: Message 68
+[2025-10-15T20:42:32.558Z] ✅ Session commit created
+[2025-10-15T20:42:32.558Z] === SESSION ARCHIVER COMPLETE ===
+
