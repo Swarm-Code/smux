@@ -380,20 +380,20 @@ proc_fork_and_daemon(int *fd)
 				fclose(debug_file);
 			}
 		}
-		printf("DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
-		fflush(stdout);
-		printf("DEBUG: Child process about to close pair[0]\n");
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
+		fflush(stderr);
+		fprintf(stderr, "DEBUG: Child process about to close pair[0]\n");
+		fflush(stderr);
 		close(pair[0]);
-		printf("DEBUG: Child process closed pair[0], setting fd\n");
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Child process closed pair[0], setting fd\n");
+		fflush(stderr);
 		*fd = pair[1];
-		printf("DEBUG: Child process calling daemon(1, 0)\n");
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Child process calling daemon(1, 0)\n");
+		fflush(stderr);
 		if (daemon(1, 0) != 0)
 			fatal("daemon failed");
-		printf("DEBUG: Child process daemon() call completed successfully\n");
-		fflush(stdout);
+		fprintf(stderr, "DEBUG: Child process daemon() call completed successfully\n");
+		fflush(stderr);
 		return (0);
 	default:
 		printf("DEBUG: Parent process (PID=%d) got child PID=%d\n", getpid(), pid);
