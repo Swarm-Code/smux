@@ -4131,3 +4131,15 @@ tool_input: {
   "old_string": "\t\tprintf(\"DEBUG: Connection failed, will try to start server\\n\");\n\t\tfflush(stdout);",
   "new_string": "\t\t/* Connection failed, will try to start server */"
 }
+
+=== 2025-10-15T16:40:02.935Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "grep -n \"printf.*DEBUG\" client.c server.c proc.c",
+  "description": "Find all remaining debug printf statements"
+}
