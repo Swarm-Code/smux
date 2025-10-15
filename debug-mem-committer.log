@@ -9686,3 +9686,15 @@ tool_input: {
   "command": "git log --oneline --grep=\"enhanced\\|PROJECT\\|SESSION\" | head -10",
   "description": "Look for enhancement-related commits"
 }
+
+=== 2025-10-15T21:08:33.960Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "git show 1fa96e36:window-tree.c | grep -A 20 \"WINDOW_TREE_DEFAULT_FORMAT\" | head -20",
+  "description": "Check original tmux format before enhancements"
+}
