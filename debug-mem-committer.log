@@ -3284,3 +3284,15 @@ tool_input: {
   "command": "ps aux | grep smux | grep -v grep",
   "description": "Check for any hanging smux processes"
 }
+
+=== 2025-10-15T07:43:21.315Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "kill -9 530839",
+  "description": "Kill the hanging smux daemon process"
+}
