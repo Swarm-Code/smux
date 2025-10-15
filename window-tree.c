@@ -45,7 +45,7 @@ static void		 window_tree_build_project(struct project *, void *,
 #define WINDOW_TREE_DEFAULT_FORMAT \
 	"#{?pane_format," \
 		"#{?pane_marked,#[reverse],}" \
-		"#[fg=#475266]    └─ #[fg=#D19A66,italics]PANE #[fg=#565B66,noitalics]🪟 " \
+		"#[fg=#475266]    └─ #[fg=#D19A66]PANE #[fg=#565B66]🪟 " \
 		"#{?pane_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}" \
 		"#{pane_current_command}#{?pane_active,*,}#{?pane_marked,M,}" \
 		"#{?pane_active,#[fg=#95E6CB] ●,#[fg=#565B66]}" \
