@@ -71,6 +71,9 @@ start_cfg(void)
 	/* Initialize plugin directories early in server startup */
 	plugin_init_directories();
 
+	/* Register plugin cleanup for server shutdown */
+	atexit(plugin_cleanup);
+
 	/*
 	 * Configuration files are loaded without a client, so commands are run
 	 * in the global queue with item->client NULL.
