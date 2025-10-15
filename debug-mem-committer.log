@@ -6162,3 +6162,15 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/test-fresh-restart.sh",
   "content": "#!/bin/bash\n# Test Enhanced Selector After Fresh Restart\n\necho \"🚀 Fresh Smux Restart - Enhanced Selector Test\"\necho \"==============================================\"\necho \"\"\necho \"✅ smux successfully restarted (tmux preserved)\"\necho \"\"\n\necho \"📊 Current Session Structure:\"\necho \"=============================\"\ntimeout 5s smux list-sessions\necho \"\"\n\necho \"📁 Current Project Structure:\
+
+=== 2025-10-15T18:17:50.030Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "chmod +x test-fresh-restart.sh && ./test-fresh-restart.sh",
+  "description": "Run fresh restart test to verify enhanced selector functionality"
+}
