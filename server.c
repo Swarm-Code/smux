@@ -182,40 +182,32 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	char		*cause = NULL;
 	struct timeval	 tv = { .tv_sec = 3600 };
 
-	printf("DEBUG: server_start() called - starting smux server\n");
 	fflush(stdout);
 
 	sigfillset(&set);
 	sigprocmask(SIG_BLOCK, &set, &oldset);
 
-	printf("DEBUG: Setting up server process, flags=%#llx\n", (unsigned long long)flags);
 	fflush(stdout);
 
 	if (~flags & CLIENT_NOFORK) {
-		printf("DEBUG: Forking server daemon\n");
 		fflush(stdout);
 		if (proc_fork_and_daemon(&fd) != 0) {
-			printf("DEBUG: Parent process returning fd=%d\n", fd);
 			fflush(stdout);
 			sigprocmask(SIG_SETMASK, &oldset, NULL);
 			return (fd);
 		}
-		printf("DEBUG: Child process continuing server setup\n");
 		fflush(stdout);
 	}
 	proc_clear_signals(client, 0);
 	server_client_flags = flags;
 
-	printf("DEBUG: Reinitializing event base\n");
 	fflush(stdout);
 	if (event_reinit(base) != 0)
 		fatalx("event_reinit failed");
 
-	printf("DEBUG: Starting server proc\n");
 	fflush(stdout);
 	server_proc = proc_start("server");
 
-	printf("DEBUG: Setting signal handlers\n");
 	fflush(stdout);
 	proc_set_signals(server_proc, server_signal);
 	sigprocmask(SIG_SETMASK, &oldset, NULL);
@@ -231,18 +223,15 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	RB_INIT(&windows);
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
-	printf("DEBUG: Initializing data structures\n");
 	fflush(stdout);
 	RB_INIT(&sessions);
 	/* RB_INIT(&projects); */ /* Temporarily disabled to debug hang */
 	/* next_project_id = 0; */ /* Temporarily disabled to debug hang */
 	/* plugin_init(); */ /* Temporarily disabled to debug hang */
 
-	printf("DEBUG: Initializing key bindings\n");
 	fflush(stdout);
 	key_bindings_init();
 
-	printf("DEBUG: Initializing message log\n");
 	fflush(stdout);
 	TAILQ_INIT(&message_log);
 	gettimeofday(&start_time, NULL);
@@ -280,15 +269,12 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 
 	server_acl_init();
 
-	printf("DEBUG: Adding server accept event\n");
 	fflush(stdout);
 	server_add_accept(0);
 
-	printf("DEBUG: Starting server event loop\n");
 	fflush(stdout);
 	proc_loop(server_proc, server_loop);
 
-	printf("DEBUG: Server event loop exited\n");
 	fflush(stdout);
 
 	job_kill_all();

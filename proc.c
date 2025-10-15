@@ -368,10 +368,8 @@ proc_fork_and_daemon(int *fd)
 		fatal("socketpair failed");
 
 	system("touch /tmp/proc_fork_and_daemon_AFTER_SOCKETPAIR");
-	fprintf(stderr, "DEBUG: About to fork()\n");
 	fflush(stderr);
 	pid = fork();
-	fprintf(stderr, "DEBUG: After fork(), PID=%d, returned pid=%d\n", getpid(), pid);
 	fflush(stderr);
 	switch (pid) {
 	case -1:
@@ -381,29 +379,22 @@ proc_fork_and_daemon(int *fd)
 		{
 			FILE *debug_file = fopen("/tmp/smux_child_debug.log", "w");
 			if (debug_file) {
-				fprintf(debug_file, "DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
 				fflush(debug_file);
 				fclose(debug_file);
 			}
 		}
-		fprintf(stderr, "DEBUG: Child process ENTERED case 0 - PID=%d\n", getpid());
 		fflush(stderr);
-		fprintf(stderr, "DEBUG: Child process about to close pair[0]\n");
 		fflush(stderr);
 		close(pair[0]);
-		fprintf(stderr, "DEBUG: Child process closed pair[0], setting fd\n");
 		fflush(stderr);
 		*fd = pair[1];
-		fprintf(stderr, "DEBUG: Child process calling daemon(1, 0)\n");
 		fflush(stderr);
 
 		/* Manual daemonization instead of daemon(1, 0) */
-		fprintf(stderr, "DEBUG: Manual daemonization - calling setsid()\n");
 		fflush(stderr);
 		if (setsid() == -1)
 			fatal("setsid failed");
 
-		fprintf(stderr, "DEBUG: Manual daemonization - second fork to prevent reacquiring terminal\n");
 		fflush(stderr);
 		pid_t daemon_pid = fork();
 		if (daemon_pid < 0)
@@ -411,16 +402,13 @@ proc_fork_and_daemon(int *fd)
 		if (daemon_pid > 0)
 			exit(0); /* First child exits */
 
-		fprintf(stderr, "DEBUG: Manual daemonization completed successfully\n");
 		fflush(stderr);
 		return (0);
 	default:
 		system("touch /tmp/proc_fork_and_daemon_PARENT_CASE");
-		fprintf(stderr, "DEBUG: Parent process (PID=%d) got child PID=%d\n", getpid(), pid);
 		fflush(stderr);
 		close(pair[1]);
 		*fd = pair[0];
-		fprintf(stderr, "DEBUG: Parent process returning child PID=%d\n", pid);
 		fflush(stderr);
 		return (pid);
 	}

@@ -300,7 +300,6 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		}
 		return (1);
 	}
-	printf("DEBUG: Connected to server successfully, fd=%d\n", fd);
 	fflush(stdout);
 	client_peer = proc_add_peer(client_proc, fd, client_dispatch, NULL);
 
@@ -402,10 +401,8 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		proc_send(client_peer, msg, -1, NULL, 0);
 
 	/* Start main loop. */
-	printf("DEBUG: Starting client proc_loop - waiting for server response\n");
 	fflush(stdout);
 	proc_loop(client_proc, NULL);
-	printf("DEBUG: Client proc_loop exited\n");
 	fflush(stdout);
 
 	/* Run command if user requested exec, instead of exiting. */
