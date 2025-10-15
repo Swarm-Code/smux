@@ -290,8 +290,7 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 	/* Attempt to connect to server */
 	fd = client_connect(base, socket_path, client_flags);
 	if (fd == -1) {
-		printf("DEBUG: Connection failed, will try to start server\n");
-		fflush(stdout);
+		/* Connection failed, will try to start server */
 		if (errno == ECONNREFUSED) {
 			fprintf(stderr, "no server running on %s\n",
 			    socket_path);
