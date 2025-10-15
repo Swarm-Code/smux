@@ -8461,3 +8461,25 @@ tool_input: {
   "command": "timeout 10s ./test-explicit-labels.sh",
   "description": "Test enhanced choose-tree functionality with timeout"
 }
+
+=== 2025-10-15T20:03:34.964Z ===
+Tool: TodoWrite
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "todos": [
+    {
+      "content": "Fix format string syntax error in PROJECT labels causing 'nobold]' to display",
+      "status": "completed",
+      "activeForm": "Fixing format string syntax error in PROJECT labels"
+    },
+    {
+      "content": "Test choose-tree output directly to verify PROJECT labels display correctly",
+      "status": "in_progress",
+      "activeForm": "Testing choose-tree output to verify PROJECT labels"
+    }
+  ]
+}
