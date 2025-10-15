@@ -120,10 +120,6 @@ extern const struct cmd_entry cmd_swap_pane_entry;
 extern const struct cmd_entry cmd_swap_window_entry;
 extern const struct cmd_entry cmd_switch_client_entry;
 extern const struct cmd_entry cmd_switch_project_entry;
-extern const struct cmd_entry cmd_install_plugins_entry;
-extern const struct cmd_entry cmd_update_plugins_entry;
-extern const struct cmd_entry cmd_remove_plugins_entry;
-extern const struct cmd_entry cmd_list_plugins_entry;
 extern const struct cmd_entry cmd_unbind_key_entry;
 extern const struct cmd_entry cmd_unlink_window_entry;
 extern const struct cmd_entry cmd_wait_for_entry;
@@ -222,10 +218,6 @@ const struct cmd_entry *cmd_table[] = {
 	&cmd_swap_window_entry,
 	&cmd_switch_client_entry,
 	&cmd_switch_project_entry,
-	&cmd_install_plugins_entry,
-	&cmd_update_plugins_entry,
-	&cmd_remove_plugins_entry,
-	&cmd_list_plugins_entry,
 	&cmd_unbind_key_entry,
 	&cmd_unlink_window_entry,
 	&cmd_wait_for_entry,

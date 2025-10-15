@@ -1412,38 +1412,6 @@ struct project {
 };
 RB_HEAD(projects, project);
 
-/* Plugin status enumeration. */
-enum plugin_status {
-	PLUGIN_STATUS_NONE,		/* Plugin not processed */
-	PLUGIN_STATUS_PARSED,		/* Plugin declaration parsed */
-	PLUGIN_STATUS_INSTALLING,	/* Plugin being installed */
-	PLUGIN_STATUS_INSTALLED,	/* Plugin successfully installed */
-	PLUGIN_STATUS_FAILED,		/* Plugin installation failed */
-	PLUGIN_STATUS_UPDATING,		/* Plugin being updated */
-	PLUGIN_STATUS_REMOVING		/* Plugin being removed */
-};
-
-/* Plugin structure for tpm integration. */
-struct plugin {
-	char		*name;		/* Plugin name/identifier */
-	char		*source;	/* Plugin source (GitHub, git URL, etc.) */
-	char		*branch;	/* Specific branch/tag (optional) */
-	char		*install_path;	/* Installation directory path */
-
-	enum plugin_status status;	/* Current plugin status */
-
-	struct timeval	 parsed_time;	/* When plugin was first parsed */
-	struct timeval	 install_time;	/* When plugin was installed */
-
-	int		 is_global;	/* 1 if global plugin, 0 if project-specific */
-	struct project	*project;	/* Associated project (NULL for global) */
-
-	char		*last_error;	/* Last error message (if any) */
-
-	RB_ENTRY(plugin) entry;		/* Entry for global plugins RB tree */
-};
-RB_HEAD(plugins, plugin);
-
 struct session {
 	u_int		 id;
 
@@ -3533,25 +3501,6 @@ void		 project_add_ref(struct project *, const char *);
 void		 project_remove_ref(struct project *, const char *);
 struct session	*project_attach_session(struct project *, struct session *);
 int		 project_detach_session(struct project *, struct session *);
-
-/* plugin.c - embedded in cfg.c */
-extern struct plugins plugins;
-int	plugin_cmp(struct plugin *, struct plugin *);
-RB_PROTOTYPE(plugins, plugin, entry, plugin_cmp);
-struct plugin	*plugin_find(const char *);
-struct plugin	*plugin_find_by_source(const char *);
-struct plugin	*plugin_create(const char *, const char *, const char *,
-		     struct project *);
-void		 plugin_destroy(struct plugin *);
-int		 plugin_parse_declaration(const char *, struct project *);
-int		 plugin_install(struct plugin *);
-int		 plugin_update(struct plugin *);
-int		 plugin_remove(struct plugin *);
-void		 plugin_source_all(void);
-void		 plugin_source(struct plugin *);
-char		*plugin_get_install_path(struct plugin *);
-void		 plugin_init_directories(void);
-void		 plugin_cleanup(void);
 
 /* session.c */
 extern struct sessions sessions;
