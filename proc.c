@@ -361,8 +361,6 @@ proc_fork_and_daemon(int *fd)
 	pid_t	pid;
 	int	pair[2];
 
-	/* Create a file to prove this function was called */
-
 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pair) != 0)
 		fatal("socketpair failed");
 
@@ -371,13 +369,6 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
-		{
-			FILE *debug_file = fopen("/tmp/smux_child_debug.log", "w");
-			if (debug_file) {
-				fflush(debug_file);
-				fclose(debug_file);
-			}
-		}
 		close(pair[0]);
 		*fd = pair[1];
 
