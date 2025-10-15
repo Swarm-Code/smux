@@ -53,7 +53,7 @@ static void		 window_tree_build_project(struct project *, void *,
 		"#[default]" \
 	",window_format," \
 		"#{?window_marked_flag,#[reverse],}" \
-		"#[fg=#475266]    └─ #[fg=#D19A66,italics]PANE #[fg=#565B66,noitalics]🪟 " \
+		"#[fg=#475266]    └─ #[fg=#D19A66,italics]WINDOW #[fg=#565B66,noitalics]🪟 " \
 		"#{?window_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}" \
 		"#{window_name}#{?window_active,#[fg=#95E6CB] ●,#[fg=#565B66]}#{window_flags}" \
 		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},#[fg=#565B66]: \"#{pane_title}\",}" \
