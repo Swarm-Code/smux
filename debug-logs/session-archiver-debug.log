@@ -2847,3 +2847,15 @@ Let me chronolog..."
 [2025-10-15T06:38:07.954Z] ✅ Session commit created
 [2025-10-15T06:38:07.954Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T06:38:30.767Z] === SESSION ARCHIVER START ===
+[2025-10-15T06:38:30.767Z] 📋 Processing session: d9d55975
+[2025-10-15T06:38:30.767Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T06:38:30.768Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T06:38:30.772Z] 📊 Parsing 919 transcript lines, checking recent 150
+[2025-10-15T06:38:30.773Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T06:38:30.773Z] 💬 User prompt: ""
+[2025-10-15T06:38:30.773Z] 🔧 Tool: Bash
+[2025-10-15T06:38:30.781Z] 💾 Commit created: Message 1
+[2025-10-15T06:38:30.781Z] ✅ Session commit created
+[2025-10-15T06:38:30.781Z] === SESSION ARCHIVER COMPLETE ===
+
