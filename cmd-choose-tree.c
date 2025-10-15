@@ -94,13 +94,15 @@ const struct cmd_entry cmd_customize_mode_entry = {
 	"#[fg=#565B66](#{t:project_created})#[default]"
 
 #define CHOOSE_TREE_SESSION_TEMPLATE				\
-	"#{?session_project,[#{session_project}] ,}"		\
-	"#{session_windows} windows"				\
+	"#{?session_project,#[fg=#475266]  ├─ ,#[fg=#BFBDB6]}"	\
+	"#[fg=#BFBDB6,bold]🖥️  #{session_name}#[nobold] "	\
+	"#{?session_project,,#[fg=#95E6CB][#{session_project}] }"	\
+	"#[fg=#565B66]- #{session_windows} windows"		\
 	"#{?session_grouped, "					\
-		"(group #{session_group}: "			\
+		"#[fg=#565B66](group #{session_group}: "	\
 		"#{session_group_list}),"			\
 	"}"							\
-	"#{?session_attached, (attached),}"
+	"#{?session_attached,#[fg=#95E6CB,bold] ● ACTIVE#[default],}"
 
 #define CHOOSE_TREE_WINDOW_TEMPLATE				\
 	"#{?window_marked_flag,#[reverse],}"			\
