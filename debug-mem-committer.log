@@ -7117,3 +7117,16 @@ tool_input: {
   "old_string": "\t  .default_str = \"[#{session_name}] \",",
   "new_string": "\t  .default_str = \"#[bg=#0B0E14,fg=#BFBDB6,bold]#{?client_prefix,#[bg=#95E6CB]#[fg=#0B0E14],}   ▌ #S ▌   #{?client_prefix,#[bg=#0B0E14]#[fg=#95E6CB],} \","
 }
+
+=== 2025-10-15T19:22:35.836Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/options-table.c
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/options-table.c",
+  "old_string": "\t{ .name = \"status-left-length\",\n\t  .type = OPTIONS_TABLE_NUMBER,\n\t  .scope = OPTIONS_TABLE_SESSION,\n\t  .minimum = 0,\n\t  .maximum = SHRT_MAX,\n\t  .default_num = 10,",
+  "new_string": "\t{ .name = \"status-left-length\",\n\t  .type = OPTIONS_TABLE_NUMBER,\n\t  .scope = OPTIONS_TABLE_SESSION,\n\t  .minimum = 0,\n\t  .maximum = SHRT_MAX,\n\t  .default_num = 35,"
+}

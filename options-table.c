@@ -863,7 +863,7 @@ const struct options_table_entry options_table[] = {
 	  .scope = OPTIONS_TABLE_SESSION,
 	  .minimum = 0,
 	  .maximum = SHRT_MAX,
-	  .default_num = 10,
+	  .default_num = 35,
 	  .text = "Maximum width of the left side of the status line."
 	},
 
