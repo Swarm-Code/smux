@@ -6362,3 +6362,15 @@ tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md",
   "old_string": "### 🖥️ Sessions (Under Projects or Standalone)\n- **Tree connectors**: `├─` for hierarchical structure\n- **Computer icon**: 🖥️ for session identification\n- **Active indicators**: `● ACTIVE` for attached sessions\n- **Format**: `\"├─ 🖥️ SessionName - X windows ● ACTIVE\"`\n- **Purpose**: Show session relationships and status",
   "new_string": "### 🖥️ Sessions (Under Projects or Standalone)\n- **Expl
+
+=== 2025-10-15T18:28:11.327Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md",
+  "old_string": "### 🪟 Windows (Under Sessions)\n- **Deep indentation**: `└─` for clear hierarchy\n- **Window icon**: 🪟 for window identification\n- **Active highlighting**: `●` for current window\n- **Conditional colors**: Active windows in accent color\n- **Format**: `\"└─ 🪟 WindowName ●\"`\n- **Purpose**: Show window structure within sessions",
+  "new_string": "### 🪟 Windows/Panes (Under Sessions)\n- **Explicit la

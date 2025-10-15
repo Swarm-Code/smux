@@ -24,13 +24,14 @@
 - **Format**: `"├─ SESSION 🖥️ SessionName - X windows ● ACTIVE"`
 - **Purpose**: Clear session identification with explicit labeling
 
-### 🪟 Windows (Under Sessions)
+### 🪟 Windows/Panes (Under Sessions)
+- **Explicit label**: Italic "PANE" text in orange color `#D19A66`
 - **Deep indentation**: `└─` for clear hierarchy
 - **Window icon**: 🪟 for window identification
 - **Active highlighting**: `●` for current window
 - **Conditional colors**: Active windows in accent color
-- **Format**: `"└─ 🪟 WindowName ●"`
-- **Purpose**: Show window structure within sessions
+- **Format**: `"└─ PANE 🪟 WindowName ●"`
+- **Purpose**: Clear window/pane identification with explicit labeling
 
 ---
 
