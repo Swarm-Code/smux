@@ -1412,6 +1412,28 @@ struct project {
 };
 RB_HEAD(projects, project);
 
+/* Plugin structure for TPM integration */
+struct plugin {
+	char		*name;		/* Plugin name (RB tree key) */
+	char		*source;	/* Plugin source (github user/repo, git url) */
+	char		*branch;	/* Optional branch specification */
+	char		*path;		/* Local installation path */
+	enum {
+		PLUGIN_GLOBAL,		/* Global plugin */
+		PLUGIN_PROJECT		/* Project-specific plugin */
+	} scope;
+	enum {
+		PLUGIN_STATUS_DECLARED,	/* Declared in config */
+		PLUGIN_STATUS_INSTALLING, /* Being installed */
+		PLUGIN_STATUS_INSTALLED, /* Successfully installed */
+		PLUGIN_STATUS_ERROR	/* Installation error */
+	} status;
+	char		*error_msg;	/* Error message if status is ERROR */
+	struct timeval	 install_time;	/* When plugin was installed */
+	RB_ENTRY(plugin) entry;		/* Entry for plugins RB tree */
+};
+RB_HEAD(plugins, plugin);
+
 struct session {
 	u_int		 id;
 
