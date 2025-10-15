@@ -585,6 +585,8 @@ plugin_source_all(struct session *s)
 		log_debug("Plugin sourcing already in progress, skipping to prevent circular dependency");
 		return;
 	}
+
+	/* Set flag and ensure it's always reset via cleanup function */
 	sourcing_in_progress = 1;
 
 	/* Source global plugins first */

@@ -3494,3 +3494,42 @@ Let me chronolog..."
 [2025-10-15T07:01:25.222Z] ✅ Session commit created
 [2025-10-15T07:01:25.222Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T07:02:51.616Z] === SESSION ARCHIVER START ===
+[2025-10-15T07:02:51.616Z] 📋 Processing session: d9d55975
+[2025-10-15T07:02:51.616Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T07:02:51.616Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T07:02:51.622Z] 📊 Parsing 1232 transcript lines, checking recent 150
+[2025-10-15T07:02:51.622Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T07:02:51.622Z] ✅ Found user text: "that time out is failing ..."
+[2025-10-15T07:02:51.628Z] 💬 User prompt: "that time out is failing "
+[2025-10-15T07:02:51.628Z] 🔧 Tool: Read
+[2025-10-15T07:02:51.635Z] 💾 Commit created: Message 16
+[2025-10-15T07:02:51.635Z] ✅ Session commit created
+[2025-10-15T07:02:51.635Z] === SESSION ARCHIVER COMPLETE ===
+
+[2025-10-15T07:02:57.120Z] === SESSION ARCHIVER START ===
+[2025-10-15T07:02:57.120Z] 📋 Processing session: d9d55975
+[2025-10-15T07:02:57.120Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T07:02:57.120Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T07:02:57.126Z] 📊 Parsing 1236 transcript lines, checking recent 150
+[2025-10-15T07:02:57.127Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T07:02:57.127Z] ✅ Found user text: "that time out is failing ..."
+[2025-10-15T07:02:57.132Z] 💬 User prompt: "that time out is failing "
+[2025-10-15T07:02:57.132Z] 🔧 Tool: Read
+[2025-10-15T07:02:57.140Z] 💾 Commit created: Message 16
+[2025-10-15T07:02:57.140Z] ✅ Session commit created
+[2025-10-15T07:02:57.140Z] === SESSION ARCHIVER COMPLETE ===
+
+[2025-10-15T07:03:09.164Z] === SESSION ARCHIVER START ===
+[2025-10-15T07:03:09.164Z] 📋 Processing session: d9d55975
+[2025-10-15T07:03:09.164Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T07:03:09.164Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T07:03:09.173Z] 📊 Parsing 1241 transcript lines, checking recent 150
+[2025-10-15T07:03:09.174Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T07:03:09.174Z] ✅ Found user text: "that time out is failing ..."
+[2025-10-15T07:03:09.180Z] 💬 User prompt: "that time out is failing "
+[2025-10-15T07:03:09.180Z] 🔧 Tool: Edit
+[2025-10-15T07:03:09.189Z] 💾 Commit created: Message 16
+[2025-10-15T07:03:09.189Z] ✅ Session commit created
+[2025-10-15T07:03:09.189Z] === SESSION ARCHIVER COMPLETE ===
+
