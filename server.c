@@ -280,8 +280,16 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 
 	server_acl_init();
 
+	printf("DEBUG: Adding server accept event\n");
+	fflush(stdout);
 	server_add_accept(0);
+
+	printf("DEBUG: Starting server event loop\n");
+	fflush(stdout);
 	proc_loop(server_proc, server_loop);
+
+	printf("DEBUG: Server event loop exited\n");
+	fflush(stdout);
 
 	job_kill_all();
 	status_prompt_save_history();
