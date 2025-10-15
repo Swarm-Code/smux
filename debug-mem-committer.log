@@ -7326,3 +7326,15 @@ tool_input: {
   "command": "smux list-projects",
   "description": "Check if there are any projects created"
 }
+
+=== 2025-10-15T19:28:48.157Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "smux new-project -n test-project",
+  "description": "Create a test project to demonstrate enhanced selector"
+}
