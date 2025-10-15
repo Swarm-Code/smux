@@ -42,6 +42,7 @@ For easy switching between all themes:
 - Current window: `▶ window-name ◀` with directional arrows
 - Time display: `⏰ HH:MM` with clock emoji
 - Enhanced spacing and visual hierarchy
+- **Enhanced session/project selector** with matching dark theme
 
 ### Theme Comparison
 
