@@ -62,7 +62,7 @@ static void		 window_tree_build_project(struct project *, void *,
 		"\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6]#[nobold] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\n" \
 	"," \
 		"#{?session_project,#[fg=#475266]  ├─ ,}" \
-		"#[fg=#E6A95E,bold]SESSION #[fg=#BFBDB6,bold]🖥️  #{session_name}#[nobold] " \
+		"#[fg=#E6A95E,bold]SESSION #[fg=#BFBDB6]#[bold]🖥️  #{session_name}#[nobold] " \
 		"#[fg=#565B66]- #{session_windows} windows" \
 		"#{?session_grouped, " \
 			"#[fg=#565B66](group #{session_group}: " \
