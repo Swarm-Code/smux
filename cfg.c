@@ -581,7 +581,7 @@ plugin_source_all(struct session *s)
 
 	/* Source global plugins first */
 	RB_FOREACH(plugin, plugins, &plugins_global) {
-		if (plugin->status == PLUGIN_STATUS_INSTALLED && plugin->path && plugin->name) {
+		if ((plugin->status == PLUGIN_STATUS_INSTALLED || plugin->status == PLUGIN_STATUS_DECLARED) && plugin->path && plugin->name) {
 			snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
 			snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
 
@@ -611,7 +611,7 @@ plugin_source_all(struct session *s)
 	/* Source project plugins (if in project context) */
 	if (s && s->project) {
 		RB_FOREACH(plugin, plugins, &plugins_project) {
-			if (plugin->status == PLUGIN_STATUS_INSTALLED && plugin->path && plugin->name) {
+			if ((plugin->status == PLUGIN_STATUS_INSTALLED || plugin->status == PLUGIN_STATUS_DECLARED) && plugin->path && plugin->name) {
 				snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
 				snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
 
