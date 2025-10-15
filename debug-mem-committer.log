@@ -183,3 +183,15 @@ tool_input: {
   "command": "smux -V",
   "description": "Verify smux installation and version"
 }
+
+=== 2025-10-15T05:55:35.824Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/77cf3fdc-ce17-48f9-9b12-f5ef1691e2b1.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "find . -maxdepth 2 -type f \\( -name \"*.md\" -o -name \"*.json\" -o -name \"*.toml\" -o -name \"*.yaml\" -o -name \"*.yml\" -o -name \"Makefile\" -o -name \"README*\" -o -name \"*.sh\" \\) | head -20",
+  "description": "Find configuration and documentation files"
+}
