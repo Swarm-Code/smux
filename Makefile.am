@@ -146,6 +146,10 @@ dist_smux_SOURCES = \
 	cmd-swap-window.c \
 	cmd-switch-client.c \
 	cmd-switch-project.c \
+	cmd-install-plugins.c \
+	cmd-update-plugins.c \
+	cmd-remove-plugins.c \
+	cmd-list-plugins.c \
 	cmd-unbind-key.c \
 	cmd-wait-for.c \
 	cmd.c \

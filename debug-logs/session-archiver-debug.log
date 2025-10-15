@@ -1138,3 +1138,27 @@ You are an advanced AI agent operating within..."
 [2025-10-15T06:12:33.720Z] ✅ Session commit created
 [2025-10-15T06:12:33.720Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T06:12:40.848Z] === SESSION ARCHIVER START ===
+[2025-10-15T06:12:40.848Z] 📋 Processing session: d9d55975
+[2025-10-15T06:12:40.848Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T06:12:40.849Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T06:12:40.851Z] 📊 Parsing 274 transcript lines, checking recent 150
+[2025-10-15T06:12:40.851Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T06:12:40.852Z] 💬 User prompt: ""
+[2025-10-15T06:12:40.852Z] 🔧 Tool: Read
+[2025-10-15T06:12:40.859Z] 💾 Commit created: Message 1
+[2025-10-15T06:12:40.859Z] ✅ Session commit created
+[2025-10-15T06:12:40.859Z] === SESSION ARCHIVER COMPLETE ===
+
+[2025-10-15T06:12:47.463Z] === SESSION ARCHIVER START ===
+[2025-10-15T06:12:47.464Z] 📋 Processing session: d9d55975
+[2025-10-15T06:12:47.464Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T06:12:47.464Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T06:12:47.467Z] 📊 Parsing 277 transcript lines, checking recent 150
+[2025-10-15T06:12:47.467Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T06:12:47.468Z] 💬 User prompt: ""
+[2025-10-15T06:12:47.468Z] 🔧 Tool: Edit
+[2025-10-15T06:12:47.476Z] 💾 Commit created: Message 1
+[2025-10-15T06:12:47.477Z] ✅ Session commit created
+[2025-10-15T06:12:47.477Z] === SESSION ARCHIVER COMPLETE ===
+
