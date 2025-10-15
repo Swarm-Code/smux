@@ -839,7 +839,7 @@ const struct options_table_entry options_table[] = {
 	  .type = OPTIONS_TABLE_CHOICE,
 	  .scope = OPTIONS_TABLE_SESSION,
 	  .choices = options_table_status_justify_list,
-	  .default_num = 0,
+	  .default_num = 1,
 	  .text = "Position of the window list in the status line."
 	},
 
