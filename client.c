@@ -300,7 +300,6 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		}
 		return (1);
 	}
-	fflush(stdout);
 	client_peer = proc_add_peer(client_proc, fd, client_dispatch, NULL);
 
 	/* Save these before pledge(). */
@@ -401,9 +400,7 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		proc_send(client_peer, msg, -1, NULL, 0);
 
 	/* Start main loop. */
-	fflush(stdout);
 	proc_loop(client_proc, NULL);
-	fflush(stdout);
 
 	/* Run command if user requested exec, instead of exiting. */
 	if (client_exittype == MSG_EXEC) {
@@ -430,7 +427,6 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 			printf("%%exit %s\n", client_exit_message());
 		else
 			printf("%%exit\n");
-		fflush(stdout);
 		if (client_flags & CLIENT_CONTROL_WAITEXIT) {
 			setvbuf(stdin, NULL, _IOLBF, 0);
 			for (;;) {
@@ -442,7 +438,6 @@ client_main(struct event_base *base, int argc, char **argv, uint64_t flags,
 		}
 		if (client_flags & CLIENT_CONTROLCONTROL) {
 			printf("\033\\");
-			fflush(stdout);
 			tcsetattr(STDOUT_FILENO, TCSAFLUSH, &saved_tio);
 		}
 	} else if (client_exitreason != CLIENT_EXIT_NONE)

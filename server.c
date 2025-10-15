@@ -182,33 +182,25 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	char		*cause = NULL;
 	struct timeval	 tv = { .tv_sec = 3600 };
 
-	fflush(stdout);
 
 	sigfillset(&set);
 	sigprocmask(SIG_BLOCK, &set, &oldset);
 
-	fflush(stdout);
 
 	if (~flags & CLIENT_NOFORK) {
-		fflush(stdout);
 		if (proc_fork_and_daemon(&fd) != 0) {
-			fflush(stdout);
 			sigprocmask(SIG_SETMASK, &oldset, NULL);
 			return (fd);
 		}
-		fflush(stdout);
 	}
 	proc_clear_signals(client, 0);
 	server_client_flags = flags;
 
-	fflush(stdout);
 	if (event_reinit(base) != 0)
 		fatalx("event_reinit failed");
 
-	fflush(stdout);
 	server_proc = proc_start("server");
 
-	fflush(stdout);
 	proc_set_signals(server_proc, server_signal);
 	sigprocmask(SIG_SETMASK, &oldset, NULL);
 
@@ -223,16 +215,13 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	RB_INIT(&windows);
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
-	fflush(stdout);
 	RB_INIT(&sessions);
 	/* RB_INIT(&projects); */ /* Temporarily disabled to debug hang */
 	/* next_project_id = 0; */ /* Temporarily disabled to debug hang */
 	/* plugin_init(); */ /* Temporarily disabled to debug hang */
 
-	fflush(stdout);
 	key_bindings_init();
 
-	fflush(stdout);
 	TAILQ_INIT(&message_log);
 	gettimeofday(&start_time, NULL);
 
@@ -269,13 +258,10 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 
 	server_acl_init();
 
-	fflush(stdout);
 	server_add_accept(0);
 
-	fflush(stdout);
 	proc_loop(server_proc, server_loop);
 
-	fflush(stdout);
 
 	job_kill_all();
 	status_prompt_save_history();

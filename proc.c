@@ -366,9 +366,7 @@ proc_fork_and_daemon(int *fd)
 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pair) != 0)
 		fatal("socketpair failed");
 
-	fflush(stderr);
 	pid = fork();
-	fflush(stderr);
 	switch (pid) {
 	case -1:
 		fatal("fork failed");
@@ -380,32 +378,23 @@ proc_fork_and_daemon(int *fd)
 				fclose(debug_file);
 			}
 		}
-		fflush(stderr);
-		fflush(stderr);
 		close(pair[0]);
-		fflush(stderr);
 		*fd = pair[1];
-		fflush(stderr);
 
 		/* Manual daemonization instead of daemon(1, 0) */
-		fflush(stderr);
 		if (setsid() == -1)
 			fatal("setsid failed");
 
-		fflush(stderr);
 		pid_t daemon_pid = fork();
 		if (daemon_pid < 0)
 			fatal("second fork failed");
 		if (daemon_pid > 0)
 			exit(0); /* First child exits */
 
-		fflush(stderr);
 		return (0);
 	default:
-		fflush(stderr);
 		close(pair[1]);
 		*fd = pair[0];
-		fflush(stderr);
 		return (pid);
 	}
 }
