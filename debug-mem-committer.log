@@ -5458,3 +5458,15 @@ tool_input: {
   "command": "timeout 5s smux show-options -g window-status-current-format && timeout 5s smux show-options -g prompt-cursor-colour",
   "description": "Check enhanced window format and cursor color"
 }
+
+=== 2025-10-15T18:01:15.263Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "timeout 5s smux source-file ultra-minimal.conf 2>&1 && echo \"ULTRA_MINIMAL_APPLIED\"",
+  "description": "Test switching to ultra-minimal theme"
+}
