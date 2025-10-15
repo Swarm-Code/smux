@@ -338,7 +338,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "default-client-command",
 	  .type = OPTIONS_TABLE_COMMAND,
 	  .scope = OPTIONS_TABLE_SERVER,
-	  .default_str = "new-session",
+	  .default_str = "new-session -P #{c:#{b:#{pane_current_path}}}",
 	  .text = "Default command to run when tmux is run without a command."
 	},
 
