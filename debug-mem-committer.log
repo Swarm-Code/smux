@@ -10002,3 +10002,15 @@ tool_input: {
   "command": "git log --oneline -5",
   "description": "Check recent commits"
 }
+
+=== 2025-10-15T21:26:27.189Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "git diff HEAD window-tree.c | head -50",
+  "description": "Check uncommitted changes to window-tree.c"
+}
