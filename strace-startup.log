@@ -1,0 +1,308 @@
+2399509 execve("./smux", ["./smux", "-v"], 0x7ffe679c06c0 /* 90 vars */) = 0
+2399509 brk(NULL)                       = 0x5600f7400000
+2399509 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+2399509 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+2399509 fstat(3, {st_mode=S_IFREG|0644, st_size=179579, ...}) = 0
+2399509 mmap(NULL, 179579, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa2726d1000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3
+2399509 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\346\6\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\33\0\32\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\314\0\0\0\0\0\0`\314\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\271i\4\0\0\0\0\0\271i\4\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0"..., 832) = 832
+2399509 fstat(3, {st_mode=S_IFREG|0755, st_size=453896, ...}) = 0
+2399509 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa2726cf000
+2399509 mmap(NULL, 453856, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa272660000
+2399509 mmap(0x7fa27266d000, 290816, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd000) = 0x7fa27266d000
+2399509 mmap(0x7fa2726b4000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x54000) = 0x7fa2726b4000
+2399509 mmap(0x7fa2726ca000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6a000) = 0x7fa2726ca000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/usr/lib/libevent_core-2.1.so.7", O_RDONLY|O_CLOEXEC) = 3
+2399509 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\240\21\3\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\31\0\30\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@|\0\0\0\0\0\0@|\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\200\0\0\0\0\0\0\0\200\0\0\0\0\0\0\0\200\0\0\0\0\0\0\21\305\1\0\0\0\0\0\21\305\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\2\0\0\0\0\0\0P\2\0\0\0\0\0"..., 832) = 832
+2399509 fstat(3, {st_mode=S_IFREG|0755, st_size=202720, ...}) = 0
+2399509 mmap(NULL, 202320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa27262e000
+2399509 mmap(0x7fa272636000, 118784, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7fa272636000
+2399509 mmap(0x7fa272653000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7fa272653000
+2399509 mmap(0x7fa27265e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x30000) = 0x7fa27265e000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/usr/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+2399509 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\360\301\20\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0\"\0!\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0 \356\0\0\0\0\0\0 \356\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\360\0\0\0\0\0\0\0\360\0\0\0\0\0\0\0\360\0\0\0\0\0\0\25\250\10\0\0\0\0\0\25\250\10\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\240\t\0\0\0\0\0\0\240\t\0\0\0\0\0"..., 832) = 832
+2399509 fstat(3, {st_mode=S_IFREG|0755, st_size=1100400, ...}) = 0
+2399509 mmap(NULL, 1102152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa272520000
+2399509 mmap(0x7fa27252f000, 569344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7fa27252f000
+2399509 mmap(0x7fa2725ba000, 466944, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9a000) = 0x7fa2725ba000
+2399509 mmap(0x7fa27262c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10b000) = 0x7fa27262c000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/usr/lib/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3
+2399509 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\0\2\1\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0\35\0\34\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\330\"\0\0\0\0\0\0\330\"\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0000\0\0\0\0\0\0\0000\0\0\0\0\0\0\0000\0\0\0\0\0\0\351\206\0\0\0\0\0\0\351\206\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\300\0\0\0\0\0\0\0\300\0\0\0\0\0\0"..., 832) = 832
+2399509 fstat(3, {st_mode=S_IFREG|0755, st_size=67904, ...}) = 0
+2399509 mmap(NULL, 75912, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa27250d000
+2399509 mmap(0x7fa272510000, 36864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7fa272510000
+2399509 mmap(0x7fa272519000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7fa272519000
+2399509 mmap(0x7fa27251c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7fa27251c000
+2399509 mmap(0x7fa27251e000, 6280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa27251e000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+2399509 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000x\2\0\0\0\0\0@\0\0\0\0\0\0\0`\275 \0\0\0\0\0\0\0\0\0@\08\0\20\0@\0@\0?\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\200\3\0\0\0\0\0\0\200\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+2399509 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\200\3\0\0\0\0\0\0\200\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`6\2\0\0\0\0\0`6\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0"..., 896, 64) = 896
+2399509 fstat(3, {st_mode=S_IFREG|0755, st_size=2149728, ...}) = 0
+2399509 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\200\3\0\0\0\0\0\0\200\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`6\2\0\0\0\0\0`6\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0"..., 896, 64) = 896
+2399509 mmap(NULL, 2174000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa272200000
+2399509 mmap(0x7fa272224000, 1515520, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7fa272224000
+2399509 mmap(0x7fa272396000, 454656, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x196000) = 0x7fa272396000
+2399509 mmap(0x7fa272405000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x204000) = 0x7fa272405000
+2399509 mmap(0x7fa27240b000, 31792, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa27240b000
+2399509 close(3)                        = 0
+2399509 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa27250b000
+2399509 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa272508000
+2399509 arch_prctl(ARCH_SET_FS, 0x7fa272508740) = 0
+2399509 set_tid_address(0x7fa272508a10) = 2399509
+2399509 set_robust_list(0x7fa272508a20, 24) = 0
+2399509 rseq(0x7fa272508680, 0x20, 0, 0x53053053) = 0
+2399509 mprotect(0x7fa272405000, 16384, PROT_READ) = 0
+2399509 mprotect(0x7fa27251c000, 4096, PROT_READ) = 0
+2399509 mprotect(0x7fa27262c000, 4096, PROT_READ) = 0
+2399509 mprotect(0x7fa27265e000, 4096, PROT_READ) = 0
+2399509 mprotect(0x7fa2726ca000, 16384, PROT_READ) = 0
+2399509 mprotect(0x5600bd292000, 81920, PROT_READ) = 0
+2399509 mprotect(0x7fa27273e000, 8192, PROT_READ) = 0
+2399509 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+2399509 getrandom("\xea\x04\x80\xed\xa9\xbc\x1a\x0e", 8, GRND_NONBLOCK) = 8
+2399509 munmap(0x7fa2726d1000, 179579)  = 0
+2399509 brk(NULL)                       = 0x5600f7400000
+2399509 brk(0x5600f7421000)             = 0x5600f7421000
+2399509 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+2399509 fstat(3, {st_mode=S_IFREG|0644, st_size=3063024, ...}) = 0
+2399509 mmap(NULL, 3063024, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa271e00000
+2399509 close(3)                        = 0
+2399509 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+2399509 fstat(3, {st_mode=S_IFREG|0644, st_size=3552, ...}) = 0
+2399509 fstat(3, {st_mode=S_IFREG|0644, st_size=3552, ...}) = 0
+2399509 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0\0\0\0\354\0\0\0\6\0\0\0\24\200\0\0\0\236\246\36p\237\272\353`\240\206\0p\241\232\315`\242e\342p\243\203\351\340\244j\256p\2455\247`\246S\312\360\247\25\211`\2503\254\360\250\376\245\340\252\23\216\360\252\336\207\340\253\363p\360\254\276i\340\255\323R\360\256\236K\340\257\2634\360\260~-\340\261\234Qp\262gJ`\263|3p\264G,`\265\\\25p\266'\16`\267;\367p\270\6\360`\271\33\331p\271\346\322`\273\4\365\360\273\306\264`\274\344\327\360\275\257\320\340\276\304\271\360\277\217\262\340\300\244\233\360\301o\224\340"..., 4096) = 3552
+2399509 lseek(3, -2260, SEEK_CUR)       = 1292
+2399509 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0\0\0\0\354\0\0\0\6\0\0\0\24\377\377\377\377^\3\360\220\377\377\377\377\236\246\36p\377\377\377\377\237\272\353`\377\377\377\377\240\206\0p\377\377\377\377\241\232\315`\377\377\377\377\242e\342p\377\377\377\377\243\203\351\340\377\377\377\377\244j\256p\377\377\377\377\2455\247`\377\377\377\377\246S\312\360\377\377\377\377\247\25\211`\377\377\377\377\2503\254\360\377\377\377\377\250\376\245\340\377\377\377\377\252\23\216\360\377\377\377\377\252\336\207\340\377\377\377\377\253\363p\360\377\377\377\377\254\276i\340\377\377\377\377\255\323R\360\377\377\377\377\256\236K\340\377\377\377\377"..., 4096) = 2260
+2399509 lseek(3, 3551, SEEK_SET)        = 3551
+2399509 close(3)                        = 0
+2399509 getcwd("/home/alejandro/Swarm/smux", 4096) = 27
+2399509 readlink("/home", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm/smux", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm/smux", 0x7fffa8c4b0d0, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/etc", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/etc/smux.conf", 0x7fffa8c4c080, 1023) = -1 ENOENT (No such file or directory)
+2399509 readlink("/home", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/.smux.conf", 0x7fffa8c4c080, 1023) = -1 ENOENT (No such file or directory)
+2399509 readlink("/home", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/.config", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/.config/smux", 0x7fffa8c4c080, 1023) = -1 ENOENT (No such file or directory)
+2399509 readlink("/home", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/.config", 0x7fffa8c4c080, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/.config/smux", 0x7fffa8c4c080, 1023) = -1 ENOENT (No such file or directory)
+2399509 access("/usr/bin/bash", X_OK)   = 0
+2399509 getuid()                        = 1000
+2399509 readlink("/tmp", 0x7fffa8c4bf90, 1023) = -1 EINVAL (Invalid argument)
+2399509 faccessat2(AT_FDCWD, "/tmp/", F_OK, AT_EACCESS) = 0
+2399509 mkdir("/tmp/smux-1000", 0700)   = -1 EEXIST (File exists)
+2399509 newfstatat(AT_FDCWD, "/tmp/smux-1000", {st_mode=S_IFDIR|0700, st_size=60, ...}, AT_SYMLINK_NOFOLLOW) = 0
+2399509 getuid()                        = 1000
+2399509 geteuid()                       = 1000
+2399509 getgid()                        = 1000
+2399509 getegid()                       = 1000
+2399509 getuid()                        = 1000
+2399509 geteuid()                       = 1000
+2399509 getgid()                        = 1000
+2399509 getegid()                       = 1000
+2399509 getuid()                        = 1000
+2399509 geteuid()                       = 1000
+2399509 getgid()                        = 1000
+2399509 getegid()                       = 1000
+2399509 pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0
+2399509 getpid()                        = 2399509
+2399509 getuid()                        = 1000
+2399509 geteuid()                       = 1000
+2399509 getgid()                        = 1000
+2399509 getegid()                       = 1000
+2399509 getpid()                        = 2399509
+2399509 openat(AT_FDCWD, "tmux-client-2399509.log", O_WRONLY|O_CREAT|O_APPEND, 0666) = 5
+2399509 lseek(5, 0, SEEK_END)           = 0
+2399509 prctl(PR_SET_NAME, "smux: client") = 0
+2399509 uname({sysname="Linux", nodename="swarm", ...}) = 0
+2399509 getpid()                        = 2399509
+2399509 fstat(5, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+2399509 write(5, "1760563631.776640 client started (2399509): version next-3.7, socket /tmp/smux-1000/default, protocol 8\n", 104) = 104
+2399509 write(5, "1760563631.776671 on Linux 6.16.7-arch1-1 #1 SMP PREEMPT_DYNAMIC Thu, 11 Sep 2025 17:42:36 +0000\n", 97) = 97
+2399509 write(5, "1760563631.776686 using libevent 2.1.12-stable poll\n", 52) = 52
+2399509 write(5, "1760563631.776695 using ncurses 6.5 20240427\n", 45) = 45
+2399509 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, NULL, 8) = 0
+2399509 rt_sigaction(SIGTSTP, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, NULL, 8) = 0
+2399509 rt_sigaction(SIGTTIN, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, NULL, 8) = 0
+2399509 rt_sigaction(SIGTTOU, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, NULL, 8) = 0
+2399509 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, NULL, 8) = 0
+2399509 rt_sigaction(SIGINT, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGHUP, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGCHLD, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGCONT, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGTERM, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGUSR1, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGUSR2, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 rt_sigaction(SIGWINCH, {sa_handler=0x7fa27264fb20, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa27223e540}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+2399509 write(5, "1760563631.776812 flags are 0x18010000\n", 39) = 39
+2399509 write(5, "1760563631.776823 socket is /tmp/smux-1000/default\n", 51) = 51
+2399509 socket(AF_UNIX, SOCK_STREAM, 0) = 6
+2399509 write(5, "1760563631.776844 trying connect\n", 33) = 33
+2399509 connect(6, {sa_family=AF_UNIX, sun_path="/tmp/smux-1000/default"}, 110) = 0
+2399509 fcntl(6, F_GETFL)               = 0x2 (flags O_RDWR)
+2399509 fcntl(6, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+2399509 brk(0x5600f744b000)             = 0x5600f744b000
+2399509 getpid()                        = 2399509
+2399509 getsockopt(6, SOL_SOCKET, SO_PEERCRED, {pid=2268911, uid=1000, gid=1000}, [12]) = 0
+2399509 write(5, "1760563631.776913 add peer 0x5600f741aaa0: 6 ((nil))\n", 53) = 53
+2399509 getcwd("/home/alejandro/Swarm/smux", 4096) = 27
+2399509 readlink("/home", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm/smux", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 readlink("/home/alejandro/Swarm/smux", 0x7fffa8c4af90, 1023) = -1 EINVAL (Invalid argument)
+2399509 ioctl(0, TCGETS2, 0x7fffa8c4d340) = -1 ENOTTY (Inappropriate ioctl for device)
+2399509 ioctl(0, TCGETS2, 0x7fffa8c4d3c0) = -1 ENOTTY (Inappropriate ioctl for device)
+2399509 close(2147483647)               = -1 EBADF (Bad file descriptor)
+2399509 write(5, "1760563631.777034 sending message 111 to peer 0x5600f741aaa0 (8 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777044 sending message 111 to peer 0x5600f741aaa0 (8 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777053 sending message 101 to peer 0x5600f741aaa0 (15 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777062 sending message 109 to peer 0x5600f741aaa0 (4 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777071 sending message 102 to peer 0x5600f741aaa0 (1 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777079 sending message 108 to peer 0x5600f741aaa0 (27 bytes)\n", 72) = 72
+2399509 dup(0)                          = 7
+2399509 write(5, "1760563631.777095 sending message 104 to peer 0x5600f741aaa0 (0 bytes)\n", 71) = 71
+2399509 dup(1)                          = 8
+2399509 write(5, "1760563631.777112 sending message 110 to peer 0x5600f741aaa0 (0 bytes)\n", 71) = 71
+2399509 getpid()                        = 2399509
+2399509 write(5, "1760563631.777128 sending message 107 to peer 0x5600f741aaa0 (4 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777136 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777146 sending message 105 to peer 0x5600f741aaa0 (27 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777154 sending message 105 to peer 0x5600f741aaa0 (24 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777163 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777171 sending message 105 to peer 0x5600f741aaa0 (22 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777180 sending message 105 to peer 0x5600f741aaa0 (25 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777188 sending message 105 to peer 0x5600f741aaa0 (26 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777197 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777206 sending message 105 to peer 0x5600f741aaa0 (43 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777214 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777236 sending message 105 to peer 0x5600f741aaa0 (25 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777248 sending message 105 to peer 0x5600f741aaa0 (40 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777257 sending message 105 to peer 0x5600f741aaa0 (50 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777282 sending message 105 to peer 0x5600f741aaa0 (51 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777293 sending message 105 to peer 0x5600f741aaa0 (21 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777302 sending message 105 to peer 0x5600f741aaa0 (25 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777310 sending message 105 to peer 0x5600f741aaa0 (37 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777322 sending message 105 to peer 0x5600f741aaa0 (64 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777331 sending message 105 to peer 0x5600f741aaa0 (16 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777339 sending message 105 to peer 0x5600f741aaa0 (12 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777348 sending message 105 to peer 0x5600f741aaa0 (15 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777356 sending message 105 to peer 0x5600f741aaa0 (31 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777365 sending message 105 to peer 0x5600f741aaa0 (18 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777374 sending message 105 to peer 0x5600f741aaa0 (29 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777382 sending message 105 to peer 0x5600f741aaa0 (25 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777391 sending message 105 to peer 0x5600f741aaa0 (44 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777399 sending message 105 to peer 0x5600f741aaa0 (22 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777408 sending message 105 to peer 0x5600f741aaa0 (17 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777421 sending message 105 to peer 0x5600f741aaa0 (37 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777471 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777501 sending message 105 to peer 0x5600f741aaa0 (13 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777562 sending message 105 to peer 0x5600f741aaa0 (26 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777577 sending message 105 to peer 0x5600f741aaa0 (21 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777588 sending message 105 to peer 0x5600f741aaa0 (17 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777596 sending message 105 to peer 0x5600f741aaa0 (30 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777605 sending message 105 to peer 0x5600f741aaa0 (29 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777613 sending message 105 to peer 0x5600f741aaa0 (148 bytes)\n", 73) = 73
+2399509 write(5, "1760563631.777623 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777645 sending message 105 to peer 0x5600f741aaa0 (26 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777655 sending message 105 to peer 0x5600f741aaa0 (47 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777664 sending message 105 to peer 0x5600f741aaa0 (47 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777672 sending message 105 to peer 0x5600f741aaa0 (16 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777687 sending message 105 to peer 0x5600f741aaa0 (15 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777704 sending message 105 to peer 0x5600f741aaa0 (38 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777712 sending message 105 to peer 0x5600f741aaa0 (28 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777721 sending message 105 to peer 0x5600f741aaa0 (47 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777729 sending message 105 to peer 0x5600f741aaa0 (379 bytes)\n", 73) = 73
+2399509 write(5, "1760563631.777738 sending message 105 to peer 0x5600f741aaa0 (38 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777747 sending message 105 to peer 0x5600f741aaa0 (63 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777755 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777764 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777772 sending message 105 to peer 0x5600f741aaa0 (23 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777782 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777799 sending message 105 to peer 0x5600f741aaa0 (70 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777808 sending message 105 to peer 0x5600f741aaa0 (15 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777816 sending message 105 to peer 0x5600f741aaa0 (24 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777824 sending message 105 to peer 0x5600f741aaa0 (17 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777833 sending message 105 to peer 0x5600f741aaa0 (23 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777843 sending message 105 to peer 0x5600f741aaa0 (224 bytes)\n", 73) = 73
+2399509 write(5, "1760563631.777853 sending message 105 to peer 0x5600f741aaa0 (90 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777864 sending message 105 to peer 0x5600f741aaa0 (44 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777873 sending message 105 to peer 0x5600f741aaa0 (11 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777881 sending message 105 to peer 0x5600f741aaa0 (8 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.777890 sending message 105 to peer 0x5600f741aaa0 (21 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777898 sending message 105 to peer 0x5600f741aaa0 (16 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777907 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777915 sending message 105 to peer 0x5600f741aaa0 (11 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777924 sending message 105 to peer 0x5600f741aaa0 (17 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777932 sending message 105 to peer 0x5600f741aaa0 (20 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777951 sending message 105 to peer 0x5600f741aaa0 (56 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777975 sending message 105 to peer 0x5600f741aaa0 (44 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777986 sending message 105 to peer 0x5600f741aaa0 (31 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.777996 sending message 105 to peer 0x5600f741aaa0 (27 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778004 sending message 105 to peer 0x5600f741aaa0 (50 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778012 sending message 105 to peer 0x5600f741aaa0 (33 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778020 sending message 105 to peer 0x5600f741aaa0 (23 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778028 sending message 105 to peer 0x5600f741aaa0 (16 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778036 sending message 105 to peer 0x5600f741aaa0 (42 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778045 sending message 105 to peer 0x5600f741aaa0 (26 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778053 sending message 105 to peer 0x5600f741aaa0 (256 bytes)\n", 73) = 73
+2399509 write(5, "1760563631.778061 sending message 105 to peer 0x5600f741aaa0 (33 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778069 sending message 105 to peer 0x5600f741aaa0 (12 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778077 sending message 105 to peer 0x5600f741aaa0 (39 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778085 sending message 105 to peer 0x5600f741aaa0 (54 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778094 sending message 105 to peer 0x5600f741aaa0 (31 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778102 sending message 105 to peer 0x5600f741aaa0 (124 bytes)\n", 73) = 73
+2399509 write(5, "1760563631.778110 sending message 105 to peer 0x5600f741aaa0 (35 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778118 sending message 105 to peer 0x5600f741aaa0 (29 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778126 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778135 sending message 105 to peer 0x5600f741aaa0 (19 bytes)\n", 72) = 72
+2399509 write(5, "1760563631.778144 sending message 106 to peer 0x5600f741aaa0 (0 bytes)\n", 71) = 71
+2399509 sendmsg(6, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="o\0\0\0\30\0\0\0\10\0\0\0\377\377\377\377\0\0\1\30\0\0\0\0", iov_len=24}, {iov_base="o\0\0\0\30\0\0\0\10\0\0\0\377\377\377\377\0\0\1\30\0\0\0\0", iov_len=24}, {iov_base="e\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377xterm-256color\0", iov_len=31}, {iov_base="m\0\0\0\24\0\0\0\10\0\0\0\377\377\377\377\0\0\0\0", iov_len=20}, {iov_base="f\0\0\0\21\0\0\0\10\0\0\0\377\377\377\377\0", iov_len=17}, {iov_base="l\0\0\0+\0\0\0\10\0\0\0\377\377\377\377/home/alejandro/Swarm/smux\0", iov_len=43}], msg_iovlen=6, msg_controllen=0, msg_flags=0}, 0) = 159
+2399509 sendmsg(6, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="h\0\0\0\20\0\0\200\10\0\0\0\377\377\377\377", iov_len=16}], msg_iovlen=1, msg_control=[{cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, cmsg_data=[7]}], msg_controllen=24, msg_flags=0}, 0) = 16
+2399509 close(7)                        = 0
+2399509 sendmsg(6, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="n\0\0\0\20\0\0\200\10\0\0\0\377\377\377\377", iov_len=16}, {iov_base="k\0\0\0\24\0\0\0\10\0\0\0\377\377\377\377\25\235$\0", iov_len=20}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377SHELL=/usr/bin/bash\0", iov_len=36}, {iov_base="i\0\0\0+\0\0\0\10\0\0\0\377\377\377\377COREPACK_ENABLE_AUTO_PIN=0\0", iov_len=43}, {iov_base="i\0\0\0(\0\0\0\10\0\0\0\377\377\377\377WINDOWID=94462613837024\0", iov_len=40}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377COLORTERM=truecolor\0", iov_len=36}, {iov_base="i\0\0\0&\0\0\0\10\0\0\0\377\377\377\377HYPRLAND_CMD=Hyprland\0", iov_len=38}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XDG_CONFIG_DIRS=/etc/xdg\0", iov_len=41}, {iov_base="i\0\0\0*\0\0\0\10\0\0\0\377\377\377\377XDG_MENU_PREFIX=hyprland-\0", iov_len=42}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377XDG_BACKEND=wayland\0", iov_len=36}, {iov_base="i\0\0\0;\0\0\0\10\0\0\0\377\377\377\377XDG_DATA_HOME=/home/alejandro/.local/share\0", iov_len=59}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377INPUT_METHOD=fcitx\0", iov_len=35}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XCOMPOSEFILE=~/.XCompose\0", iov_len=41}, {iov_base="i\0\0\08\0\0\0\10\0\0\0\377\377\377\377XDG_CONFIG_HOME=/home/alejandro/.config\0", iov_len=56}, {iov_base="i\0\0\0B\0\0\0\10\0\0\0\377\377\377\377OMARCHY_PATH=/home/alejandro/.local/share/omarchy\0", iov_len=66}, {iov_base="i\0\0\0C\0\0\0\10\0\0\0\377\377\377\377MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=\0", iov_len=67}, {iov_base="i\0\0\0%\0\0\0\10\0\0\0\377\377\377\377XMODIFIERS=@im=fcitx\0", iov_len=37}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377LIBVA_DRIVER_NAME=nvidia\0", iov_len=41}, {iov_base="i\0\0\0005\0\0\0\10\0\0\0\377\377\377\377ELECTRON_OZONE_PLATFORM_HINT=wayland\0", iov_len=53}, {iov_base="i\0\0\0P\0\0\0\10\0\0\0\377\377\377\377HL_INITIAL_WORKSPACE_TOKEN=d7744078-4cc7-409b-a42a-68308dc1c13d\0", iov_len=80}, {iov_base="i\0\0\0 \0\0\0\10\0\0\0\377\377\377\377XCURSOR_SIZE=24\0", iov_len=32}, {iov_base="i\0\0\0\34\0\0\0\10\0\0\0\377\377\377\377EDITOR=nvim\0", iov_len=28}, {iov_base="i\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377XDG_SEAT=seat0\0", iov_len=31}, {iov_base="i\0\0\0/\0\0\0\10\0\0\0\377\377\377\377PWD=/home/alejandro/Swarm/smux\0", iov_len=47}, {iov_base="i\0\0\0\"\0\0\0\10\0\0\0\377\377\377\377LOGNAME=alejandro\0", iov_len=34}, {iov_base="i\0\0\0-\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_DESKTOP=Hyprland\0", iov_len=45}, {iov_base="i\0\0\0)\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_TYPE=wayland\0", iov_len=41}, {iov_base="i\0\0\0<\0\0\0\10\0\0\0\377\377\377\377PNPM_HOME=/home/alejandro/.local/share/pnpm\0", iov_len=60}, {iov_base="i\0\0\0&\0\0\0\10\0\0\0\377\377\377\377SYSTEMD_EXEC_PID=2008\0", iov_len=38}, {iov_base="i\0\0\0!\0\0\0\10\0\0\0\377\377\377\377VIPSHOME=/target\0", iov_len=33}, {iov_base="i\0\0\0005\0\0\0\10\0\0\0\377\377\377\377NoDefaultCurrentDirectoryInExePath=1\0", iov_len=53}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377TERMINAL=alacritty\0", iov_len=35}, {iov_base="i\0\0\0\35\0\0\0\10\0\0\0\377\377\377\377CLAUDECODE=1\0", iov_len=29}, {iov_base="i\0\0\0*\0\0\0\10\0\0\0\377\377\377\377QT_STYLE_OVERRIDE=kvantum\0", iov_len=42}, {iov_base="i\0\0\0%\0\0\0\10\0\0\0\377\377\377\377HOME=/home/alejandro\0", iov_len=37}, {iov_base="i\0\0\0!\0\0\0\10\0\0\0\377\377\377\377LANG=en_US.UTF-8\0", iov_len=33}, {iov_base="i\0\0\0.\0\0\0\10\0\0\0\377\377\377\377_JAVA_AWT_WM_NONREPARENTING=1\0", iov_len=46}, {iov_base="i\0\0\0-\0\0\0\10\0\0\0\377\377\377\377XDG_CURRENT_DESKTOP=Hyprland\0", iov_len=45}, {iov_base="i\0\0\0\244\0\0\0\10\0\0\0\377\377\377\377MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/wayland-wm@hyprland.desktop.service/memory.pressure\0", iov_len=164}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377STARSHIP_SHELL=bash\0", iov_len=36}, {iov_base="i\0\0\0*\0\0\0\10\0\0\0\377\377\377\377WAYLAND_DISPLAY=wayland-1\0", iov_len=42}, {iov_base="i\0\0\0?\0\0\0\10\0\0\0\377\377\377\377__MISE_DIFF=eAFrXpyfk9KwOC+1vGFJQWJJxgQASssINA\0", iov_len=63}, {iov_base="i\0\0\0?\0\0\0\10\0\0\0\377\377\377\377INVOCATION_ID=c8377527aee9465f846ac745dc2f3c2d\0", iov_len=63}, {iov_base="i\0\0\0 \0\0\0\10\0\0\0\377\377\377\377MANAGERPID=1613\0", iov_len=32}, {iov_base="i\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377BAT_THEME=ansi\0", iov_len=31}, {iov_base="i\0\0\0006\0\0\0\10\0\0\0\377\377\377\377STARSHIP_SESSION_KEY=6232950112170216\0", iov_len=54}, {iov_base="i\0\0\0,\0\0\0\10\0\0\0\377\377\377\377QT_QPA_PLATFORM=wayland;xcb\0", iov_len=44}, {iov_base="i\0\0\0?\0\0\0\10\0\0\0\377\377\377\377UWSM_WAIT_VARNAMES=HYPRLAND_INSTANCE_SIGNATURE\0", iov_len=63}, {iov_base="i\0\0\0\213\1\0\0\10\0\0\0\377\377\377\377__MISE_ORIG_PATH=/home/alejandro/.local/bin:/home/alejandro/bin:/home/alejandro/.bun/bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/pnpm:/home/alejandro/.local/share/../bi"..., iov_len=395}, {iov_base="i\0\0\0006\0\0\0\10\0\0\0\377\377\377\377XDG_CACHE_HOME=/home/alejandro/.cache\0", iov_len=54}, {iov_base="i\0\0\0O\0\0\0\10\0\0\0\377\377\377\377ALACRITTY_SOCKET=/run/user/1000/Alacritty-wayland-1-43497.sock\0", iov_len=79}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377SDL_IM_MODULE=fcitx\0", iov_len=36}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377NVD_BACKEND=direct\0", iov_len=35}, {iov_base="i\0\0\0'\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_CLASS=user\0", iov_len=39}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377TERM=xterm-256color\0", iov_len=36}, {iov_base="i\0\0\0V\0\0\0\10\0\0\0\377\377\377\377CEREBRAS_API_KEY=csk-mph8k98h2934xwn4mpr9d9ekd4tdermf49634xpxk9938w2y\0", iov_len=86}, {iov_base="i\0\0\0\37\0\0\0\10\0\0\0\377\377\377\377USER=alejandro\0", iov_len=31}, {iov_base="i\0\0\0(\0\0\0\10\0\0\0\377\377\377\377SDL_VIDEODRIVER=wayland\0", iov_len=40}, {iov_base="i\0\0\0!\0\0\0\10\0\0\0\377\377\377\377SUDO_EDITOR=nvim\0", iov_len=33}, {iov_base="i\0\0\0'\0\0\0\10\0\0\0\377\377\377\377OZONE_PLATFORM=wayland\0", iov_len=39}, {iov_base="i\0\0\0\360\0\0\0\10\0\0\0\377\377\377\377__MISE_SESSION=eAFrX5OTn5iSmhJfkp+fUzxhHZSXnJ+XlplePPGmhn5Gfm6qfmJOalZiXkpRvr4eREo/N7M4VR/C1ivJz81ZA2HHFySWZBRPWJyaV9awOCWzaBe6/uDyxKJc/eLc0oo1qXll8WWJRfEZicUZG5KMLQ1T00wNkswNkw1NLczW5"..., iov_len=240}, {iov_base="i\0\0\0j\0\0\0\10\0\0\0\377\377\377\377HYPRLAND_INSTANCE_SIGNATURE=46174f78b374b6cea669c48880877a8bdcf7802f_1760488431_983427023\0", iov_len=106}, {iov_base="i\0\0\0<\0\0\0\10\0\0\0\377\377\377\377NOTIFY_SOCKET=/run/user/1000/systemd/notify\0", iov_len=60}, {iov_base="i\0\0\0\33\0\0\0\10\0\0\0\377\377\377\377DISPLAY=:0\0", iov_len=27}, {iov_base="i\0\0\0\30\0\0\0\10\0\0\0\377\377\377\377SHLVL=2\0", iov_len=24}, {iov_base="i\0\0\0%\0\0\0\10\0\0\0\377\377\377\377MOZ_ENABLE_WAYLAND=1\0", iov_len=37}, {iov_base="i\0\0\0 \0\0\0\10\0\0\0\377\377\377\377GIT_EDITOR=true\0", iov_len=32}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377QT_IM_MODULE=fcitx\0", iov_len=35}, {iov_base="i\0\0\0\33\0\0\0\10\0\0\0\377\377\377\377XDG_VTNR=1\0", iov_len=27}, {iov_base="i\0\0\0!\0\0\0\10\0\0\0\377\377\377\377XDG_SESSION_ID=1\0", iov_len=33}, {iov_base="i\0\0\0$\0\0\0\10\0\0\0\377\377\377\377MANAGERPIDFDID=1614\0", iov_len=36}, {iov_base="i\0\0\0H\0\0\0\10\0\0\0\377\377\377\377OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=delta\0", iov_len=72}, {iov_base="i\0\0\0<\0\0\0\10\0\0\0\377\377\377\377XDG_STATE_HOME=/home/alejandro/.local/state\0", iov_len=60}, {iov_base="i\0\0\0/\0\0\0\10\0\0\0\377\377\377\377XDG_RUNTIME_DIR=/run/user/1000\0", iov_len=47}, {iov_base="i\0\0\0+\0\0\0\10\0\0\0\377\377\377\377CLAUDE_CODE_ENTRYPOINT=cli\0", iov_len=43}, {iov_base="i\0\0\0B\0\0\0\10\0\0\0\377\377\377\377DEBUGINFOD_URLS=https://debuginfod.archlinux.org \0", iov_len=66}, {iov_base="i\0\0\0001\0\0\0\10\0\0\0\377\377\377\377BUN_INSTALL=/home/alejandro/.bun\0", iov_len=49}, {iov_base="i\0\0\0'\0\0\0\10\0\0\0\377\377\377\377JOURNAL_STREAM=9:23911\0", iov_len=39}, {iov_base="i\0\0\0 \0\0\0\10\0\0\0\377\377\377\377MISE_SHELL=bash\0", iov_len=32}, {iov_base="i\0\0\0:\0\0\0\10\0\0\0\377\377\377\377XDG_DATA_DIRS=/usr/local/share:/usr/share\0", iov_len=58}, {iov_base="i\0\0\0*\0\0\0\10\0\0\0\377\377\377\377GDK_BACKEND=wayland,x11,*\0", iov_len=42}, {iov_base="i\0\0\0\20\1\0\0\10\0\0\0\377\377\377\377PATH=/home/alejandro/bin:/home/alejandro/.bun/bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/pnpm:/home/alejandro/.local/share/../bin:/home/alejandro/.local/bin:/home/alej"..., iov_len=272}, {iov_base="i\0\0\0001\0\0\0\10\0\0\0\377\377\377\377__GLX_VENDOR_LIBRARY_NAME=nvidia\0", iov_len=49}, {iov_base="i\0\0\0\34\0\0\0\10\0\0\0\377\377\377\377GDK_SCALE=2\0", iov_len=28}, {iov_base="i\0\0\0007\0\0\0\10\0\0\0\377\377\377\377ALACRITTY_LOG=/tmp/Alacritty-43497.log\0", iov_len=55}, {iov_base="i\0\0\0F\0\0\0\10\0\0\0\377\377\377\377DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus\0", iov_len=70}, {iov_base="i\0\0\0/\0\0\0\10\0\0\0\377\377\377\377MAIL=/var/spool/mail/alejandro\0", iov_len=47}, {iov_base="i\0\0\0\214\0\0\0\10\0\0\0\377\377\377\377UWSM_FINALIZE_VARNAMES=HYPRLAND_INSTANCE_SIGNATURE HYPRLAND_CMD HYPRCURSOR_THEME HYPRCURSOR_SIZE XCURSOR_SIZE XCURSOR_THEME\0", iov_len=140}, {iov_base="i\0\0\0003\0\0\0\10\0\0\0\377\377\377\377ALACRITTY_WINDOW_ID=94462613837024\0", iov_len=51}, {iov_base="i\0\0\0-\0\0\0\10\0\0\0\377\377\377\377OLDPWD=/home/alejandro/Swarm\0", iov_len=45}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377HYPRCURSOR_SIZE=24\0", iov_len=35}, {iov_base="i\0\0\0#\0\0\0\10\0\0\0\377\377\377\377_=/usr/bin/timeout\0", iov_len=35}, {iov_base="j\0\0\0\20\0\0\0\10\0\0\0\377\377\377\377", iov_len=16}], msg_iovlen=93, msg_control=[{cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, cmsg_data=[8]}], msg_controllen=24, msg_flags=0}, 0) = 5095
+2399509 close(8)                        = 0
+2399509 write(5, "1760563631.778336 sending message 200 to peer 0x5600f741aaa0 (4 bytes)\n", 71) = 71
+2399509 write(5, "1760563631.778345 client loop enter\n", 36) = 36
+2399509 poll([{fd=3, events=POLLIN}, {fd=6, events=POLLIN|POLLOUT}], 2, -1) = 1 ([{fd=6, revents=POLLOUT}])
+2399509 sendmsg(6, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\310\0\0\0\24\0\0\0\10\0\0\0\377\377\377\377\0\0\0\0", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+2399509 poll([{fd=3, events=POLLIN}, {fd=6, events=POLLIN}], 2, -1) = ? ERESTART_RESTARTBLOCK (Interrupted by signal)
+2399509 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2399506, si_uid=1000} ---
+2399509 write(4, "\17", 1)              = 1
+2399509 rt_sigreturn({mask=[]})         = -1 EINTR (Interrupted system call)
+2399509 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=2399506, si_uid=1000} ---
+2399509 write(4, "\22", 1)              = 1
+2399509 rt_sigreturn({mask=[]})         = -1 EINTR (Interrupted system call)
+2399509 poll([{fd=3, events=POLLIN}, {fd=6, events=POLLIN}], 2, -1) = 1 ([{fd=3, revents=POLLIN}])
+2399509 read(3, "\17\22", 1024)         = 2
+2399509 read(3, 0x7fa27265f1a0, 1024)   = -1 EAGAIN (Resource temporarily unavailable)
+2399509 write(5, "1760563636.768151 client_signal: Terminated\n", 44) = 44
+2399509 write(5, "1760563636.768183 client_signal: Continued\n", 43) = 43
+2399509 write(5, "1760563636.768199 client loop exit\n", 35) = 35
+2399509 fcntl(0, F_GETFL)               = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+2399509 fcntl(0, F_SETFL, O_RDONLY|O_LARGEFILE) = 0
+2399509 fcntl(1, F_GETFL)               = 0x2 (flags O_RDWR)
+2399509 fcntl(1, F_SETFL, O_RDWR)       = 0
+2399509 fcntl(2, F_GETFL)               = 0x2 (flags O_RDWR)
+2399509 fcntl(2, F_SETFL, O_RDWR)       = 0
+2399509 exit_group(0)                   = ?
+2399509 +++ exited with 0 +++
