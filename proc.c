@@ -362,12 +362,10 @@ proc_fork_and_daemon(int *fd)
 	int	pair[2];
 
 	/* Create a file to prove this function was called */
-	system("touch /tmp/proc_fork_and_daemon_CALLED");
 
 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pair) != 0)
 		fatal("socketpair failed");
 
-	system("touch /tmp/proc_fork_and_daemon_AFTER_SOCKETPAIR");
 	fflush(stderr);
 	pid = fork();
 	fflush(stderr);
@@ -375,7 +373,6 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
-		system("touch /tmp/proc_fork_and_daemon_CHILD_CASE");
 		{
 			FILE *debug_file = fopen("/tmp/smux_child_debug.log", "w");
 			if (debug_file) {
@@ -405,7 +402,6 @@ proc_fork_and_daemon(int *fd)
 		fflush(stderr);
 		return (0);
 	default:
-		system("touch /tmp/proc_fork_and_daemon_PARENT_CASE");
 		fflush(stderr);
 		close(pair[1]);
 		*fd = pair[0];

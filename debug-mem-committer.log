@@ -4155,3 +4155,15 @@ tool_input: {
   "command": "sed -i '/printf.*DEBUG/d' client.c server.c proc.c && sed -i '/fprintf.*DEBUG/d' client.c server.c proc.c",
   "description": "Remove all debug printf and fprintf statements"
 }
+
+=== 2025-10-15T16:40:20.068Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "sed -i '/system.*debug/d' proc.c && sed -i '/system.*proc_fork_and_daemon/d' proc.c",
+  "description": "Remove debug system calls from proc.c"
+}
