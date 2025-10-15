@@ -455,3 +455,216 @@ plugin_source_all(struct session *s)
 {
 	/* TODO: Implement plugin .tmux file sourcing */
 }
+
+/* Plugin command implementations */
+static enum cmd_retval	cmd_install_plugins_exec(struct cmd *, struct cmdq_item *);
+static enum cmd_retval	cmd_update_plugins_exec(struct cmd *, struct cmdq_item *);
+static enum cmd_retval	cmd_remove_plugins_exec(struct cmd *, struct cmdq_item *);
+static enum cmd_retval	cmd_list_plugins_exec(struct cmd *, struct cmdq_item *);
+
+const struct cmd_entry cmd_install_plugins_entry = {
+	.name = "install-plugins",
+	.alias = "plugin-install",
+
+	.args = { "q", 0, 0, NULL },
+	.usage = "[-q]",
+
+	.flags = CMD_STARTSERVER,
+	.exec = cmd_install_plugins_exec
+};
+
+const struct cmd_entry cmd_update_plugins_entry = {
+	.name = "update-plugins",
+	.alias = "plugin-update",
+
+	.args = { "q", 0, 0, NULL },
+	.usage = "[-q]",
+
+	.flags = CMD_STARTSERVER,
+	.exec = cmd_update_plugins_exec
+};
+
+const struct cmd_entry cmd_remove_plugins_entry = {
+	.name = "remove-plugins",
+	.alias = "plugin-remove",
+
+	.args = { "q", 0, 0, NULL },
+	.usage = "[-q]",
+
+	.flags = CMD_STARTSERVER,
+	.exec = cmd_remove_plugins_exec
+};
+
+const struct cmd_entry cmd_list_plugins_entry = {
+	.name = "list-plugins",
+	.alias = "plugin-list",
+
+	.args = { "F:", 0, 0, NULL },
+	.usage = "[-F format]",
+
+	.flags = CMD_STARTSERVER,
+	.exec = cmd_list_plugins_exec
+};
+
+static enum cmd_retval
+cmd_install_plugins_exec(struct cmd *self, struct cmdq_item *item)
+{
+	struct args *args = cmd_get_args(self);
+	struct plugin *plugin;
+	int quiet = args_has(args, 'q');
+	int installed = 0;
+
+	/* Install global plugins */
+	RB_FOREACH(plugin, plugins, &plugins_global) {
+		if (plugin->status == PLUGIN_STATUS_DECLARED) {
+			if (!quiet)
+				cmdq_print(item, "Installing plugin: %s", plugin->name);
+
+			if (plugin_install(plugin) == 0) {
+				plugin_set_status(plugin, PLUGIN_STATUS_INSTALLED, NULL);
+				installed++;
+			} else {
+				plugin_set_status(plugin, PLUGIN_STATUS_ERROR, "Installation failed");
+				cmdq_error(item, "Failed to install plugin: %s", plugin->name);
+			}
+		}
+	}
+
+	/* Install project plugins */
+	RB_FOREACH(plugin, plugins, &plugins_project) {
+		if (plugin->status == PLUGIN_STATUS_DECLARED) {
+			if (!quiet)
+				cmdq_print(item, "Installing plugin: %s", plugin->name);
+
+			if (plugin_install(plugin) == 0) {
+				plugin_set_status(plugin, PLUGIN_STATUS_INSTALLED, NULL);
+				installed++;
+			} else {
+				plugin_set_status(plugin, PLUGIN_STATUS_ERROR, "Installation failed");
+				cmdq_error(item, "Failed to install plugin: %s", plugin->name);
+			}
+		}
+	}
+
+	if (!quiet)
+		cmdq_print(item, "Installed %d plugins", installed);
+
+	return (CMD_RETURN_NORMAL);
+}
+
+static enum cmd_retval
+cmd_update_plugins_exec(struct cmd *self, struct cmdq_item *item)
+{
+	struct args *args = cmd_get_args(self);
+	struct plugin *plugin;
+	int quiet = args_has(args, 'q');
+	int updated = 0;
+
+	/* Update global plugins */
+	RB_FOREACH(plugin, plugins, &plugins_global) {
+		if (plugin->status == PLUGIN_STATUS_INSTALLED) {
+			if (!quiet)
+				cmdq_print(item, "Updating plugin: %s", plugin->name);
+
+			if (plugin_update(plugin) == 0) {
+				updated++;
+			} else {
+				cmdq_error(item, "Failed to update plugin: %s", plugin->name);
+			}
+		}
+	}
+
+	/* Update project plugins */
+	RB_FOREACH(plugin, plugins, &plugins_project) {
+		if (plugin->status == PLUGIN_STATUS_INSTALLED) {
+			if (!quiet)
+				cmdq_print(item, "Updating plugin: %s", plugin->name);
+
+			if (plugin_update(plugin) == 0) {
+				updated++;
+			} else {
+				cmdq_error(item, "Failed to update plugin: %s", plugin->name);
+			}
+		}
+	}
+
+	if (!quiet)
+		cmdq_print(item, "Updated %d plugins", updated);
+
+	return (CMD_RETURN_NORMAL);
+}
+
+static enum cmd_retval
+cmd_remove_plugins_exec(struct cmd *self, struct cmdq_item *item)
+{
+	struct args *args = cmd_get_args(self);
+	int quiet = args_has(args, 'q');
+	int removed = 0;
+
+	/* TODO: Implement plugin removal logic */
+	if (!quiet)
+		cmdq_print(item, "Removed %d plugins", removed);
+
+	return (CMD_RETURN_NORMAL);
+}
+
+static enum cmd_retval
+cmd_list_plugins_exec(struct cmd *self, struct cmdq_item *item)
+{
+	struct args *args = cmd_get_args(self);
+	struct plugin *plugin;
+	const char *template = args_get(args, 'F');
+
+	if (template == NULL)
+		template = "#{plugin_name}: #{plugin_source} [#{plugin_status}]";
+
+	cmdq_print(item, "Global plugins:");
+	RB_FOREACH(plugin, plugins, &plugins_global) {
+		const char *status;
+		switch (plugin->status) {
+		case PLUGIN_STATUS_DECLARED:
+			status = "declared";
+			break;
+		case PLUGIN_STATUS_INSTALLING:
+			status = "installing";
+			break;
+		case PLUGIN_STATUS_INSTALLED:
+			status = "installed";
+			break;
+		case PLUGIN_STATUS_ERROR:
+			status = "error";
+			break;
+		default:
+			status = "unknown";
+			break;
+		}
+		cmdq_print(item, "  %s: %s [%s]", plugin->name,
+		    plugin->source ? plugin->source : "unknown", status);
+	}
+
+	cmdq_print(item, "Project plugins:");
+	RB_FOREACH(plugin, plugins, &plugins_project) {
+		const char *status;
+		switch (plugin->status) {
+		case PLUGIN_STATUS_DECLARED:
+			status = "declared";
+			break;
+		case PLUGIN_STATUS_INSTALLING:
+			status = "installing";
+			break;
+		case PLUGIN_STATUS_INSTALLED:
+			status = "installed";
+			break;
+		case PLUGIN_STATUS_ERROR:
+			status = "error";
+			break;
+		default:
+			status = "unknown";
+			break;
+		}
+		cmdq_print(item, "  %s: %s [%s]", plugin->name,
+		    plugin->source ? plugin->source : "unknown", status);
+	}
+
+	return (CMD_RETURN_NORMAL);
+}
