@@ -2748,6 +2748,12 @@ char		*cmd_template_replace(const char *, const char *, int);
 enum cmd_retval	 cmd_attach_session(struct cmdq_item *, const char *, int, int,
 		     int, const char *, int, const char *);
 
+/* cmd-send-keys.c */
+struct cmdq_item *cmd_send_keys_inject_key(struct cmdq_item *, struct cmdq_item *,
+		     struct args *, key_code);
+struct cmdq_item *cmd_send_keys_inject_string(struct cmdq_item *, struct cmdq_item *,
+		     struct args *, int);
+
 /* cmd-parse.c */
 struct cmd_parse_result *cmd_parse_from_file(FILE *, struct cmd_parse_input *);
 struct cmd_parse_result *cmd_parse_from_string(const char *,
