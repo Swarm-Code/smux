@@ -8649,3 +8649,16 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/test-real-choosetree.sh",
   "content": "#!/bin/bash\n# Test the actual choose-tree output to identify \"nobold\" issues\n\necho \"🔍 TESTING REAL CHOOSE-TREE OUTPUT\"\necho \"==================================\"\necho \"\"\n\necho \"📊 Setting up test environment:\"\necho \"Creating multiple projects and sessions...\"\n\n# Create test structure\nsmux new-project -n project1 2>/dev/null || true\nsmux new-project -n project2 2>/dev/null || true\nsmux ne
+
+=== 2025-10-15T20:12:02.122Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/window-tree.c
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/window-tree.c",
+  "old_string": "\t\t\"\\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6]#[nobold] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\\n\"",
+  "new_string": "\t\t\"\\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[default]#[fg=#BFBDB6] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\\n\""
+}
