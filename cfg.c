@@ -68,6 +68,9 @@ start_cfg(void)
 	u_int		  i;
 	int		  flags = 0;
 
+	/* Initialize plugin directories early in server startup */
+	plugin_init_directories();
+
 	/*
 	 * Configuration files are loaded without a client, so commands are run
 	 * in the global queue with item->client NULL.
