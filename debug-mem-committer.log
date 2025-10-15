@@ -1169,3 +1169,15 @@ tool_input: {
   "command": "./smux set-option @plugin 'tmux-plugins/tmux-sensible'",
   "description": "Test @plugin declaration with running server"
 }
+
+=== 2025-10-15T06:30:56.501Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "./smux list-plugins",
+  "description": "Verify the plugin was registered after declaration"
+}
