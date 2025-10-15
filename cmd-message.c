@@ -24,11 +24,13 @@
 #include "tmux.h"
 
 /*
- * Send a line of text to a pane (text + Enter key).
- * Uses a proper timer-based delay to ensure Enter is sent after text is fully processed.
+ * Send a message to a pane (text + Enter key).
+ * Uses intelligent pane stability detection and proper timer-based delays
+ * to ensure text is sent character-by-character like send-keys, then Enter
+ * is sent separately after text is fully processed.
  */
 
-struct cmd_send_line_data {
+struct cmd_message_data {
 	struct session		*s;
 	int			 wl_idx;
 	int			 wp_id;
@@ -44,13 +46,13 @@ struct cmd_send_line_data {
 	} state;
 };
 
-static enum cmd_retval		cmd_send_line_exec(struct cmd *, struct cmdq_item *);
-static void			cmd_send_line_timer(int, short, void *);
-static void			cmd_send_line_free(void *);
+static enum cmd_retval		cmd_message_exec(struct cmd *, struct cmdq_item *);
+static void			cmd_message_timer(int, short, void *);
+static void			cmd_message_free(void *);
 
-const struct cmd_entry cmd_send_line_entry = {
-	.name = "send-line",
-	.alias = "sendl",
+const struct cmd_entry cmd_message_entry = {
+	.name = "message",
+	.alias = "msg",
 
 	.args = { "t:", 1, 1, NULL },
 	.usage = "[-t target-pane] text",
@@ -58,13 +60,13 @@ const struct cmd_entry cmd_send_line_entry = {
 	.target = { 't', CMD_FIND_PANE, 0 },
 
 	.flags = CMD_AFTERHOOK,
-	.exec = cmd_send_line_exec
+	.exec = cmd_message_exec
 };
 
 static void
-cmd_send_line_timer(__unused int fd, __unused short events, void *arg)
+cmd_message_timer(__unused int fd, __unused short events, void *arg)
 {
-	struct cmd_send_line_data	*data = arg;
+	struct cmd_message_data	*data = arg;
 	struct session			*s;
 	struct winlink			*wl;
 	struct window_pane		*wp;
@@ -138,8 +140,25 @@ cmd_send_line_timer(__unused int fd, __unused short events, void *arg)
 		break;
 
 	case SENDING_TEXT:
-		/* Send the text */
-		input_parse_buffer(wp, (u_char *)data->text, strlen(data->text));
+		/* Send the text character by character like send-keys does */
+		{
+			struct utf8_data	*ud, *loop;
+			utf8_char		 uc;
+			key_code		 key;
+
+			ud = utf8_fromcstr(data->text);
+			for (loop = ud; loop->size != 0; loop++) {
+				if (loop->size == 1 && loop->data[0] <= 0x7f)
+					key = loop->data[0];
+				else {
+					if (utf8_from_data(loop, &uc) != UTF8_DONE)
+						continue;
+					key = uc;
+				}
+				window_pane_key(wp, NULL, s, wl, key, NULL);
+			}
+			free(ud);
+		}
 
 		/* Schedule Enter after 500ms */
 		data->state = SENDING_ENTER;
@@ -157,13 +176,13 @@ cmd_send_line_timer(__unused int fd, __unused short events, void *arg)
 	return;
 
 out:
-	cmd_send_line_free(data);
+	cmd_message_free(data);
 }
 
 static void
-cmd_send_line_free(void *arg)
+cmd_message_free(void *arg)
 {
-	struct cmd_send_line_data	*data = arg;
+	struct cmd_message_data	*data = arg;
 
 	evtimer_del(&data->timer);
 	free(data->text);
@@ -172,11 +191,11 @@ cmd_send_line_free(void *arg)
 }
 
 static enum cmd_retval
-cmd_send_line_exec(struct cmd *self, struct cmdq_item *item)
+cmd_message_exec(struct cmd *self, struct cmdq_item *item)
 {
 	struct args			*args = cmd_get_args(self);
 	struct cmd_find_state		*target = cmdq_get_target(item);
-	struct cmd_send_line_data	*data;
+	struct cmd_message_data	*data;
 	struct timeval			 tv = { .tv_sec = 0, .tv_usec = 200000 }; /* Start checking in 200ms */
 	const char			*text;
 
@@ -195,7 +214,7 @@ cmd_send_line_exec(struct cmd *self, struct cmdq_item *item)
 	data->max_attempts = 150; /* 150 * 200ms = 30 seconds max wait */
 	data->state = WAITING_STABLE;
 
-	evtimer_set(&data->timer, cmd_send_line_timer, data);
+	evtimer_set(&data->timer, cmd_message_timer, data);
 	evtimer_add(&data->timer, &tv);
 
 	return (CMD_RETURN_NORMAL);

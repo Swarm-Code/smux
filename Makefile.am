@@ -131,7 +131,7 @@ dist_smux_SOURCES = \
 	cmd-select-pane.c \
 	cmd-select-window.c \
 	cmd-send-keys.c \
-	cmd-send-line.c \
+	cmd-message.c \
 	cmd-server-access.c \
 	cmd-set-buffer.c \
 	cmd-set-environment.c \
