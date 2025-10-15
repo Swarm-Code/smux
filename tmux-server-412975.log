@@ -26126,3 +26126,336 @@
 1760510258.709610 cmdq_next <global>: empty
 1760510258.709611 server_client_check_pane_buffer: pane %0 is on
 1760510258.709612 @0 active pane not changed
+1760510323.649703 add peer 0x55da559e58a0: 8 (0x55da55a10860)
+1760510323.649724 new client 0x55da55a10860
+1760510323.649727 cmdq_next <global>: empty
+1760510323.649730 server_client_check_pane_buffer: pane %0 is on
+1760510323.649734 @0 active pane not changed
+1760510323.649743 peer 0x55da559e58a0 message 111
+1760510323.649745 client 0x55da55a10860 IDENTIFY_LONGFLAGS 0x8010000
+1760510323.649746 peer 0x55da559e58a0 message 111
+1760510323.649747 client 0x55da55a10860 IDENTIFY_LONGFLAGS 0x8010000
+1760510323.649749 peer 0x55da559e58a0 message 101
+1760510323.649750 client 0x55da55a10860 IDENTIFY_TERM xterm-256color
+1760510323.649754 peer 0x55da559e58a0 message 109
+1760510323.649762 client 0x55da55a10860 IDENTIFY_FEATURES 
+1760510323.649763 peer 0x55da559e58a0 message 102
+1760510323.649764 client 0x55da55a10860 IDENTIFY_TTYNAME 
+1760510323.649765 peer 0x55da559e58a0 message 108
+1760510323.649769 client 0x55da55a10860 IDENTIFY_CWD /home/alejandro/Swarm/smux
+1760510323.649770 peer 0x55da559e58a0 message 104
+1760510323.649771 client 0x55da55a10860 IDENTIFY_STDIN 10
+1760510323.649772 cmdq_next <global>: empty
+1760510323.649773 server_client_check_pane_buffer: pane %0 is on
+1760510323.649774 @0 active pane not changed
+1760510323.649791 peer 0x55da559e58a0 message 110
+1760510323.649792 client 0x55da55a10860 IDENTIFY_STDOUT 11
+1760510323.649792 peer 0x55da559e58a0 message 107
+1760510323.649794 client 0x55da55a10860 IDENTIFY_CLIENTPID 421474
+1760510323.649794 peer 0x55da559e58a0 message 105
+1760510323.649797 client 0x55da55a10860 IDENTIFY_ENVIRON SHELL=/usr/bin/bash
+1760510323.649797 peer 0x55da559e58a0 message 105
+1760510323.649799 client 0x55da55a10860 IDENTIFY_ENVIRON COREPACK_ENABLE_AUTO_PIN=0
+1760510323.649800 peer 0x55da559e58a0 message 105
+1760510323.649801 client 0x55da55a10860 IDENTIFY_ENVIRON WINDOWID=94462613837024
+1760510323.649802 peer 0x55da559e58a0 message 105
+1760510323.649803 client 0x55da55a10860 IDENTIFY_ENVIRON COLORTERM=truecolor
+1760510323.649804 peer 0x55da559e58a0 message 105
+1760510323.649805 client 0x55da55a10860 IDENTIFY_ENVIRON HYPRLAND_CMD=Hyprland
+1760510323.649806 peer 0x55da559e58a0 message 105
+1760510323.649807 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_CONFIG_DIRS=/etc/xdg
+1760510323.649808 peer 0x55da559e58a0 message 105
+1760510323.649809 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_MENU_PREFIX=hyprland-
+1760510323.649810 peer 0x55da559e58a0 message 105
+1760510323.649812 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_BACKEND=wayland
+1760510323.649812 peer 0x55da559e58a0 message 105
+1760510323.649814 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_DATA_HOME=/home/alejandro/.local/share
+1760510323.649815 peer 0x55da559e58a0 message 105
+1760510323.649816 client 0x55da55a10860 IDENTIFY_ENVIRON INPUT_METHOD=fcitx
+1760510323.649817 peer 0x55da559e58a0 message 105
+1760510323.649818 client 0x55da55a10860 IDENTIFY_ENVIRON XCOMPOSEFILE=~/.XCompose
+1760510323.649819 peer 0x55da559e58a0 message 105
+1760510323.649820 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_CONFIG_HOME=/home/alejandro/.config
+1760510323.649821 peer 0x55da559e58a0 message 105
+1760510323.649823 client 0x55da55a10860 IDENTIFY_ENVIRON OMARCHY_PATH=/home/alejandro/.local/share/omarchy
+1760510323.649824 peer 0x55da559e58a0 message 105
+1760510323.649826 client 0x55da55a10860 IDENTIFY_ENVIRON MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+1760510323.649826 peer 0x55da559e58a0 message 105
+1760510323.649828 client 0x55da55a10860 IDENTIFY_ENVIRON XMODIFIERS=@im=fcitx
+1760510323.649828 peer 0x55da559e58a0 message 105
+1760510323.649830 client 0x55da55a10860 IDENTIFY_ENVIRON LIBVA_DRIVER_NAME=nvidia
+1760510323.649831 peer 0x55da559e58a0 message 105
+1760510323.649832 client 0x55da55a10860 IDENTIFY_ENVIRON ELECTRON_OZONE_PLATFORM_HINT=wayland
+1760510323.649832 peer 0x55da559e58a0 message 105
+1760510323.649834 client 0x55da55a10860 IDENTIFY_ENVIRON HL_INITIAL_WORKSPACE_TOKEN=d7744078-4cc7-409b-a42a-68308dc1c13d
+1760510323.649835 peer 0x55da559e58a0 message 105
+1760510323.649837 client 0x55da55a10860 IDENTIFY_ENVIRON XCURSOR_SIZE=24
+1760510323.649838 peer 0x55da559e58a0 message 105
+1760510323.649839 client 0x55da55a10860 IDENTIFY_ENVIRON EDITOR=nvim
+1760510323.649840 peer 0x55da559e58a0 message 105
+1760510323.649841 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_SEAT=seat0
+1760510323.649842 peer 0x55da559e58a0 message 105
+1760510323.649843 client 0x55da55a10860 IDENTIFY_ENVIRON PWD=/home/alejandro/Swarm/smux
+1760510323.649843 peer 0x55da559e58a0 message 105
+1760510323.649844 client 0x55da55a10860 IDENTIFY_ENVIRON LOGNAME=alejandro
+1760510323.649845 peer 0x55da559e58a0 message 105
+1760510323.649847 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_SESSION_DESKTOP=Hyprland
+1760510323.649850 peer 0x55da559e58a0 message 105
+1760510323.649852 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_SESSION_TYPE=wayland
+1760510323.649853 peer 0x55da559e58a0 message 105
+1760510323.649855 client 0x55da55a10860 IDENTIFY_ENVIRON PNPM_HOME=/home/alejandro/.local/share/pnpm
+1760510323.649855 peer 0x55da559e58a0 message 105
+1760510323.649857 client 0x55da55a10860 IDENTIFY_ENVIRON SYSTEMD_EXEC_PID=2008
+1760510323.649857 peer 0x55da559e58a0 message 105
+1760510323.649859 client 0x55da55a10860 IDENTIFY_ENVIRON NoDefaultCurrentDirectoryInExePath=1
+1760510323.649860 peer 0x55da559e58a0 message 105
+1760510323.649862 client 0x55da55a10860 IDENTIFY_ENVIRON TERMINAL=alacritty
+1760510323.649863 peer 0x55da559e58a0 message 105
+1760510323.649865 client 0x55da55a10860 IDENTIFY_ENVIRON CLAUDECODE=1
+1760510323.649865 peer 0x55da559e58a0 message 105
+1760510323.649866 client 0x55da55a10860 IDENTIFY_ENVIRON QT_STYLE_OVERRIDE=kvantum
+1760510323.649867 peer 0x55da559e58a0 message 105
+1760510323.649868 client 0x55da55a10860 IDENTIFY_ENVIRON HOME=/home/alejandro
+1760510323.649869 peer 0x55da559e58a0 message 105
+1760510323.649871 client 0x55da55a10860 IDENTIFY_ENVIRON LANG=en_US.UTF-8
+1760510323.649872 peer 0x55da559e58a0 message 105
+1760510323.649873 client 0x55da55a10860 IDENTIFY_ENVIRON _JAVA_AWT_WM_NONREPARENTING=1
+1760510323.649874 peer 0x55da559e58a0 message 105
+1760510323.649875 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_CURRENT_DESKTOP=Hyprland
+1760510323.649876 peer 0x55da559e58a0 message 105
+1760510323.649878 client 0x55da55a10860 IDENTIFY_ENVIRON MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/wayland-wm@hyprland.desktop.service/memory.pressure
+1760510323.649880 peer 0x55da559e58a0 message 105
+1760510323.649881 client 0x55da55a10860 IDENTIFY_ENVIRON STARSHIP_SHELL=bash
+1760510323.649882 peer 0x55da559e58a0 message 105
+1760510323.649883 client 0x55da55a10860 IDENTIFY_ENVIRON WAYLAND_DISPLAY=wayland-1
+1760510323.649884 peer 0x55da559e58a0 message 105
+1760510323.649885 client 0x55da55a10860 IDENTIFY_ENVIRON __MISE_DIFF=eAFrXpyfk9KwOC+1vGFJQWJJxgQASssINA
+1760510323.649886 peer 0x55da559e58a0 message 105
+1760510323.649888 client 0x55da55a10860 IDENTIFY_ENVIRON INVOCATION_ID=c8377527aee9465f846ac745dc2f3c2d
+1760510323.649888 peer 0x55da559e58a0 message 105
+1760510323.649890 client 0x55da55a10860 IDENTIFY_ENVIRON MANAGERPID=1613
+1760510323.649891 peer 0x55da559e58a0 message 105
+1760510323.649892 client 0x55da55a10860 IDENTIFY_ENVIRON BAT_THEME=ansi
+1760510323.649893 peer 0x55da559e58a0 message 105
+1760510323.649894 client 0x55da55a10860 IDENTIFY_ENVIRON STARSHIP_SESSION_KEY=2600318145217481
+1760510323.649895 peer 0x55da559e58a0 message 105
+1760510323.649896 client 0x55da55a10860 IDENTIFY_ENVIRON QT_QPA_PLATFORM=wayland;xcb
+1760510323.649897 peer 0x55da559e58a0 message 105
+1760510323.649898 client 0x55da55a10860 IDENTIFY_ENVIRON UWSM_WAIT_VARNAMES=HYPRLAND_INSTANCE_SIGNATURE
+1760510323.649899 peer 0x55da559e58a0 message 105
+1760510323.649905 client 0x55da55a10860 IDENTIFY_ENVIRON __MISE_ORIG_PATH=/home/alejandro/.local/bin:/home/alejandro/bin:/home/alejandro/.bun/bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/pnpm:/home/alejandro/.local/share/../bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/omarchy/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+1760510323.649907 peer 0x55da559e58a0 message 105
+1760510323.649908 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_CACHE_HOME=/home/alejandro/.cache
+1760510323.649909 peer 0x55da559e58a0 message 105
+1760510323.649910 client 0x55da55a10860 IDENTIFY_ENVIRON ALACRITTY_SOCKET=/run/user/1000/Alacritty-wayland-1-43497.sock
+1760510323.649911 peer 0x55da559e58a0 message 105
+1760510323.649913 client 0x55da55a10860 IDENTIFY_ENVIRON SDL_IM_MODULE=fcitx
+1760510323.649914 peer 0x55da559e58a0 message 105
+1760510323.649915 client 0x55da55a10860 IDENTIFY_ENVIRON NVD_BACKEND=direct
+1760510323.649916 peer 0x55da559e58a0 message 105
+1760510323.649917 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_SESSION_CLASS=user
+1760510323.649919 peer 0x55da559e58a0 message 105
+1760510323.649920 client 0x55da55a10860 IDENTIFY_ENVIRON TERM=xterm-256color
+1760510323.649921 peer 0x55da559e58a0 message 105
+1760510323.649923 client 0x55da55a10860 IDENTIFY_ENVIRON CEREBRAS_API_KEY=csk-mph8k98h2934xwn4mpr9d9ekd4tdermf49634xpxk9938w2y
+1760510323.649924 peer 0x55da559e58a0 message 105
+1760510323.649925 client 0x55da55a10860 IDENTIFY_ENVIRON USER=alejandro
+1760510323.649926 peer 0x55da559e58a0 message 105
+1760510323.649927 client 0x55da55a10860 IDENTIFY_ENVIRON SDL_VIDEODRIVER=wayland
+1760510323.649928 peer 0x55da559e58a0 message 105
+1760510323.649929 client 0x55da55a10860 IDENTIFY_ENVIRON SUDO_EDITOR=nvim
+1760510323.649930 peer 0x55da559e58a0 message 105
+1760510323.649932 client 0x55da55a10860 IDENTIFY_ENVIRON OZONE_PLATFORM=wayland
+1760510323.649933 peer 0x55da559e58a0 message 105
+1760510323.649936 client 0x55da55a10860 IDENTIFY_ENVIRON __MISE_SESSION=eAFrX5OTn5iSmhJfkp+fUzxhHZSXnJ+XlplePPGmhn5Gfm6qfmJOalZiXkpRvr4eREo/N7M4VR/C1ivJz81ZA2HHFySWZBRPWJyaV9awOCWzaBe6/uDyxKJc/eLc0oo1qXll8WWJRfEZicUZG5KMLQ1T00wNkswNkw1NLczW5iSWpBaXxJcWpCSWpB4RYIADxpnPpq+eDAB6a0eO
+1760510323.649937 peer 0x55da559e58a0 message 105
+1760510323.649938 client 0x55da55a10860 IDENTIFY_ENVIRON HYPRLAND_INSTANCE_SIGNATURE=46174f78b374b6cea669c48880877a8bdcf7802f_1760488431_983427023
+1760510323.649939 peer 0x55da559e58a0 message 105
+1760510323.649941 client 0x55da55a10860 IDENTIFY_ENVIRON NOTIFY_SOCKET=/run/user/1000/systemd/notify
+1760510323.649941 peer 0x55da559e58a0 message 105
+1760510323.649943 client 0x55da55a10860 IDENTIFY_ENVIRON DISPLAY=:0
+1760510323.649943 peer 0x55da559e58a0 message 105
+1760510323.649944 client 0x55da55a10860 IDENTIFY_ENVIRON SHLVL=2
+1760510323.649945 peer 0x55da559e58a0 message 105
+1760510323.649946 client 0x55da55a10860 IDENTIFY_ENVIRON MOZ_ENABLE_WAYLAND=1
+1760510323.649947 peer 0x55da559e58a0 message 105
+1760510323.649949 client 0x55da55a10860 IDENTIFY_ENVIRON GIT_EDITOR=true
+1760510323.649950 peer 0x55da559e58a0 message 105
+1760510323.649951 client 0x55da55a10860 IDENTIFY_ENVIRON QT_IM_MODULE=fcitx
+1760510323.649951 peer 0x55da559e58a0 message 105
+1760510323.649952 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_VTNR=1
+1760510323.649953 peer 0x55da559e58a0 message 105
+1760510323.649955 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_SESSION_ID=1
+1760510323.649956 peer 0x55da559e58a0 message 105
+1760510323.649957 client 0x55da55a10860 IDENTIFY_ENVIRON MANAGERPIDFDID=1614
+1760510323.649958 peer 0x55da559e58a0 message 105
+1760510323.649959 client 0x55da55a10860 IDENTIFY_ENVIRON OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=delta
+1760510323.649960 peer 0x55da559e58a0 message 105
+1760510323.649961 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_STATE_HOME=/home/alejandro/.local/state
+1760510323.649962 peer 0x55da559e58a0 message 105
+1760510323.649963 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_RUNTIME_DIR=/run/user/1000
+1760510323.649964 peer 0x55da559e58a0 message 105
+1760510323.649965 client 0x55da55a10860 IDENTIFY_ENVIRON CLAUDE_CODE_ENTRYPOINT=cli
+1760510323.649966 peer 0x55da559e58a0 message 105
+1760510323.649968 client 0x55da55a10860 IDENTIFY_ENVIRON DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+1760510323.649968 peer 0x55da559e58a0 message 105
+1760510323.649970 client 0x55da55a10860 IDENTIFY_ENVIRON BUN_INSTALL=/home/alejandro/.bun
+1760510323.649970 peer 0x55da559e58a0 message 105
+1760510323.649972 client 0x55da55a10860 IDENTIFY_ENVIRON JOURNAL_STREAM=9:23911
+1760510323.649972 peer 0x55da559e58a0 message 105
+1760510323.649973 client 0x55da55a10860 IDENTIFY_ENVIRON MISE_SHELL=bash
+1760510323.649974 peer 0x55da559e58a0 message 105
+1760510323.649975 client 0x55da55a10860 IDENTIFY_ENVIRON XDG_DATA_DIRS=/usr/local/share:/usr/share
+1760510323.649976 peer 0x55da559e58a0 message 105
+1760510323.649977 client 0x55da55a10860 IDENTIFY_ENVIRON GDK_BACKEND=wayland,x11,*
+1760510323.649978 peer 0x55da559e58a0 message 105
+1760510323.649981 client 0x55da55a10860 IDENTIFY_ENVIRON PATH=/home/alejandro/bin:/home/alejandro/.bun/bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/pnpm:/home/alejandro/.local/share/../bin:/home/alejandro/.local/bin:/home/alejandro/.local/share/omarchy/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin
+1760510323.649983 peer 0x55da559e58a0 message 105
+1760510323.649985 client 0x55da55a10860 IDENTIFY_ENVIRON __GLX_VENDOR_LIBRARY_NAME=nvidia
+1760510323.649986 peer 0x55da559e58a0 message 105
+1760510323.649988 client 0x55da55a10860 IDENTIFY_ENVIRON GDK_SCALE=2
+1760510323.649988 peer 0x55da559e58a0 message 105
+1760510323.649990 client 0x55da55a10860 IDENTIFY_ENVIRON ALACRITTY_LOG=/tmp/Alacritty-43497.log
+1760510323.649990 peer 0x55da559e58a0 message 105
+1760510323.649992 client 0x55da55a10860 IDENTIFY_ENVIRON DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+1760510323.649993 peer 0x55da559e58a0 message 105
+1760510323.649994 client 0x55da55a10860 IDENTIFY_ENVIRON MAIL=/var/spool/mail/alejandro
+1760510323.649995 peer 0x55da559e58a0 message 105
+1760510323.649997 client 0x55da55a10860 IDENTIFY_ENVIRON UWSM_FINALIZE_VARNAMES=HYPRLAND_INSTANCE_SIGNATURE HYPRLAND_CMD HYPRCURSOR_THEME HYPRCURSOR_SIZE XCURSOR_SIZE XCURSOR_THEME
+1760510323.649998 peer 0x55da559e58a0 message 105
+1760510323.649999 client 0x55da55a10860 IDENTIFY_ENVIRON ALACRITTY_WINDOW_ID=94462613837024
+1760510323.650000 peer 0x55da559e58a0 message 105
+1760510323.650001 client 0x55da55a10860 IDENTIFY_ENVIRON OLDPWD=/home/alejandro/Swarm
+1760510323.650002 peer 0x55da559e58a0 message 105
+1760510323.650003 client 0x55da55a10860 IDENTIFY_ENVIRON HYPRCURSOR_SIZE=24
+1760510323.650004 peer 0x55da559e58a0 message 105
+1760510323.650005 client 0x55da55a10860 IDENTIFY_ENVIRON _=./smux
+1760510323.650006 peer 0x55da559e58a0 message 106
+1760510323.650007 client 0x55da55a10860 name is client-421474
+1760510323.650009 cmdq_next <global>: empty
+1760510323.650010 cmdq_next <client-421474>: empty
+1760510323.650011 server_client_check_pane_buffer: pane %0 is on
+1760510323.650012 @0 active pane not changed
+1760510323.650013 peer 0x55da559e58a0 message 200
+1760510323.650015 cmd_unpack_argv: argv[0]=kill-server
+1760510323.650017 cmd_parse_build_commands 0:0: kill-server
+1760510323.650022 args_parse: flags end at 1 of 1
+1760510323.650024 cmd_parse_build_commands: kill-server
+1760510323.650026 cmdq_get_command: [kill-server/0x55da559b1540] group 2881
+1760510323.650027 cmdq_append <client-421474>: [kill-server/0x55da559b1540]
+1760510323.650028 cmdq_append <client-421474>: [server_client_command_done/0x55da559bf850]
+1760510323.650029 cmdq_next <global>: empty
+1760510323.650030 cmdq_next <client-421474>: enter
+1760510323.650031 cmdq_next <client-421474>: [kill-server/0x55da559b1540] (0), flags 0
+1760510323.650033 message: client-421474 command: kill-server
+1760510323.650035 cmdq_fire_command <client-421474>: (2881) kill-server
+1760510323.650037 cmd_find_best_session: 0 sessions to try
+1760510323.650038 cmd_find_current_client: no target, return (nil)
+1760510323.650040 cmd_find_best_session: 0 sessions to try
+1760510323.650041 cmd_find_from_nothing: s=$0 debug-test
+1760510323.650042 cmd_find_from_nothing: wl=0 1 w=@0 bash
+1760510323.650043 cmd_find_from_nothing: wp=%0
+1760510323.650044 cmd_find_from_nothing: idx=0
+1760510323.650044 cmd_find_best_session: 0 sessions to try
+1760510323.650045 cmd_find_from_nothing: s=$0 debug-test
+1760510323.650046 cmd_find_from_nothing: wl=0 1 w=@0 bash
+1760510323.650047 cmd_find_from_nothing: wp=%0
+1760510323.650048 cmd_find_from_nothing: idx=0
+1760510323.650057 unref client 0x55da55a10860 (3 references)
+1760510323.650059 cmdq_next <client-421474>: [server_client_command_done/0x55da559bf850] (1), flags 0
+1760510323.650060 unref client 0x55da55a10860 (2 references)
+1760510323.650061 cmdq_next <client-421474>: exit (empty)
+1760510323.650061 cmdq_next <global>: empty
+1760510323.650062 cmdq_next <client-421474>: empty
+1760510323.650064 sending message 203 to peer 0x55da559e58a0 (4 bytes)
+1760510323.650065 server_client_check_pane_buffer: pane %0 is on
+1760510323.650066 @0 active pane not changed
+1760510323.650074 server_signal: Terminated
+1760510323.650076 session debug-test destroyed (server_send_exit)
+1760510323.650080 cmd_find_best_session: 0 sessions to try
+1760510323.650084 notify_add: buffer_mode_format=#{t/p:buffer_created}: #{buffer_sample}
+1760510323.650087 notify_add: client_mode_format=#{t/p:client_activity}: session #{session_name}
+1760510323.650089 notify_add: config_files=
+1760510323.650093 notify_add: host=swarm
+1760510323.650094 notify_add: host_short=swarm
+1760510323.650095 notify_add: loop_last_flag=0
+1760510323.650097 notify_add: next_session_id=$1
+1760510323.650099 notify_add: pane_format=0
+1760510323.650101 notify_add: pid=412975
+1760510323.650102 notify_add: project_format=0
+1760510323.650103 notify_add: server_sessions=0
+1760510323.650105 notify_add: session_format=0
+1760510323.650106 notify_add: sixel_support=0
+1760510323.650107 notify_add: socket_path=/tmp/smux-1000/default
+1760510323.650108 notify_add: start_time=1760510186
+1760510323.650114 notify_add: tree_mode_format=#{?pane_format,#{?pane_marked,#[reverse],}#{pane_current_command}#{?pane_active,*,}#{?pane_marked,M,}#{?#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}},: "#{pane_title}",},window_format,#{?window_marked_flag,#[reverse],}#{window_name}#{window_flags}#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: "#{pane_title}",},project_format,#[bold,fg=magenta]PROJECT:#[default] #[fg=cyan]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default],#[fg=yellow]SESSION:#[default] #{session_windows} windows#{?session_grouped, (group #{session_group}: #{session_group_list}),}#{?session_attached, #[fg=green](attached)#[default],}}
+1760510323.650116 notify_add: uid=1000
+1760510323.650129 notify_add: user=alejandro
+1760510323.650130 notify_add: version=next-3.7
+1760510323.650131 notify_add: window_format=0
+1760510323.650133 notify_add: hook=session-closed
+1760510323.650134 notify_add: hook_session=$0
+1760510323.650134 notify_add: hook_session_name=debug-test
+1760510323.650136 session_add_ref: debug-test notify_add, now 2
+1760510323.650137 cmdq_append <global>: [notify_callback/0x55da559bf850]
+1760510323.650138 cmd_find_best_winlink_with_window: window is @0
+1760510323.650139 cmd_find_from_session_window: s=$0 debug-test
+1760510323.650140 cmd_find_from_session_window: wl=0 1 w=@0 bash
+1760510323.650141 cmd_find_from_session_window: wp=%0
+1760510323.650142 cmd_find_from_session_window: idx=0
+1760510323.650144 notify_add: buffer_mode_format=#{t/p:buffer_created}: #{buffer_sample}
+1760510323.650145 notify_add: client_mode_format=#{t/p:client_activity}: session #{session_name}
+1760510323.650146 notify_add: config_files=
+1760510323.650147 notify_add: host=swarm
+1760510323.650148 notify_add: host_short=swarm
+1760510323.650149 notify_add: loop_last_flag=0
+1760510323.650150 notify_add: next_session_id=$1
+1760510323.650151 notify_add: pane_format=0
+1760510323.650152 notify_add: pid=412975
+1760510323.650153 notify_add: project_format=0
+1760510323.650154 notify_add: server_sessions=0
+1760510323.650155 notify_add: session_format=0
+1760510323.650156 notify_add: sixel_support=0
+1760510323.650157 notify_add: socket_path=/tmp/smux-1000/default
+1760510323.650158 notify_add: start_time=1760510186
+1760510323.650161 notify_add: tree_mode_format=#{?pane_format,#{?pane_marked,#[reverse],}#{pane_current_command}#{?pane_active,*,}#{?pane_marked,M,}#{?#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}},: "#{pane_title}",},window_format,#{?window_marked_flag,#[reverse],}#{window_name}#{window_flags}#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: "#{pane_title}",},project_format,#[bold,fg=magenta]PROJECT:#[default] #[fg=cyan]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default],#[fg=yellow]SESSION:#[default] #{session_windows} windows#{?session_grouped, (group #{session_group}: #{session_group_list}),}#{?session_attached, #[fg=green](attached)#[default],}}
+1760510323.650163 notify_add: uid=1000
+1760510323.650166 notify_add: user=alejandro
+1760510323.650167 notify_add: version=next-3.7
+1760510323.650169 notify_add: window_format=0
+1760510323.650170 notify_add: hook=window-unlinked
+1760510323.650171 notify_add: hook_session=$0
+1760510323.650172 notify_add: hook_session_name=debug-test
+1760510323.650173 notify_add: hook_window=@0
+1760510323.650173 notify_add: hook_window_name=bash
+1760510323.650174 session_add_ref: debug-test notify_add, now 3
+1760510323.650175 window_add_ref: @0 notify_add, now 2
+1760510323.650176 session_add_ref: debug-test notify_add, now 4
+1760510323.650177 cmdq_append <global>: [notify_callback/0x55da559b1540]
+1760510323.650179 window_remove_ref: @0 winlink_remove, now 1
+1760510323.650180 session_remove_ref: debug-test session_destroy, now 3
+1760510323.650181 cmdq_next <global>: enter
+1760510323.650182 cmdq_next <global>: [notify_callback/0x55da559bf850] (1), flags 0
+1760510323.650183 notify_callback: session-closed
+1760510323.650184 notify_insert_hook: inserting hook session-closed
+1760510323.650185 cmd_find_best_session: 0 sessions to try
+1760510323.650187 session_remove_ref: debug-test notify_callback, now 2
+1760510323.650189 cmdq_next <global>: [notify_callback/0x55da559b1540] (1), flags 0
+1760510323.650190 notify_callback: window-unlinked
+1760510323.650191 notify_insert_hook: inserting hook window-unlinked
+1760510323.650191 cmd_find_best_session: 0 sessions to try
+1760510323.650194 session_remove_ref: debug-test notify_callback, now 1
+1760510323.650195 window_remove_ref: @0 notify_callback, now 0
+1760510323.650196 window @0 destroyed (0 references)
+1760510323.650212 session_remove_ref: debug-test notify_callback, now 0
+1760510323.650213 cmdq_next <global>: exit (empty)
+1760510323.650214 cmdq_next <client-421474>: empty
+1760510323.650215 cmdq_next <global>: empty
+1760510323.650215 cmdq_next <client-421474>: empty
+1760510323.650218 session debug-test freed (0 references)
+1760510323.650221 lost client 0x55da55a10860
+1760510323.650226 remove peer 0x55da559e58a0
+1760510323.650235 unref client 0x55da55a10860 (1 references)
+1760510323.650237 free client 0x55da55a10860 (0 references)
+1760510323.650238 cmdq_next <global>: empty
+1760510323.650239 server loop exit
