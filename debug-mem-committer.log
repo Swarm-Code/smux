@@ -4380,3 +4380,15 @@ tool_input: {
   "command": "timeout 10s smux show-options -g | grep -E \"(status-left|status-right|window-status)\" | head -5 2>&1",
   "description": "Check other status options applied by tmux-dotbar theme"
 }
+
+=== 2025-10-15T16:46:30.963Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "timeout 10s smux -f tmux-dotbar-test.conf show-options -g | grep @ 2>&1",
+  "description": "Check if any @-prefixed options are being parsed from config"
+}
