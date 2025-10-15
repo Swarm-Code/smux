@@ -147,3 +147,15 @@ tool_input: {
   "command": "echo \"Build completed, checking binary exists...\"",
   "description": "Check build status"
 }
+
+=== 2025-10-15T05:53:07.824Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/a201909a-e87b-4619-b5d7-abd23a1cb761.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "make -j$(nproc)",
+  "description": "Complete the build process"
+}
