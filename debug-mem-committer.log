@@ -5915,3 +5915,15 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/demo-enhanced-chooser.sh",
   "content": "#!/bin/bash\n# Demo: Enhanced Choose-Tree Visual Hierarchy\n\necho \"🎯 Enhanced Session/Project/Window Selector Demo\"\necho \"===============================================\"\necho \"\"\necho \"This demo showcases the visual improvements to smux's session selector\"\necho \"with enhanced differentiation between projects, sessions, and windows.\"\necho \"\"\n\necho \"🎨 Visual Hierarchy Features Applied:\"\ne
+
+=== 2025-10-15T18:11:29.337Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "chmod +x demo-enhanced-chooser.sh && ./demo-enhanced-chooser.sh",
+  "description": "Run comprehensive demo of enhanced choose-tree functionality"
+}
