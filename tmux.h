@@ -1412,6 +1412,38 @@ struct project {
 };
 RB_HEAD(projects, project);
 
+/* Plugin status enumeration. */
+enum plugin_status {
+	PLUGIN_STATUS_NONE,		/* Plugin not processed */
+	PLUGIN_STATUS_PARSED,		/* Plugin declaration parsed */
+	PLUGIN_STATUS_INSTALLING,	/* Plugin being installed */
+	PLUGIN_STATUS_INSTALLED,	/* Plugin successfully installed */
+	PLUGIN_STATUS_FAILED,		/* Plugin installation failed */
+	PLUGIN_STATUS_UPDATING,		/* Plugin being updated */
+	PLUGIN_STATUS_REMOVING		/* Plugin being removed */
+};
+
+/* Plugin structure for tpm integration. */
+struct plugin {
+	char		*name;		/* Plugin name/identifier */
+	char		*source;	/* Plugin source (GitHub, git URL, etc.) */
+	char		*branch;	/* Specific branch/tag (optional) */
+	char		*install_path;	/* Installation directory path */
+
+	enum plugin_status status;	/* Current plugin status */
+
+	struct timeval	 parsed_time;	/* When plugin was first parsed */
+	struct timeval	 install_time;	/* When plugin was installed */
+
+	int		 is_global;	/* 1 if global plugin, 0 if project-specific */
+	struct project	*project;	/* Associated project (NULL for global) */
+
+	char		*last_error;	/* Last error message (if any) */
+
+	RB_ENTRY(plugin) entry;		/* Entry for global plugins RB tree */
+};
+RB_HEAD(plugins, plugin);
+
 struct session {
 	u_int		 id;
 
