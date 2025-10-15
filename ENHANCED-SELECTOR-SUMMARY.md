@@ -46,16 +46,16 @@ window1
 window2
 ```
 
-### AFTER (Enhanced smux choose-tree):
+### AFTER (Enhanced smux choose-tree with explicit labels):
 ```
-📂 project1 - 3 sessions (Wed Oct 15 14:06:52 2025)
-  ├─ 🖥️ frontend - 2 windows ● ACTIVE
-    └─ 🪟 main ●
-    └─ 🪟 tests
-  ├─ 🖥️ backend - 1 windows
-    └─ 🪟 server
-🖥️ standalone-session - 1 windows
-  └─ 🪟 bash
+PROJECT 📂 enhanced-demo - 2 sessions (Wed Oct 15 14:24:35 2025)
+  ├─ SESSION 🖥️ frontend - 2 windows ● ACTIVE
+    └─ PANE 🪟 bash ●
+    └─ PANE 🪟 components
+  ├─ SESSION 🖥️ backend - 1 windows
+    └─ PANE 🪟 server
+SESSION 🖥️ standalone-session - 1 windows
+  └─ PANE 🪟 bash
 ```
 
 ---

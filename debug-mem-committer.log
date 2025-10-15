@@ -6374,3 +6374,15 @@ tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md",
   "old_string": "### 🪟 Windows (Under Sessions)\n- **Deep indentation**: `└─` for clear hierarchy\n- **Window icon**: 🪟 for window identification\n- **Active highlighting**: `●` for current window\n- **Conditional colors**: Active windows in accent color\n- **Format**: `\"└─ 🪟 WindowName ●\"`\n- **Purpose**: Show window structure within sessions",
   "new_string": "### 🪟 Windows/Panes (Under Sessions)\n- **Explicit la
+
+=== 2025-10-15T18:28:23.022Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/ENHANCED-SELECTOR-SUMMARY.md",
+  "old_string": "### AFTER (Enhanced smux choose-tree):\n```\n📂 project1 - 3 sessions (Wed Oct 15 14:06:52 2025)\n  ├─ 🖥️ frontend - 2 windows ● ACTIVE\n    └─ 🪟 main ●\n    └─ 🪟 tests\n  ├─ 🖥️ backend - 1 windows\n    └─ 🪟 server\n🖥️ standalone-session - 1 windows\n  └─ 🪟 bash\n```",
+  "new_string": "### AFTER (Enhanced smux choose-tree with explicit labels):\n```\nPROJECT 📂 enhanced-demo - 2 sessions (Wed Oct 
