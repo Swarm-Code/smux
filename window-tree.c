@@ -52,7 +52,7 @@ static void		 window_tree_build_project(struct project *, void *,
 		"#[fg=#D19A66]WINDOW:#[default] #{window_name}#{window_flags}" \
 		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: \"#{pane_title}\",}" \
 	",project_format," \
-		"#[bold,fg=#95E6CB]PROJECT 📂:#[default] #[fg=#BFBDB6]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default]" \
+		"#[bold,fg=#95E6CB]PROJECT:#[default] #[fg=#BFBDB6]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default]" \
 	"," \
 		"#[fg=#E6A95E]SESSION 🖥️:#[default] #{session_windows} windows" \
 		"#{?session_grouped, " \
