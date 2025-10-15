@@ -61,3 +61,30 @@ For easy switching between all themes:
 - **Original**: Standard tmux-dotbar experience
 
 All themes use the same dark color scheme (`#0B0E14` background) for consistency.
+
+## Enhanced Session/Project Selector
+
+All themes now include **enhanced selector styling** that matches the minimal dark aesthetic:
+
+### Selector Features
+- **Dark background**: `#0B0E14` (matches status bar)
+- **Light text**: `#BFBDB6` (matches status bar text)
+- **Accent cursor**: `#95E6CB` (matches prefix highlight)
+- **Consistent pane indicators**: Proper color coordination
+
+### How to Access Selectors
+- **Session selector**: `Ctrl+B` then `s`
+- **Window selector**: `Ctrl+B` then `w`
+- **Navigation**: Arrow keys to move, Enter to select, `q` to cancel
+
+### Before vs After
+**Before**: Yellow background with black text (default tmux)
+**After**: Dark minimal theme matching your status bar
+
+### Testing
+Run the selector test script:
+```bash
+./test-selector.sh
+```
+
+This enhancement ensures your entire smux interface has a cohesive, minimal dark appearance.

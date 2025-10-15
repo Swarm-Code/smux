@@ -5207,3 +5207,15 @@ tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/THEMES.md",
   "old_string": "### Current Theme Features\n\n**Premium Minimal** (currently active):\n- Session display: `▌ session-name ▌` with Unicode separators\n- Current window: `▶ window-name ◀` with directional arrows\n- Time display: `⏰ HH:MM` with clock emoji\n- Enhanced spacing and visual hierarchy",
   "new_string": "### Current Theme Features\n\n**Premium Minimal** (currently active):\n- Session display: `▌ session-name ▌` with Unicode separa
+
+=== 2025-10-15T17:31:39.038Z ===
+Tool: Edit
+File: /home/alejandro/Swarm/smux/THEMES.md
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/THEMES.md",
+  "old_string": "All themes use the same dark color scheme (`#0B0E14` background) for consistency.",
+  "new_string": "All themes use the same dark color scheme (`#0B0E14` background) for consistency.\n\n## Enhanced Session/Project Selector\n\nAll themes now include **enhanced selector styling** that matches the minimal dark aesthetic:\n\n### Selector Features\n- **Dark background**: `#0B0E14` (matches status bar)\n- **Light text**: `#BFBDB
