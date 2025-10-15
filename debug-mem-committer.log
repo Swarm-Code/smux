@@ -9169,3 +9169,14 @@ tool_input: {
   "command": "smux new-session -d -s test-session -P test-project && echo \"✅ Session created successfully!\"",
   "description": "Test session creation"
 }
+
+=== 2025-10-15T20:27:16.649Z ===
+Tool: Write
+File: /home/alejandro/Swarm/smux/test-final-fix.sh
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "file_path": "/home/alejandro/Swarm/smux/test-final-fix.sh",
+  "content": "#!/bin/bash\n# Test the final fix for startup hang and format display issues\n\necho \"🎉 TESTING FINAL FIX - STARTUP HANG RESOLVED!\"\necho \"=============================================\"\necho \"\"\n\necho \"📊 Current Test Structure:\"\nsmux list-projects\necho \"\"\nsmux list-sessions\necho \"\"\n\necho \"🧪 TESTING CORRECTED FORMAT STRINGS:\"\necho \"=====================================\"\n\necho \"Testing PRO
