@@ -367,10 +367,16 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
+		printf("DEBUG: Child process in proc_fork_and_daemon - about to call daemon()\n");
+		fflush(stdout);
 		close(pair[0]);
 		*fd = pair[1];
+		printf("DEBUG: Child process calling daemon(1, 0)\n");
+		fflush(stdout);
 		if (daemon(1, 0) != 0)
 			fatal("daemon failed");
+		printf("DEBUG: Child process daemon() call completed successfully\n");
+		fflush(stdout);
 		return (0);
 	default:
 		close(pair[1]);
