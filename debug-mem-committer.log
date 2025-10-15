@@ -9883,3 +9883,15 @@ tool_input: {
   "command": "smux list-sessions | grep simple-test",
   "description": "Check sessions belonging to project"
 }
+
+=== 2025-10-15T21:20:48.821Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "pkill smux",
+  "description": "Kill hanging smux processes"
+}
