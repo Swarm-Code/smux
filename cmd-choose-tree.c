@@ -90,7 +90,7 @@ const struct cmd_entry cmd_customize_mode_entry = {
  */
 
 #define CHOOSE_TREE_PROJECT_TEMPLATE				\
-	"#[fg=#95E6CB,bold]📂 #{project_name}#[fg=#BFBDB6,nobold] - #{project_sessions} sessions " \
+	"#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6,nobold] - #{project_sessions} sessions " \
 	"#[fg=#565B66](#{t:project_created})#[default]"
 
 #define CHOOSE_TREE_SESSION_TEMPLATE				\
