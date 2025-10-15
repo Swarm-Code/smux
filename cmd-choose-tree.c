@@ -106,7 +106,7 @@ const struct cmd_entry cmd_customize_mode_entry = {
 
 #define CHOOSE_TREE_WINDOW_TEMPLATE				\
 	"#{?window_marked_flag,#[reverse],}"			\
-	"#[fg=#475266]    └─ #[fg=#D19A66,italics]PANE #[fg=#565B66,noitalics]🪟 "			\
+	"#[fg=#475266]    └─ #[fg=#D19A66]PANE #[fg=#565B66]🪟 "			\
 	"#{?window_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}"	\
 	"#{window_name}#[nobold]"				\
 	"#{?window_active,#[fg=#95E6CB] ●,#[fg=#565B66]}"	\
