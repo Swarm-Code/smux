@@ -3331,3 +3331,15 @@ tool_input type: object
 tool_input: {
   "file_path": "/home/alejandro/Swarm/smux/proc.c",
   "old_string": "\tcase 0:\n\t\tprintf(\"DEBUG: Child process ENTERED case 0 - PID=%d\\n\", getpid());\n\t\tfflush(stdout);\n\t\tprintf(\"DEBUG: Child process about to close pair[0]\\n\");\n\t\tfflush(stdout);\n\t\tclose(pair[0]);\n\t\tprintf(\"DEBUG: Child process closed pair[0], setting fd\\n\");\n\t\tfflush(stdout);\n\t\t*fd = pair[1];\n\t\tprintf(\"DEBUG: Child process calling daemon(1, 0)\\n\");\n\t\tfflush(stdout);\n\t\tif (daemon(1, 0)
+
+=== 2025-10-15T07:44:05.812Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "rm -f /tmp/smux_child_debug.log && make && timeout 15s smux new-session -d -s debug-file-test 2>&1",
+  "description": "Test with file-based child process debug logging"
+}
