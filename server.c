@@ -206,10 +206,17 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	proc_clear_signals(client, 0);
 	server_client_flags = flags;
 
+	printf("DEBUG: Reinitializing event base\n");
+	fflush(stdout);
 	if (event_reinit(base) != 0)
 		fatalx("event_reinit failed");
+
+	printf("DEBUG: Starting server proc\n");
+	fflush(stdout);
 	server_proc = proc_start("server");
 
+	printf("DEBUG: Setting signal handlers\n");
+	fflush(stdout);
 	proc_set_signals(server_proc, server_signal);
 	sigprocmask(SIG_SETMASK, &oldset, NULL);
 
