@@ -377,6 +377,7 @@ proc_fork_and_daemon(int *fd)
 	case -1:
 		fatal("fork failed");
 	case 0:
+		system("touch /tmp/proc_fork_and_daemon_CHILD_CASE");
 		{
 			FILE *debug_file = fopen("/tmp/smux_child_debug.log", "w");
 			if (debug_file) {
