@@ -587,7 +587,7 @@ plugin_source_all(struct session *s)
 
 			/* Check if plugin.tmux file exists (standard naming) */
 			if (access(tmux_file, F_OK) == 0) {
-				snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
+				snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", tmux_file);
 				log_debug("Sourcing global plugin %s: %s", plugin->name, tmux_file);
 				system(cmd);
 			} else {
@@ -617,7 +617,7 @@ plugin_source_all(struct session *s)
 
 				/* Check if plugin.tmux file exists (standard naming) */
 				if (access(tmux_file, F_OK) == 0) {
-					snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
+					snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", tmux_file);
 					log_debug("Sourcing project plugin %s: %s", plugin->name, tmux_file);
 					system(cmd);
 				} else {
