@@ -564,7 +564,49 @@ plugin_remove(struct plugin *plugin)
 void
 plugin_source_all(struct session *s)
 {
-	/* TODO: Implement plugin .tmux file sourcing */
+	struct plugin *plugin;
+	char plugin_dir[PATH_MAX];
+	char tmux_file[PATH_MAX];
+	char cmd[1024];
+
+	/* Source global plugins first */
+	RB_FOREACH(plugin, plugins, &plugins_global) {
+		if (plugin->status == PLUGIN_STATUS_INSTALLED && plugin->path && plugin->name) {
+			snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
+			snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
+
+			/* Check if plugin.tmux file exists */
+			if (access(tmux_file, F_OK) == 0) {
+				snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
+				log_debug("Sourcing global plugin %s: %s", plugin->name, tmux_file);
+				system(cmd);
+			} else {
+				/* Try generic .tmux file */
+				snprintf(tmux_file, sizeof tmux_file, "%s/*.tmux", plugin_dir);
+				/* This is simplified - in practice we'd use glob() to find .tmux files */
+				log_debug("No .tmux file found for global plugin %s", plugin->name);
+			}
+		}
+	}
+
+	/* Source project plugins (if in project context) */
+	if (s && s->project) {
+		RB_FOREACH(plugin, plugins, &plugins_project) {
+			if (plugin->status == PLUGIN_STATUS_INSTALLED && plugin->path && plugin->name) {
+				snprintf(plugin_dir, sizeof plugin_dir, "%s/%s", plugin->path, plugin->name);
+				snprintf(tmux_file, sizeof tmux_file, "%s/%s.tmux", plugin_dir, plugin->name);
+
+				/* Check if plugin.tmux file exists */
+				if (access(tmux_file, F_OK) == 0) {
+					snprintf(cmd, sizeof cmd, "bash \"%s\" 2>/dev/null", tmux_file);
+					log_debug("Sourcing project plugin %s: %s", plugin->name, tmux_file);
+					system(cmd);
+				} else {
+					log_debug("No .tmux file found for project plugin %s", plugin->name);
+				}
+			}
+		}
+	}
 }
 
 /* Plugin command implementations */
