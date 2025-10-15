@@ -182,6 +182,9 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	char		*cause = NULL;
 	struct timeval	 tv = { .tv_sec = 3600 };
 
+	printf("DEBUG: server_start() called - starting smux server\n");
+	fflush(stdout);
+
 	sigfillset(&set);
 	sigprocmask(SIG_BLOCK, &set, &oldset);
 
