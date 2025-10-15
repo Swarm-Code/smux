@@ -597,7 +597,7 @@ plugin_source_all(struct session *s)
 					for (i = 0; i < (int)glob_buf.gl_pathc; i++) {
 						snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", glob_buf.gl_pathv[i]);
 						log_debug("Sourcing global plugin %s: %s", plugin->name, glob_buf.gl_pathv[i]);
-						system(cmd);
+						/* system(cmd); */ /* Temporarily disabled to debug hang */
 						break; /* Only source the first .tmux file found */
 					}
 					globfree(&glob_buf);
