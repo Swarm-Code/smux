@@ -11,10 +11,10 @@
 ## 🎨 Visual Enhancements Delivered
 
 ### 📂 Projects (Top Level)
-- **Bold accent color**: `#95E6CB` for maximum visibility
+- **Explicit label**: Bold "PROJECT" text in accent color `#95E6CB`
 - **Folder icon**: 📂 for instant recognition
-- **Format**: `"📂 ProjectName - X sessions (created time)"`
-- **Purpose**: Clear project identification at top of hierarchy
+- **Format**: `"PROJECT 📂 ProjectName - X sessions (created time)"`
+- **Purpose**: Unmistakable project identification with explicit labeling
 
 ### 🖥️ Sessions (Under Projects or Standalone)
 - **Tree connectors**: `├─` for hierarchical structure
