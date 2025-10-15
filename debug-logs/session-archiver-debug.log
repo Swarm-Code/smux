@@ -3946,3 +3946,27 @@ Let me chronolog..."
 [2025-10-15T07:13:42.101Z] ✅ Session commit created
 [2025-10-15T07:13:42.101Z] === SESSION ARCHIVER COMPLETE ===
 
+[2025-10-15T07:13:51.127Z] === SESSION ARCHIVER START ===
+[2025-10-15T07:13:51.128Z] 📋 Processing session: d9d55975
+[2025-10-15T07:13:51.128Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T07:13:51.128Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T07:13:51.137Z] 📊 Parsing 1392 transcript lines, checking recent 150
+[2025-10-15T07:13:51.137Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T07:13:51.138Z] 💬 User prompt: ""
+[2025-10-15T07:13:51.138Z] 🔧 Tool: Read
+[2025-10-15T07:13:51.146Z] 💾 Commit created: Message 1
+[2025-10-15T07:13:51.146Z] ✅ Session commit created
+[2025-10-15T07:13:51.146Z] === SESSION ARCHIVER COMPLETE ===
+
+[2025-10-15T07:13:58.457Z] === SESSION ARCHIVER START ===
+[2025-10-15T07:13:58.457Z] 📋 Processing session: d9d55975
+[2025-10-15T07:13:58.457Z] 📁 Session worktree: /home/alejandro/Swarm/rapala/rapala-production/conversations/session-d9d55975
+[2025-10-15T07:13:58.458Z] 📋 Session worktree exists: d9d55975
+[2025-10-15T07:13:58.464Z] 📊 Parsing 1396 transcript lines, checking recent 150
+[2025-10-15T07:13:58.464Z] 🔍 Transcript path: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+[2025-10-15T07:13:58.464Z] 💬 User prompt: ""
+[2025-10-15T07:13:58.464Z] 🔧 Tool: Bash
+[2025-10-15T07:13:58.472Z] 💾 Commit created: Message 1
+[2025-10-15T07:13:58.472Z] ✅ Session commit created
+[2025-10-15T07:13:58.472Z] === SESSION ARCHIVER COMPLETE ===
+
