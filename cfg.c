@@ -571,7 +571,6 @@ plugin_remove(struct plugin *plugin)
 void
 plugin_source_all(struct session *s)
 {
-	static int sourcing_in_progress = 0;
 	struct plugin *plugin;
 	char plugin_dir[PATH_MAX];
 	char tmux_file[PATH_MAX];
@@ -579,15 +578,6 @@ plugin_source_all(struct session *s)
 	char cmd[1024];
 	glob_t glob_buf;
 	int i;
-
-	/* Prevent recursive plugin sourcing */
-	if (sourcing_in_progress) {
-		log_debug("Plugin sourcing already in progress, skipping to prevent circular dependency");
-		return;
-	}
-
-	/* Set flag and ensure it's always reset via cleanup function */
-	sourcing_in_progress = 1;
 
 	/* Source global plugins first */
 	RB_FOREACH(plugin, plugins, &plugins_global) {
