@@ -190,6 +190,58 @@ cmd_set_option_exec(struct cmd *self, struct cmdq_item *item)
 			cmdq_error(item, "empty value");
 			goto fail;
 		}
+
+		/* Handle @plugin declarations for TPM integration */
+		if (strcmp(name, "@plugin") == 0) {
+			char *plugin_name = NULL, *plugin_source = NULL, *plugin_branch = NULL;
+			struct plugin *plugin;
+			struct session *s = NULL;
+			int scope = PLUGIN_GLOBAL;
+
+			/* Parse plugin declaration */
+			if (plugin_parse_declaration(value, &plugin_name, &plugin_source, &plugin_branch) != 0) {
+				cmdq_error(item, "invalid plugin declaration: %s", value);
+				goto fail;
+			}
+
+			/* Determine scope (project vs global) */
+			if (target && target->s && target->s->project) {
+				scope = PLUGIN_PROJECT;
+				s = target->s;
+			}
+
+			/* Create or update plugin */
+			plugin = plugin_find(plugin_name, scope);
+			if (plugin == NULL) {
+				plugin = plugin_create(plugin_name, plugin_source, scope);
+				if (plugin == NULL) {
+					cmdq_error(item, "failed to create plugin: %s", plugin_name);
+					free(plugin_name);
+					free(plugin_source);
+					free(plugin_branch);
+					goto fail;
+				}
+			}
+
+			/* Update plugin properties */
+			if (plugin_source) {
+				free(plugin->source);
+				plugin->source = xstrdup(plugin_source);
+			}
+			if (plugin_branch) {
+				free(plugin->branch);
+				plugin->branch = xstrdup(plugin_branch);
+			}
+
+			/* Set plugin path based on scope */
+			plugin_set_path(plugin, plugin_get_path(scope, s));
+			plugin_set_status(plugin, PLUGIN_STATUS_DECLARED, NULL);
+
+			free(plugin_name);
+			free(plugin_source);
+			free(plugin_branch);
+		}
+
 		options_set_string(oo, name, append, "%s", value);
 	} else if (idx == -1 && !options_is_array(parent)) {
 		error = options_from_string(oo, options_table_entry(parent),
