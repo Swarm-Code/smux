@@ -589,7 +589,7 @@ plugin_source_all(struct session *s)
 			if (access(tmux_file, F_OK) == 0) {
 				snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", tmux_file);
 				log_debug("Sourcing global plugin %s: %s", plugin->name, tmux_file);
-				/* system(cmd); */ /* Temporarily disabled to debug hang */
+				system(cmd);
 			} else {
 				/* Use glob to find any .tmux file in the plugin directory */
 				snprintf(glob_pattern, sizeof glob_pattern, "%s/*.tmux", plugin_dir);
@@ -597,7 +597,7 @@ plugin_source_all(struct session *s)
 					for (i = 0; i < (int)glob_buf.gl_pathc; i++) {
 						snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", glob_buf.gl_pathv[i]);
 						log_debug("Sourcing global plugin %s: %s", plugin->name, glob_buf.gl_pathv[i]);
-						/* system(cmd); */ /* Temporarily disabled to debug hang */
+						system(cmd);
 						break; /* Only source the first .tmux file found */
 					}
 					globfree(&glob_buf);
@@ -619,7 +619,7 @@ plugin_source_all(struct session *s)
 				if (access(tmux_file, F_OK) == 0) {
 					snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", tmux_file);
 					log_debug("Sourcing project plugin %s: %s", plugin->name, tmux_file);
-					/* system(cmd); */ /* Temporarily disabled to debug hang */
+					system(cmd);
 				} else {
 					/* Use glob to find any .tmux file in the plugin directory */
 					snprintf(glob_pattern, sizeof glob_pattern, "%s/*.tmux", plugin_dir);
@@ -627,7 +627,7 @@ plugin_source_all(struct session *s)
 						for (i = 0; i < (int)glob_buf.gl_pathc; i++) {
 							snprintf(cmd, sizeof cmd, "mkdir -p /tmp/smux-bin && ln -sf \"$(which smux)\" /tmp/smux-bin/tmux 2>/dev/null; export PATH=\"/tmp/smux-bin:$PATH\" && bash \"%s\" 2>/dev/null", glob_buf.gl_pathv[i]);
 							log_debug("Sourcing project plugin %s: %s", plugin->name, glob_buf.gl_pathv[i]);
-							/* system(cmd); */ /* Temporarily disabled to debug hang */
+							system(cmd);
 							break; /* Only source the first .tmux file found */
 						}
 						globfree(&glob_buf);
