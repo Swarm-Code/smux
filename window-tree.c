@@ -54,7 +54,7 @@ static void		 window_tree_build_project(struct project *, void *,
 	",project_format," \
 		"#[bold,fg=#95E6CB]PROJECT:#[default] #[fg=#BFBDB6]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default]" \
 	"," \
-		"#[fg=#E6A95E]SESSION 🖥️:#[default] #{session_windows} windows" \
+		"#[fg=#E6A95E]SESSION:#[default] #{session_windows} windows" \
 		"#{?session_grouped, " \
 			"(group #{session_group}: " \
 			"#{session_group_list})," \
