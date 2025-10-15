@@ -361,8 +361,13 @@ proc_fork_and_daemon(int *fd)
 	pid_t	pid;
 	int	pair[2];
 
+	/* Create a file to prove this function was called */
+	system("touch /tmp/proc_fork_and_daemon_CALLED");
+
 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pair) != 0)
 		fatal("socketpair failed");
+
+	system("touch /tmp/proc_fork_and_daemon_AFTER_SOCKETPAIR");
 	fprintf(stderr, "DEBUG: About to fork()\n");
 	fflush(stderr);
 	pid = fork();
