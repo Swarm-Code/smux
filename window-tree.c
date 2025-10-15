@@ -45,21 +45,30 @@ static void		 window_tree_build_project(struct project *, void *,
 #define WINDOW_TREE_DEFAULT_FORMAT \
 	"#{?pane_format," \
 		"#{?pane_marked,#[reverse],}" \
+		"#[fg=#475266]    └─ #[fg=#D19A66,italics]PANE #[fg=#565B66,noitalics]🪟 " \
+		"#{?pane_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}" \
 		"#{pane_current_command}#{?pane_active,*,}#{?pane_marked,M,}" \
-		"#{?#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}},: \"#{pane_title}\",}" \
+		"#{?pane_active,#[fg=#95E6CB] ●,#[fg=#565B66]}" \
+		"#{?#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}},#[fg=#565B66]: \"#{pane_title}\",}" \
+		"#[default]" \
 	",window_format," \
 		"#{?window_marked_flag,#[reverse],}" \
-		"#{window_name}#{window_flags}" \
-		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},: \"#{pane_title}\",}" \
+		"#[fg=#475266]    └─ #[fg=#D19A66,italics]PANE #[fg=#565B66,noitalics]🪟 " \
+		"#{?window_active,#[fg=#95E6CB,bold],#[fg=#BFBDB6]}" \
+		"#{window_name}#{?window_active,#[fg=#95E6CB] ●,#[fg=#565B66]}#{window_flags}" \
+		"#{?#{&&:#{==:#{window_panes},1},#{&&:#{pane_title},#{!=:#{pane_title},#{host_short}}}},#[fg=#565B66]: \"#{pane_title}\",}" \
+		"#[default]" \
 	",project_format," \
-		"#[bold,fg=magenta]PROJECT:#[default] #[fg=cyan]#{project_name}#[default] #[dim](#{project_sessions} sessions)#[default]" \
+		"\n#[fg=#95E6CB,bold]PROJECT 📂 #{project_name}#[fg=#BFBDB6,nobold] - #{project_sessions} sessions #[fg=#565B66](#{t:project_created})#[default]\n" \
 	"," \
-		"#[fg=yellow]SESSION:#[default] #{session_windows} windows" \
+		"#{?session_project,#[fg=#475266]  ├─ ,}" \
+		"#[fg=#E6A95E,bold]SESSION #[fg=#BFBDB6,bold]🖥️  #{session_name}#[nobold] " \
+		"#[fg=#565B66]- #{session_windows} windows" \
 		"#{?session_grouped, " \
-			"(group #{session_group}: " \
+			"#[fg=#565B66](group #{session_group}: " \
 			"#{session_group_list})," \
 		"}" \
-		"#{?session_attached, #[fg=green](attached)#[default],}" \
+		"#{?session_attached,#[fg=#95E6CB,bold] ● ACTIVE#[default],}" \
 	"}"
 
 #define WINDOW_TREE_DEFAULT_KEY_FORMAT \
