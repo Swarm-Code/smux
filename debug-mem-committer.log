@@ -8794,3 +8794,15 @@ tool_input: {
     {
       "content": "Add extensive logging to format_expand to trace #[default] parsing",
       "st
+
+=== 2025-10-15T20:16:27.308Z ===
+Tool: Bash
+File: undefined
+Timestamp: undefined
+Transcript: /home/alejandro/.claude/projects/-home-alejandro-Swarm-smux/d9d55975-8640-489b-ae48-24ff15da6d47.jsonl
+toolRecord keys: session_id, transcript_path, cwd, permission_mode, hook_event_name, tool_name, tool_input, tool_response
+tool_input type: object
+tool_input: {
+  "command": "ls -la /home/alejandro/Swarm/smux/smux 2>/dev/null || echo \"Binary not found\"",
+  "description": "Check if smux binary exists"
+}
