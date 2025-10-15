@@ -64,13 +64,20 @@ All themes use the same dark color scheme (`#0B0E14` background) for consistency
 
 ## Enhanced Session/Project Selector
 
-All themes now include **enhanced selector styling** that matches the minimal dark aesthetic:
+All themes now include **enhanced selector styling** with visual hierarchy and minimal dark aesthetic:
+
+### Visual Hierarchy Features
+- **📂 Projects**: Bold accent color (`#95E6CB`) with folder icons
+- **🖥️ Sessions**: Tree connectors (`├─`) with computer icons and status indicators
+- **🪟 Windows**: Indented (`└─`) with window icons and active highlighting
+- **● Active indicators**: Bright accent highlights for current elements
 
 ### Selector Features
 - **Dark background**: `#0B0E14` (matches status bar)
 - **Light text**: `#BFBDB6` (matches status bar text)
 - **Accent cursor**: `#95E6CB` (matches prefix highlight)
 - **Consistent pane indicators**: Proper color coordination
+- **Visual differentiation**: Clear hierarchy with icons, indentation, and colors
 
 ### How to Access Selectors
 - **Session selector**: `Ctrl+B` then `s`
