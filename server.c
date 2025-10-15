@@ -188,11 +188,20 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	sigfillset(&set);
 	sigprocmask(SIG_BLOCK, &set, &oldset);
 
+	printf("DEBUG: Setting up server process, flags=%#llx\n", (unsigned long long)flags);
+	fflush(stdout);
+
 	if (~flags & CLIENT_NOFORK) {
+		printf("DEBUG: Forking server daemon\n");
+		fflush(stdout);
 		if (proc_fork_and_daemon(&fd) != 0) {
+			printf("DEBUG: Parent process returning fd=%d\n", fd);
+			fflush(stdout);
 			sigprocmask(SIG_SETMASK, &oldset, NULL);
 			return (fd);
 		}
+		printf("DEBUG: Child process continuing server setup\n");
+		fflush(stdout);
 	}
 	proc_clear_signals(client, 0);
 	server_client_flags = flags;
