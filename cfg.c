@@ -279,3 +279,179 @@ out:
 	cfg_causes = NULL;
 	cfg_ncauses = 0;
 }
+
+/* Plugin management functions */
+struct plugins plugins_global = RB_INITIALIZER(&plugins_global);
+struct plugins plugins_project = RB_INITIALIZER(&plugins_project);
+
+int
+plugin_cmp(struct plugin *a, struct plugin *b)
+{
+	return strcmp(a->name, b->name);
+}
+
+RB_GENERATE(plugins, plugin, entry, plugin_cmp);
+
+struct plugin *
+plugin_find(const char *name, int scope)
+{
+	struct plugin find;
+	find.name = (char *)name;
+
+	if (scope == PLUGIN_GLOBAL)
+		return RB_FIND(plugins, &plugins_global, &find);
+	else
+		return RB_FIND(plugins, &plugins_project, &find);
+}
+
+struct plugin *
+plugin_create(const char *name, const char *source, int scope)
+{
+	struct plugin *plugin;
+
+	plugin = xcalloc(1, sizeof *plugin);
+	plugin->name = xstrdup(name);
+	plugin->source = source ? xstrdup(source) : NULL;
+	plugin->branch = NULL;
+	plugin->path = NULL;
+	plugin->scope = scope;
+	plugin->status = PLUGIN_STATUS_DECLARED;
+	plugin->error_msg = NULL;
+	gettimeofday(&plugin->install_time, NULL);
+
+	if (scope == PLUGIN_GLOBAL)
+		RB_INSERT(plugins, &plugins_global, plugin);
+	else
+		RB_INSERT(plugins, &plugins_project, plugin);
+
+	return plugin;
+}
+
+void
+plugin_destroy(struct plugin *plugin)
+{
+	if (plugin->scope == PLUGIN_GLOBAL)
+		RB_REMOVE(plugins, &plugins_global, plugin);
+	else
+		RB_REMOVE(plugins, &plugins_project, plugin);
+
+	free(plugin->name);
+	free(plugin->source);
+	free(plugin->branch);
+	free(plugin->path);
+	free(plugin->error_msg);
+	free(plugin);
+}
+
+void
+plugin_set_path(struct plugin *plugin, const char *path)
+{
+	free(plugin->path);
+	plugin->path = path ? xstrdup(path) : NULL;
+}
+
+void
+plugin_set_status(struct plugin *plugin, int status, const char *error_msg)
+{
+	plugin->status = status;
+	free(plugin->error_msg);
+	plugin->error_msg = error_msg ? xstrdup(error_msg) : NULL;
+}
+
+int
+plugin_parse_declaration(const char *declaration, char **name, char **source, char **branch)
+{
+	char *decl_copy, *token, *hash_pos;
+
+	*name = *source = *branch = NULL;
+
+	decl_copy = xstrdup(declaration);
+
+	/* Look for branch specification (after #) */
+	hash_pos = strchr(decl_copy, '#');
+	if (hash_pos != NULL) {
+		*hash_pos = '\0';
+		*branch = xstrdup(hash_pos + 1);
+	}
+
+	/* Extract source */
+	*source = xstrdup(decl_copy);
+
+	/* Extract plugin name from source */
+	token = strrchr(decl_copy, '/');
+	if (token != NULL) {
+		*name = xstrdup(token + 1);
+	} else {
+		*name = xstrdup(decl_copy);
+	}
+
+	free(decl_copy);
+	return 0;
+}
+
+const char *
+plugin_get_path(int scope, struct session *s)
+{
+	static char path[PATH_MAX];
+	const char *home;
+
+	home = find_home();
+	if (home == NULL)
+		return NULL;
+
+	if (scope == PLUGIN_GLOBAL) {
+		snprintf(path, sizeof path, "%s/.smux/plugins/global", home);
+	} else if (s && s->project) {
+		snprintf(path, sizeof path, "%s/.smux/plugins/%s", home, s->project->name);
+	} else {
+		snprintf(path, sizeof path, "%s/.smux/plugins/global", home);
+	}
+
+	return path;
+}
+
+void
+plugin_init(void)
+{
+	/* Plugin initialization - create directories if needed */
+	const char *home;
+	char path[PATH_MAX];
+
+	home = find_home();
+	if (home == NULL)
+		return;
+
+	/* Create global plugin directory */
+	snprintf(path, sizeof path, "%s/.smux/plugins", home);
+	mkdir(path, 0755);
+
+	snprintf(path, sizeof path, "%s/.smux/plugins/global", home);
+	mkdir(path, 0755);
+}
+
+int
+plugin_install(struct plugin *plugin)
+{
+	/* TODO: Implement git clone functionality */
+	return 0;
+}
+
+int
+plugin_update(struct plugin *plugin)
+{
+	/* TODO: Implement git pull functionality */
+	return 0;
+}
+
+int
+plugin_remove(struct plugin *plugin)
+{
+	/* TODO: Implement directory removal */
+	return 0;
+}
+
+void
+plugin_source_all(struct session *s)
+{
+	/* TODO: Implement plugin .tmux file sourcing */
+}
