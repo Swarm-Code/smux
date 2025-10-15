@@ -17,11 +17,12 @@
 - **Purpose**: Unmistakable project identification with explicit labeling
 
 ### 🖥️ Sessions (Under Projects or Standalone)
+- **Explicit label**: Bold "SESSION" text in orange color `#E6A95E`
 - **Tree connectors**: `├─` for hierarchical structure
 - **Computer icon**: 🖥️ for session identification
 - **Active indicators**: `● ACTIVE` for attached sessions
-- **Format**: `"├─ 🖥️ SessionName - X windows ● ACTIVE"`
-- **Purpose**: Show session relationships and status
+- **Format**: `"├─ SESSION 🖥️ SessionName - X windows ● ACTIVE"`
+- **Purpose**: Clear session identification with explicit labeling
 
 ### 🪟 Windows (Under Sessions)
 - **Deep indentation**: `└─` for clear hierarchy
