@@ -137,6 +137,7 @@ dist_smux_SOURCES = \
 	cmd-set-environment.c \
 	cmd-set-option.c \
 	cmd-show-environment.c \
+	cmd-show-keys.c \
 	cmd-show-messages.c \
 	cmd-show-options.c \
 	cmd-show-prompt-history.c \
@@ -166,6 +167,8 @@ dist_smux_SOURCES = \
 	job.c \
 	key-bindings.c \
 	key-string.c \
+	keys-categories.c \
+	keys-search.c \
 	layout-custom.c \
 	layout-set.c \
 	layout.c \
@@ -208,6 +211,7 @@ dist_smux_SOURCES = \
 	window-clock.c \
 	window-copy.c \
 	window-customize.c \
+	window-keys.c \
 	window-tree.c \
 	window.c \
 	xmalloc.c \

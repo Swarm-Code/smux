@@ -1889,6 +1889,28 @@ enum prompt_type {
 	PROMPT_TYPE_INVALID = 0xff
 };
 
+/* Keys category. */
+enum keys_category {
+	KEYS_CAT_PROJECT,
+	KEYS_CAT_SESSION,
+	KEYS_CAT_WINDOW,
+	KEYS_CAT_PANE,
+	KEYS_CAT_COPY,
+	KEYS_CAT_NAVIGATION,
+	KEYS_CAT_LAYOUT,
+	KEYS_CAT_MISC,
+	KEYS_CAT_MOUSE
+};
+
+/* Keys category definition. */
+struct keys_category_def {
+	enum keys_category	 type;
+	const char		*name;
+	const char		*icon;
+	const char		*color;
+	const char		*description;
+};
+
 /* File in client. */
 typedef void (*client_file_cb) (struct client *, const char *, int, int,
     struct evbuffer *, void *);
@@ -2859,6 +2881,22 @@ struct cmdq_item *key_bindings_dispatch(struct key_binding *,
 key_code	 key_string_lookup_string(const char *);
 const char	*key_string_lookup_key(key_code, int);
 
+/* keys-categories.c */
+const struct keys_category_def *keys_category_get(enum keys_category);
+const struct keys_category_def *keys_category_get_by_index(u_int);
+u_int		 keys_category_count(void);
+enum keys_category keys_category_match(const char *, const char *);
+int		 keys_category_cmp(enum keys_category, enum keys_category);
+const char	*keys_category_name(enum keys_category);
+const char	*keys_category_icon(enum keys_category);
+const char	*keys_category_color(enum keys_category);
+const char	*keys_category_description(enum keys_category);
+char		*keys_generate_markdown_cheatsheet(void);
+
+/* keys-search.c */
+int		 keys_search_match(const char *, const char *);
+int		 keys_search_score(const char *, const char *);
+
 /* alerts.c */
 void	alerts_reset_all(void);
 void	alerts_queue(struct window *, int);
@@ -3436,6 +3474,8 @@ void	 mode_tree_run_command(struct client *, struct cmd_find_state *,
 
 /* window-buffer.c */
 extern const struct window_mode window_buffer_mode;
+/* window-keys.c */
+extern const struct window_mode window_keys_mode;
 
 /* window-tree.c */
 extern const struct window_mode window_tree_mode;

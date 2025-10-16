@@ -1,0 +1,12 @@
+SIGINT is used by the debugger.
+Are you sure you want to change it? (y or n) [answered Y; input not from terminal]
+Breakpoint 1 at 0x1fda0: file tmux.c, line 434.
+Breakpoint 2 at 0x90d10: file server.c, line 184.
+Breakpoint 3 at 0x90390: file server.c, line 318.
+Function "event_base_loop" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+No breakpoint number 4.
+
+===== BREAKPOINT 4: event_base_loop() =====
+comprehensive-debug.gdb:53: Error in sourced command file:
+No stack.

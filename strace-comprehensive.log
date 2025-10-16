@@ -1,0 +1,157 @@
+2658128 17:57:32.163174 execve("./smux", ["./smux", "new", "-s", "test-strace"], 0x7ffd50b2c530 /* 90 vars */) = 0 <0.000131>
+2658128 17:57:32.163441 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000006>
+2658128 17:57:32.163486 close(3)        = 0 <0.000004>
+2658128 17:57:32.163503 openat(AT_FDCWD, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000004>
+2658128 17:57:32.163517 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\346\6\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\33\0\32\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\314\0\0\0\0\0\0`\314\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\271i\4\0\0\0\0\0\271i\4\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0"..., 832) = 832 <0.000003>
+2658128 17:57:32.163589 close(3)        = 0 <0.000001>
+2658128 17:57:32.163597 openat(AT_FDCWD, "/usr/lib/libevent_core-2.1.so.7", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+2658128 17:57:32.163607 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\240\21\3\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\31\0\30\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@|\0\0\0\0\0\0@|\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\200\0\0\0\0\0\0\0\200\0\0\0\0\0\0\0\200\0\0\0\0\0\0\21\305\1\0\0\0\0\0\21\305\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\2\0\0\0\0\0\0P\2\0\0\0\0\0"..., 832) = 832 <0.000002>
+2658128 17:57:32.163651 close(3)        = 0 <0.000002>
+2658128 17:57:32.163659 openat(AT_FDCWD, "/usr/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+2658128 17:57:32.163668 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\360\301\20\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0\"\0!\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0 \356\0\0\0\0\0\0 \356\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\360\0\0\0\0\0\0\0\360\0\0\0\0\0\0\0\360\0\0\0\0\0\0\25\250\10\0\0\0\0\0\25\250\10\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\240\t\0\0\0\0\0\0\240\t\0\0\0\0\0"..., 832) = 832 <0.000002>
+2658128 17:57:32.163718 close(3)        = 0 <0.000001>
+2658128 17:57:32.163726 openat(AT_FDCWD, "/usr/lib/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3 <0.000002>
+2658128 17:57:32.163734 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\0\2\1\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0\35\0\34\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\330\"\0\0\0\0\0\0\330\"\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0000\0\0\0\0\0\0\0000\0\0\0\0\0\0\0000\0\0\0\0\0\0\351\206\0\0\0\0\0\0\351\206\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\300\0\0\0\0\0\0\0\300\0\0\0\0\0\0"..., 832) = 832 <0.000002>
+2658128 17:57:32.163786 close(3)        = 0 <0.000003>
+2658128 17:57:32.163795 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000002>
+2658128 17:57:32.163803 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000x\2\0\0\0\0\0@\0\0\0\0\0\0\0`\275 \0\0\0\0\0\0\0\0\0@\08\0\20\0@\0@\0?\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\200\3\0\0\0\0\0\0\200\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0 I \0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000002>
+2658128 17:57:32.163866 close(3)        = 0 <0.000003>
+2658128 17:57:32.164141 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+2658128 17:57:32.164160 close(3)        = 0 <0.000001>
+2658128 17:57:32.164176 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3 <0.000003>
+2658128 17:57:32.164195 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0\0\0\0\354\0\0\0\6\0\0\0\24\200\0\0\0\236\246\36p\237\272\353`\240\206\0p\241\232\315`\242e\342p\243\203\351\340\244j\256p\2455\247`\246S\312\360\247\25\211`\2503\254\360\250\376\245\340\252\23\216\360\252\336\207\340\253\363p\360\254\276i\340\255\323R\360\256\236K\340\257\2634\360\260~-\340\261\234Qp\262gJ`\263|3p\264G,`\265\\\25p\266'\16`\267;\367p\270\6\360`\271\33\331p\271\346\322`\273\4\365\360\273\306\264`\274\344\327\360\275\257\320\340\276\304\271\360\277\217\262\340\300\244\233\360\301o\224\340"..., 4096) = 3552 <0.000002>
+2658128 17:57:32.164218 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\6\0\0\0\0\0\0\0\354\0\0\0\6\0\0\0\24\377\377\377\377^\3\360\220\377\377\377\377\236\246\36p\377\377\377\377\237\272\353`\377\377\377\377\240\206\0p\377\377\377\377\241\232\315`\377\377\377\377\242e\342p\377\377\377\377\243\203\351\340\377\377\377\377\244j\256p\377\377\377\377\2455\247`\377\377\377\377\246S\312\360\377\377\377\377\247\25\211`\377\377\377\377\2503\254\360\377\377\377\377\250\376\245\340\377\377\377\377\252\23\216\360\377\377\377\377\252\336\207\340\377\377\377\377\253\363p\360\377\377\377\377\254\276i\340\377\377\377\377\255\323R\360\377\377\377\377\256\236K\340\377\377\377\377"..., 4096) = 2260 <0.000002>
+2658128 17:57:32.164233 close(3)        = 0 <0.000002>
+2658128 17:57:32.164710 socket(AF_UNIX, SOCK_STREAM, 0) = 5 <0.000006>
+2658128 17:57:32.164723 connect(5, {sa_family=AF_UNIX, sun_path="/tmp/smux-1000/default"}, 110) = -1 ECONNREFUSED (Connection refused) <0.000009>
+2658128 17:57:32.164761 close(5)        = 0 <0.000003>
+2658128 17:57:32.164770 openat(AT_FDCWD, "/tmp/smux-1000/default.lock", O_WRONLY|O_CREAT, 0600) = 5 <0.000010>
+2658128 17:57:32.164793 socket(AF_UNIX, SOCK_STREAM, 0) = 6 <0.000003>
+2658128 17:57:32.164801 connect(6, {sa_family=AF_UNIX, sun_path="/tmp/smux-1000/default"}, 110) = -1 ECONNREFUSED (Connection refused) <0.000003>
+2658128 17:57:32.164811 close(6)        = 0 <0.000002>
+2658128 17:57:32.164829 openat(AT_FDCWD, "/tmp/smux-debug-trace.log", O_WRONLY|O_CREAT|O_APPEND, 0666) = 6 <0.000003>
+2658128 17:57:32.164856 write(6, "\n=== DEBUG TRACE SESSION STARTED (PID=2658128) ===\n\n", 52) = 52 <0.000003>
+2658128 17:57:32.164873 write(6, "[2025-10-15 17:57:32.164864] [server.c:193:server_start] TRACE: >>> ENTER\n", 74) = 74 <0.000002>
+2658128 17:57:32.164887 write(6, "[2025-10-15 17:57:32.164879] [server.c:194:server_start] TRACE: client = 0x55bb8e0300e0\n", 88) = 88 <0.000003>
+2658128 17:57:32.164904 write(6, "[2025-10-15 17:57:32.164894] [server.c:195:server_start] INFO: flags=0x18010000, lockfd=5\n", 90) = 90 <0.000003>
+2658128 17:57:32.164922 write(6, "[2025-10-15 17:57:32.164911] [server.c:197:server_start] TRACE: CHECKPOINT: signal_setup\n", 89) = 89 <0.000003>
+2658128 17:57:32.164946 write(6, "[2025-10-15 17:57:32.164936] [server.c:202:server_start] TRACE: CHECKPOINT: fork_daemon_check\n", 94) = 94 <0.000003>
+2658128 17:57:32.164963 write(6, "[2025-10-15 17:57:32.164953] [server.c:204:server_start] INFO: Forking daemon process\n", 86) = 86 <0.000003>
+2658128 17:57:32.164985 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f83aa370a10) = 2658129 <0.000048>
+2658128 17:57:32.165048 close(8)        = 0 <0.000003>
+2658128 17:57:32.165081 write(6, "[2025-10-15 17:57:32.165060] [server.c:207:server_start] INFO: Parent process returning fd=7\n", 93) = 93 <0.000005>
+2658128 17:57:32.165125 close(5)        = 0 <0.000003>
+2658129 17:57:32.165176 close(7)        = 0 <0.000008>
+2658128 17:57:32.165263 close(2147483647) = -1 EBADF (Bad file descriptor) <0.000001>
+2658129 17:57:32.165290 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD <unfinished ...>
+2658128 17:57:32.165343 close(5)        = 0 <0.000001>
+2658128 17:57:32.165359 close(8)        = 0 <0.000001>
+2658128 17:57:32.165369 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN|POLLOUT}], 2, -1) = 1 ([{fd=7, revents=POLLOUT}]) <0.000002>
+2658128 17:57:32.165388 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}], 2, -1 <unfinished ...>
+2658129 17:57:32.165405 <... clone resumed>, child_tidptr=0x7f83aa370a10) = 2658130 <0.000108>
+2658130 17:57:32.165493 write(6, "[2025-10-15 17:57:32.165451] [server.c:210:server_start] INFO: Child daemon process continuing\n", 95) = 95 <0.000005>
+2658130 17:57:32.165511 write(6, "[2025-10-15 17:57:32.165503] [server.c:212:server_start] TRACE: CHECKPOINT: clear_signals\n", 90) = 90 <0.000002>
+2658129 17:57:32.165560 +++ exited with 0 +++
+2658128 17:57:32.165565 <... poll resumed>) = ? ERESTART_RESTARTBLOCK (Interrupted by signal) <0.000174>
+2658128 17:57:32.165573 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2658129, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+2658128 17:57:32.165582 write(4, "\21", 1) = 1 <0.000005>
+2658128 17:57:32.165607 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}], 2, -1) = 1 ([{fd=3, revents=POLLIN}]) <0.000004>
+2658128 17:57:32.165624 read(3, "\21", 1024) = 1 <0.000004>
+2658130 17:57:32.165634 write(6, "[2025-10-15 17:57:32.165614] [server.c:216:server_start] TRACE: CHECKPOINT: event_reinit\n", 89 <unfinished ...>
+2658128 17:57:32.165637 read(3 <unfinished ...>
+2658130 17:57:32.165640 <... write resumed>) = 89 <0.000003>
+2658128 17:57:32.165645 <... read resumed>, 0x7f83aa4c71a0, 1024) = -1 EAGAIN (Resource temporarily unavailable) <0.000006>
+2658130 17:57:32.165650 close(3 <unfinished ...>
+2658128 17:57:32.165655 wait4(-1 <unfinished ...>
+2658130 17:57:32.165658 <... close resumed>) = 0 <0.000006>
+2658130 17:57:32.165664 close(4 <unfinished ...>
+2658128 17:57:32.165667 <... wait4 resumed>, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 2658129 <0.000009>
+2658130 17:57:32.165671 <... close resumed>) = 0 <0.000005>
+2658128 17:57:32.165680 wait4(-1 <unfinished ...>
+2658130 17:57:32.165686 close(3 <unfinished ...>
+2658128 17:57:32.165689 <... wait4 resumed>, 0x7fff47a6e35c, WNOHANG, NULL) = -1 ECHILD (No child processes) <0.000003>
+2658130 17:57:32.165694 <... close resumed>) = -1 EBADF (Bad file descriptor) <0.000005>
+2658128 17:57:32.165697 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}], 2, -1 <unfinished ...>
+2658130 17:57:32.165701 close(4)        = -1 EBADF (Bad file descriptor) <0.000007>
+2658130 17:57:32.165738 write(6, "[2025-10-15 17:57:32.165730] [server.c:220:server_start] TRACE: CHECKPOINT: proc_start\n", 87) = 87 <0.000002>
+2658130 17:57:32.165776 write(6, "[2025-10-15 17:57:32.165768] [server.c:222:server_start] TRACE: server_proc = 0x55bb8e031d30\n", 93) = 93 <0.000002>
+2658130 17:57:32.165789 write(6, "[2025-10-15 17:57:32.165782] [server.c:224:server_start] TRACE: CHECKPOINT: set_signals\n", 88) = 88 <0.000002>
+2658130 17:57:32.165875 write(6, "[2025-10-15 17:57:32.165869] [server.c:228:server_start] TRACE: CHECKPOINT: logging_setup\n", 90) = 90 <0.000002>
+2658130 17:57:32.165888 write(6, "[2025-10-15 17:57:32.165881] [server.c:235:server_start] TRACE: CHECKPOINT: input_key_build\n", 92) = 92 <0.000002>
+2658130 17:57:32.165930 write(6, "[2025-10-15 17:57:32.165922] [server.c:237:server_start] TRACE: CHECKPOINT: utf8_update_width_cache\n", 100) = 100 <0.000002>
+2658130 17:57:32.165952 write(6, "[2025-10-15 17:57:32.165945] [server.c:239:server_start] TRACE: CHECKPOINT: init_data_structures\n", 97) = 97 <0.000001>
+2658130 17:57:32.165965 write(6, "[2025-10-15 17:57:32.165958] [server.c:246:server_start] TRACE: CHECKPOINT: plugin_init_START\n", 94) = 94 <0.000001>
+2658130 17:57:32.165992 write(6, "[2025-10-15 17:57:32.165985] [server.c:248:server_start] TRACE: CHECKPOINT: plugin_init_END\n", 92) = 92 <0.000002>
+2658130 17:57:32.166005 write(6, "[2025-10-15 17:57:32.165998] [server.c:250:server_start] TRACE: CHECKPOINT: key_bindings_init_START\n", 100) = 100 <0.000001>
+2658130 17:57:32.167483 write(6, "[2025-10-15 17:57:32.167472] [server.c:252:server_start] TRACE: CHECKPOINT: key_bindings_init_END\n", 98) = 98 <0.000003>
+2658130 17:57:32.167498 write(6, "[2025-10-15 17:57:32.167491] [server.c:254:server_start] TRACE: CHECKPOINT: message_log_init\n", 93) = 93 <0.000002>
+2658130 17:57:32.167511 write(6, "[2025-10-15 17:57:32.167504] [server.c:258:server_start] TRACE: CHECKPOINT: create_socket_START\n", 96) = 96 <0.000006>
+2658130 17:57:32.167530 socket(AF_UNIX, SOCK_STREAM, 0) = 7 <0.000005>
+2658130 17:57:32.167594 write(6, "[2025-10-15 17:57:32.167585] [server.c:264:server_start] TRACE: server_fd = 7\n", 78) = 78 <0.000002>
+2658130 17:57:32.167609 write(6, "[2025-10-15 17:57:32.167601] [server.c:265:server_start] TRACE: CHECKPOINT: create_socket_END\n", 94) = 94 <0.000002>
+2658130 17:57:32.167669 write(6, "[2025-10-15 17:57:32.167662] [server.c:274:server_start] INFO: Unlinking lockfile: /tmp/smux-1000/default.lock\n", 111) = 111 <0.000002>
+2658130 17:57:32.167683 close(5)        = 0 <0.000008>
+2658130 17:57:32.167702 write(6, "[2025-10-15 17:57:32.167695] [server.c:290:server_start] TRACE: CHECKPOINT: timer_setup\n", 88) = 88 <0.000002>
+2658130 17:57:32.167716 write(6, "[2025-10-15 17:57:32.167709] [server.c:294:server_start] TRACE: CHECKPOINT: acl_init_START\n", 91) = 91 <0.000002>
+2658130 17:57:32.167744 write(6, "[2025-10-15 17:57:32.167734] [server.c:296:server_start] TRACE: CHECKPOINT: acl_init_END\n", 89) = 89 <0.000001>
+2658130 17:57:32.167757 write(6, "[2025-10-15 17:57:32.167749] [server.c:298:server_start] TRACE: CHECKPOINT: add_accept_START\n", 93) = 93 <0.000001>
+2658130 17:57:32.167771 write(6, "[2025-10-15 17:57:32.167764] [server.c:300:server_start] TRACE: CHECKPOINT: add_accept_END\n", 91) = 91 <0.000002>
+2658130 17:57:32.167783 write(6, "[2025-10-15 17:57:32.167776] [server.c:302:server_start] TRACE: CHECKPOINT: proc_loop_START\n", 92) = 92 <0.000002>
+2658130 17:57:32.167796 write(6, "[2025-10-15 17:57:32.167789] [server.c:303:server_start] INFO: Entering main event loop - THIS IS WHERE HANG MIGHT OCCUR\n", 121) = 121 <0.000002>
+2658130 17:57:32.167805 poll([{fd=3, events=POLLIN}, {fd=8, events=POLLIN}, {fd=7, events=POLLIN}], 3, 3600000) = 1 ([{fd=8, revents=POLLIN}]) <0.000002>
+2658130 17:57:32.167843 write(6, "[2025-10-15 17:57:32.167836] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168147 write(6, "[2025-10-15 17:57:32.168139] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000002>
+2658130 17:57:32.168160 write(6, "[2025-10-15 17:57:32.168153] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88) = 88 <0.000001>
+2658130 17:57:32.168173 write(6, "[2025-10-15 17:57:32.168166] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000002>
+2658130 17:57:32.168181 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN}], 3, 3600000) = 1 ([{fd=8, revents=POLLIN}]) <0.000002>
+2658130 17:57:32.168225 close(5)        = 0 <0.000001>
+2658130 17:57:32.168232 close(9)        = 0 <0.000001>
+2658130 17:57:32.168246 write(6, "[2025-10-15 17:57:32.168239] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168261 write(6, "[2025-10-15 17:57:32.168253] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000002>
+2658130 17:57:32.168273 write(6, "[2025-10-15 17:57:32.168266] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88) = 88 <0.000002>
+2658130 17:57:32.168285 write(6, "[2025-10-15 17:57:32.168279] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000002>
+2658130 17:57:32.168292 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN}], 3, 3600000) = 1 ([{fd=8, revents=POLLIN}]) <0.000002>
+2658130 17:57:32.168315 write(6, "[2025-10-15 17:57:32.168308] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168337 write(6, "[2025-10-15 17:57:32.168330] [format.c:5683:format_expand] TRACE: FORMAT START: \"test-strace\"\n", 94) = 94 <0.000001>
+2658130 17:57:32.168350 write(6, "[2025-10-15 17:57:32.168343] [format.c:5688:format_expand] TRACE: FORMAT END: \"test-strace\"\n", 92) = 92 <0.000002>
+2658130 17:57:32.168399 write(6, "[2025-10-15 17:57:32.168392] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000001>
+2658130 17:57:32.168412 write(6, "[2025-10-15 17:57:32.168405] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88) = 88 <0.000009>
+2658130 17:57:32.168435 write(6, "[2025-10-15 17:57:32.168427] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000002>
+2658130 17:57:32.168443 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN|POLLOUT}], 3, 3599999) = 1 ([{fd=8, revents=POLLOUT}]) <0.000002>
+2658128 17:57:32.168468 <... poll resumed>) = 1 ([{fd=7, revents=POLLIN}]) <0.002766>
+2658130 17:57:32.168500 write(6, "[2025-10-15 17:57:32.168487] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000001>
+2658128 17:57:32.168510 close(2)        = 0 <0.000002>
+2658130 17:57:32.168519 write(6, "[2025-10-15 17:57:32.168507] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98 <unfinished ...>
+2658128 17:57:32.168522 poll([{fd=3, events=POLLIN}, {fd=5, events=POLLOUT}, {fd=7, events=POLLIN|POLLOUT}], 3, -1 <unfinished ...>
+2658130 17:57:32.168526 <... write resumed>) = 98 <0.000004>
+2658128 17:57:32.168528 <... poll resumed>) = 2 ([{fd=5, revents=POLLOUT}, {fd=7, revents=POLLOUT}]) <0.000002>
+2658130 17:57:32.168536 write(6, "[2025-10-15 17:57:32.168529] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88 <unfinished ...>
+2658128 17:57:32.168542 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}], 2, -1 <unfinished ...>
+2658130 17:57:32.168544 <... write resumed>) = 88 <0.000005>
+2658130 17:57:32.168556 write(6, "[2025-10-15 17:57:32.168546] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000003>
+2658130 17:57:32.168566 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN}], 3, 3599999) = 1 ([{fd=8, revents=POLLIN}]) <0.000003>
+2658130 17:57:32.168591 write(6, "[2025-10-15 17:57:32.168583] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168604 write(6, "[2025-10-15 17:57:32.168597] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000002>
+2658130 17:57:32.168619 write(6, "[2025-10-15 17:57:32.168610] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88) = 88 <0.000003>
+2658130 17:57:32.168635 write(6, "[2025-10-15 17:57:32.168626] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000002>
+2658130 17:57:32.168642 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN|POLLOUT}], 3, 3599999) = 1 ([{fd=8, revents=POLLOUT}]) <0.000002>
+2658128 17:57:32.168654 <... poll resumed>) = 1 ([{fd=7, revents=POLLIN}]) <0.000110>
+2658130 17:57:32.168662 write(6, "[2025-10-15 17:57:32.168655] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168675 write(6, "[2025-10-15 17:57:32.168668] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000002>
+2658130 17:57:32.168688 write(6, "[2025-10-15 17:57:32.168681] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88 <unfinished ...>
+2658128 17:57:32.168691 poll([{fd=3, events=POLLIN}, {fd=5, events=POLLOUT}, {fd=7, events=POLLIN}], 3, -1 <unfinished ...>
+2658130 17:57:32.168693 <... write resumed>) = 88 <0.000003>
+2658128 17:57:32.168695 <... poll resumed>) = 1 ([{fd=5, revents=POLLOUT}]) <0.000002>
+2658130 17:57:32.168703 write(6, "[2025-10-15 17:57:32.168696] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000003>
+2658130 17:57:32.168712 poll([{fd=3, events=POLLIN}, {fd=7, events=POLLIN}, {fd=8, events=POLLIN}], 3, 3599999) = 1 ([{fd=8, revents=POLLIN|POLLHUP}]) <0.000101>
+2658128 17:57:32.168825 +++ exited with 1 +++
+2658130 17:57:32.168836 close(8)        = 0 <0.000007>
+2658130 17:57:32.168856 write(6, "[2025-10-15 17:57:32.168849] [server.c:331:server_loop] TRACE: cmdq_next processing start\n", 90) = 90 <0.000002>
+2658130 17:57:32.168869 write(6, "[2025-10-15 17:57:32.168862] [server.c:339:server_loop] TRACE: cmdq_next processing end (items=0)\n", 98) = 98 <0.000002>
+2658130 17:57:32.168882 write(6, "[2025-10-15 17:57:32.168875] [server.c:341:server_loop] TRACE: server_client_loop start\n", 88) = 88 <0.000002>
+2658130 17:57:32.168895 write(6, "[2025-10-15 17:57:32.168888] [server.c:343:server_loop] TRACE: server_client_loop end\n", 86) = 86 <0.000002>
+2658130 17:57:32.168908 write(6, "[2025-10-15 17:57:32.168901] [server.c:305:server_start] TRACE: CHECKPOINT: proc_loop_END\n", 90) = 90 <0.000002>
+2658130 17:57:32.168927 write(6, "[2025-10-15 17:57:32.168920] [server.c:307:server_start] INFO: Event loop exited normally\n", 90) = 90 <0.000002>
+2658130 17:57:32.168936 write(6, "\n=== DEBUG TRACE SESSION ENDED ===\n", 35) = 35 <0.000002>
+2658130 17:57:32.168944 close(6)        = 0 <0.000002>
+2658130 17:57:32.169037 +++ exited with 0 +++

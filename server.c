@@ -35,6 +35,12 @@
 
 #include "tmux.h"
 
+/* Debug tracing */
+#define DEBUG_TRACE_IMPL
+int debug_trace_level = 5;
+FILE *debug_trace_file = NULL;
+#include "debug-trace.h"
+
 /*
  * Main server functions.
  */
@@ -182,54 +188,81 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 	char		*cause = NULL;
 	struct timeval	 tv = { .tv_sec = 3600 };
 
+	/* Initialize debug tracing */
+	debug_trace_init("/tmp/smux-debug-trace.log");
+	DEBUG_ENTER();
+	DEBUG_VAR_PTR(client);
+	DEBUG_INFO("flags=0x%lx, lockfd=%d", flags, lockfd);
 
+	DEBUG_CHECKPOINT("signal_setup");
 	sigfillset(&set);
 	sigprocmask(SIG_BLOCK, &set, &oldset);
 
 
+	DEBUG_CHECKPOINT("fork_daemon_check");
 	if (~flags & CLIENT_NOFORK) {
+		DEBUG_INFO("Forking daemon process");
 		if (proc_fork_and_daemon(&fd) != 0) {
 			sigprocmask(SIG_SETMASK, &oldset, NULL);
+			DEBUG_INFO("Parent process returning fd=%d", fd);
 			return (fd);
 		}
+		DEBUG_INFO("Child daemon process continuing");
 	}
+	DEBUG_CHECKPOINT("clear_signals");
 	proc_clear_signals(client, 0);
 	server_client_flags = flags;
 
+	DEBUG_CHECKPOINT("event_reinit");
 	if (event_reinit(base) != 0)
 		fatalx("event_reinit failed");
 
+	DEBUG_CHECKPOINT("proc_start");
 	server_proc = proc_start("server");
+	DEBUG_VAR_PTR(server_proc);
 
+	DEBUG_CHECKPOINT("set_signals");
 	proc_set_signals(server_proc, server_signal);
 	sigprocmask(SIG_SETMASK, &oldset, NULL);
 
+	DEBUG_CHECKPOINT("logging_setup");
 	if (log_get_level() > 1)
 		tty_create_log();
 	if (pledge("stdio rpath wpath cpath fattr unix getpw recvfd proc exec "
 	    "tty ps", NULL) != 0)
 		fatal("pledge failed");
 
+	DEBUG_CHECKPOINT("input_key_build");
 	input_key_build();
+	DEBUG_CHECKPOINT("utf8_update_width_cache");
 	utf8_update_width_cache();
+	DEBUG_CHECKPOINT("init_data_structures");
 	RB_INIT(&windows);
 	RB_INIT(&all_window_panes);
 	TAILQ_INIT(&clients);
 	RB_INIT(&sessions);
 	RB_INIT(&projects);
 	next_project_id = 0;
+	DEBUG_CHECKPOINT("plugin_init_START");
 	plugin_init();
+	DEBUG_CHECKPOINT("plugin_init_END");
 
+	DEBUG_CHECKPOINT("key_bindings_init_START");
 	key_bindings_init();
+	DEBUG_CHECKPOINT("key_bindings_init_END");
 
+	DEBUG_CHECKPOINT("message_log_init");
 	TAILQ_INIT(&message_log);
 	gettimeofday(&start_time, NULL);
 
+	DEBUG_CHECKPOINT("create_socket_START");
 #ifdef HAVE_SYSTEMD
 	server_fd = systemd_create_socket(flags, &cause);
 #else
 	server_fd = server_create_socket(flags, &cause);
 #endif
+	DEBUG_VAR_INT(server_fd);
+	DEBUG_CHECKPOINT("create_socket_END");
 	if (server_fd != -1)
 		server_update_socket();
 	if (~flags & CLIENT_NOFORK)
@@ -238,6 +271,7 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 		options_set_number(global_options, "exit-empty", 0);
 
 	if (lockfd >= 0) {
+		DEBUG_INFO("Unlinking lockfile: %s", lockfile);
 		unlink(lockfile);
 		free(lockfile);
 		close(lockfd);
@@ -253,19 +287,28 @@ server_start(struct tmuxproc *client, uint64_t flags, struct event_base *base,
 		}
 	}
 
+	DEBUG_CHECKPOINT("timer_setup");
 	evtimer_set(&server_ev_tidy, server_tidy_event, NULL);
 	evtimer_add(&server_ev_tidy, &tv);
 
+	DEBUG_CHECKPOINT("acl_init_START");
 	server_acl_init();
+	DEBUG_CHECKPOINT("acl_init_END");
 
+	DEBUG_CHECKPOINT("add_accept_START");
 	server_add_accept(0);
+	DEBUG_CHECKPOINT("add_accept_END");
 
+	DEBUG_CHECKPOINT("proc_loop_START");
+	DEBUG_INFO("Entering main event loop - THIS IS WHERE HANG MIGHT OCCUR");
 	proc_loop(server_proc, server_loop);
+	DEBUG_CHECKPOINT("proc_loop_END");
 
-
+	DEBUG_INFO("Event loop exited normally");
 	job_kill_all();
 	status_prompt_save_history();
 
+	debug_trace_close();
 	exit(0);
 }
 
@@ -275,9 +318,17 @@ server_loop(void)
 {
 	struct client	*c;
 	u_int		 items;
+	static u_int	 loop_count = 0;
+
+	loop_count++;
+	if (loop_count % 100 == 0) {
+		DEBUG_HEARTBEAT();
+		DEBUG_INFO("server_loop iteration %u", loop_count);
+	}
 
 	current_time = time(NULL);
 
+	DEBUG_TRACE_MSG("cmdq_next processing start");
 	do {
 		items = cmdq_next(NULL);
 		TAILQ_FOREACH(c, &clients, entry) {
@@ -285,8 +336,11 @@ server_loop(void)
 				items += cmdq_next(c);
 		}
 	} while (items != 0);
+	DEBUG_TRACE_MSG("cmdq_next processing end (items=%u)", items);
 
+	DEBUG_TRACE_MSG("server_client_loop start");
 	server_client_loop();
+	DEBUG_TRACE_MSG("server_client_loop end");
 
 	if (!options_get_number(global_options, "exit-empty") && !server_exit)
 		return (0);

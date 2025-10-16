@@ -1,0 +1,1380 @@
+1760594965.682382 server started (2272382): version next-3.7, socket /tmp/smux-1000/default, protocol 8
+1760594965.682393 on Linux 6.16.7-arch1-1 #1 SMP PREEMPT_DYNAMIC Thu, 11 Sep 2025 17:42:36 +0000
+1760594965.682399 using libevent 2.1.12-stable poll
+1760594965.682400 using ncurses 6.5 20240427
+1760594965.682440 input_key_build: 0x10e003 (PasteStart) is \033[200~
+1760594965.682441 input_key_build: 0x10e004 (PasteEnd) is \033[201~
+1760594965.682442 input_key_build: 0x10e25b (F1) is \033OP
+1760594965.682443 input_key_build: 0x10e25c (F2) is \033OQ
+1760594965.682444 input_key_build: 0x10e25d (F3) is \033OR
+1760594965.682445 input_key_build: 0x10e25e (F4) is \033OS
+1760594965.682445 input_key_build: 0x10e25f (F5) is \033[15~
+1760594965.682446 input_key_build: 0x10e260 (F6) is \033[17~
+1760594965.682447 input_key_build: 0x10e261 (F7) is \033[18~
+1760594965.682448 input_key_build: 0x10e262 (F8) is \033[19~
+1760594965.682449 input_key_build: 0x10e263 (F9) is \033[20~
+1760594965.682450 input_key_build: 0x10e264 (F10) is \033[21~
+1760594965.682451 input_key_build: 0x10e265 (F11) is \033[23~
+1760594965.682452 input_key_build: 0x10e266 (F12) is \033[24~
+1760594965.682452 input_key_build: 0x10e267 (IC) is \033[2~
+1760594965.682453 input_key_build: 0x10e268 (DC) is \033[3~
+1760594965.682454 input_key_build: 0x10e269 (Home) is \033[1~
+1760594965.682455 input_key_build: 0x10e26a (End) is \033[4~
+1760594965.682456 input_key_build: 0x10e26b (NPage) is \033[6~
+1760594965.682457 input_key_build: 0x10e26c (PPage) is \033[5~
+1760594965.682457 input_key_build: 0x10e26d (BTab) is \033[Z
+1760594965.682458 input_key_build: 0x10e26e (Up) is \033[A
+1760594965.682459 input_key_build: 0x10e26f (Down) is \033[B
+1760594965.682460 input_key_build: 0x10e270 (Left) is \033[D
+1760594965.682461 input_key_build: 0x10e271 (Right) is \033[C
+1760594965.682462 input_key_build: 0x10e272 (KP/) is /
+1760594965.682463 input_key_build: 0x10e273 (KP*) is *
+1760594965.682464 input_key_build: 0x10e274 (KP-) is -
+1760594965.682465 input_key_build: 0x10e275 (KP7) is 7
+1760594965.682465 input_key_build: 0x10e276 (KP8) is 8
+1760594965.682466 input_key_build: 0x10e277 (KP9) is 9
+1760594965.682467 input_key_build: 0x10e278 (KP+) is +
+1760594965.682468 input_key_build: 0x10e279 (KP4) is 4
+1760594965.682469 input_key_build: 0x10e27a (KP5) is 5
+1760594965.682470 input_key_build: 0x10e27b (KP6) is 6
+1760594965.682471 input_key_build: 0x10e27c (KP1) is 1
+1760594965.682472 input_key_build: 0x10e27d (KP2) is 2
+1760594965.682472 input_key_build: 0x10e27e (KP3) is 3
+1760594965.682473 input_key_build: 0x10e27f (KPEnter) is \n
+1760594965.682474 input_key_build: 0x10e280 (KP0) is 0
+1760594965.682475 input_key_build: 0x10e281 (KP.) is .
+1760594965.682477 input_key_build: 0x10e282 (Invalid#10e282) is \033[?997;1n
+1760594965.682479 input_key_build: 0x10e283 (Invalid#10e283) is \033[?997;2n
+1760594965.682480 input_key_build: 0x20000010e25b (C-F1) is \033[1;5P
+1760594965.682480 input_key_build: 0x20000010e25c (C-F2) is \033[1;5Q
+1760594965.682481 input_key_build: 0x20000010e25d (C-F3) is \033[1;5R
+1760594965.682482 input_key_build: 0x20000010e25e (C-F4) is \033[1;5S
+1760594965.682483 input_key_build: 0x20000010e25f (C-F5) is \033[15;5~
+1760594965.682484 input_key_build: 0x20000010e260 (C-F6) is \033[17;5~
+1760594965.682485 input_key_build: 0x20000010e261 (C-F7) is \033[18;5~
+1760594965.682485 input_key_build: 0x20000010e262 (C-F8) is \033[19;5~
+1760594965.682486 input_key_build: 0x20000010e263 (C-F9) is \033[20;5~
+1760594965.682487 input_key_build: 0x20000010e264 (C-F10) is \033[21;5~
+1760594965.682488 input_key_build: 0x20000010e265 (C-F11) is \033[23;5~
+1760594965.682489 input_key_build: 0x20000010e266 (C-F12) is \033[24;5~
+1760594965.682490 input_key_build: 0x20000010e267 (C-IC) is \033[2;5~
+1760594965.682490 input_key_build: 0x20000010e268 (C-DC) is \033[3;5~
+1760594965.682491 input_key_build: 0x20000010e269 (C-Home) is \033[1;5H
+1760594965.682492 input_key_build: 0x20000010e26a (C-End) is \033[1;5F
+1760594965.682493 input_key_build: 0x20000010e26b (C-NPage) is \033[6;5~
+1760594965.682494 input_key_build: 0x20000010e26c (C-PPage) is \033[5;5~
+1760594965.682496 input_key_build: 0x20000010e26e (C-Up) is \033[1;5A
+1760594965.682499 input_key_build: 0x20000010e26f (C-Down) is \033[1;5B
+1760594965.682500 input_key_build: 0x20000010e270 (C-Left) is \033[1;5D
+1760594965.682501 input_key_build: 0x20000010e271 (C-Right) is \033[1;5C
+1760594965.682502 input_key_build: 0x40000010e25b (S-F1) is \033[1;2P
+1760594965.682503 input_key_build: 0x40000010e25c (S-F2) is \033[1;2Q
+1760594965.682503 input_key_build: 0x40000010e25d (S-F3) is \033[1;2R
+1760594965.682504 input_key_build: 0x40000010e25e (S-F4) is \033[1;2S
+1760594965.682505 input_key_build: 0x40000010e25f (S-F5) is \033[15;2~
+1760594965.682506 input_key_build: 0x40000010e260 (S-F6) is \033[17;2~
+1760594965.682507 input_key_build: 0x40000010e261 (S-F7) is \033[18;2~
+1760594965.682508 input_key_build: 0x40000010e262 (S-F8) is \033[19;2~
+1760594965.682508 input_key_build: 0x40000010e263 (S-F9) is \033[20;2~
+1760594965.682509 input_key_build: 0x40000010e264 (S-F10) is \033[21;2~
+1760594965.682510 input_key_build: 0x40000010e265 (S-F11) is \033[23;2~
+1760594965.682511 input_key_build: 0x40000010e266 (S-F12) is \033[24;2~
+1760594965.682512 input_key_build: 0x40000010e267 (S-IC) is \033[2;2~
+1760594965.682513 input_key_build: 0x40000010e268 (S-DC) is \033[3;2~
+1760594965.682513 input_key_build: 0x40000010e269 (S-Home) is \033[1;2H
+1760594965.682514 input_key_build: 0x40000010e26a (S-End) is \033[1;2F
+1760594965.682515 input_key_build: 0x40000010e26b (S-NPage) is \033[6;2~
+1760594965.682516 input_key_build: 0x40000010e26c (S-PPage) is \033[5;2~
+1760594965.682517 input_key_build: 0x40000010e26e (S-Up) is \033[1;2A
+1760594965.682518 input_key_build: 0x40000010e26f (S-Down) is \033[1;2B
+1760594965.682519 input_key_build: 0x40000010e270 (S-Left) is \033[1;2D
+1760594965.682519 input_key_build: 0x40000010e271 (S-Right) is \033[1;2C
+1760594965.682520 input_key_build: 0x60000010e25b (C-S-F1) is \033[1;6P
+1760594965.682521 input_key_build: 0x60000010e25c (C-S-F2) is \033[1;6Q
+1760594965.682522 input_key_build: 0x60000010e25d (C-S-F3) is \033[1;6R
+1760594965.682523 input_key_build: 0x60000010e25e (C-S-F4) is \033[1;6S
+1760594965.682524 input_key_build: 0x60000010e25f (C-S-F5) is \033[15;6~
+1760594965.682525 input_key_build: 0x60000010e260 (C-S-F6) is \033[17;6~
+1760594965.682526 input_key_build: 0x60000010e261 (C-S-F7) is \033[18;6~
+1760594965.682527 input_key_build: 0x60000010e262 (C-S-F8) is \033[19;6~
+1760594965.682527 input_key_build: 0x60000010e263 (C-S-F9) is \033[20;6~
+1760594965.682528 input_key_build: 0x60000010e264 (C-S-F10) is \033[21;6~
+1760594965.682529 input_key_build: 0x60000010e265 (C-S-F11) is \033[23;6~
+1760594965.682530 input_key_build: 0x60000010e266 (C-S-F12) is \033[24;6~
+1760594965.682531 input_key_build: 0x60000010e267 (C-S-IC) is \033[2;6~
+1760594965.682532 input_key_build: 0x60000010e268 (C-S-DC) is \033[3;6~
+1760594965.682533 input_key_build: 0x60000010e269 (C-S-Home) is \033[1;6H
+1760594965.682533 input_key_build: 0x60000010e26a (C-S-End) is \033[1;6F
+1760594965.682534 input_key_build: 0x60000010e26b (C-S-NPage) is \033[6;6~
+1760594965.682535 input_key_build: 0x60000010e26c (C-S-PPage) is \033[5;6~
+1760594965.682536 input_key_build: 0x60000010e26e (C-S-Up) is \033[1;6A
+1760594965.682537 input_key_build: 0x60000010e26f (C-S-Down) is \033[1;6B
+1760594965.682538 input_key_build: 0x60000010e270 (C-S-Left) is \033[1;6D
+1760594965.682539 input_key_build: 0x60000010e271 (C-S-Right) is \033[1;6C
+1760594965.682540 input_key_build: 0x200000010e272 (KP/[K]) is \033Oo
+1760594965.682541 input_key_build: 0x200000010e273 (KP*[K]) is \033Oj
+1760594965.682542 input_key_build: 0x200000010e274 (KP-[K]) is \033Om
+1760594965.682543 input_key_build: 0x200000010e275 (KP7[K]) is \033Ow
+1760594965.682543 input_key_build: 0x200000010e276 (KP8[K]) is \033Ox
+1760594965.682544 input_key_build: 0x200000010e277 (KP9[K]) is \033Oy
+1760594965.682545 input_key_build: 0x200000010e278 (KP+[K]) is \033Ok
+1760594965.682546 input_key_build: 0x200000010e279 (KP4[K]) is \033Ot
+1760594965.682547 input_key_build: 0x200000010e27a (KP5[K]) is \033Ou
+1760594965.682549 input_key_build: 0x200000010e27b (KP6[K]) is \033Ov
+1760594965.682550 input_key_build: 0x200000010e27c (KP1[K]) is \033Oq
+1760594965.682551 input_key_build: 0x200000010e27d (KP2[K]) is \033Or
+1760594965.682552 input_key_build: 0x200000010e27e (KP3[K]) is \033Os
+1760594965.682552 input_key_build: 0x200000010e27f (KPEnter[K]) is \033OM
+1760594965.682553 input_key_build: 0x200000010e280 (KP0[K]) is \033Op
+1760594965.682554 input_key_build: 0x200000010e281 (KP.[K]) is \033On
+1760594965.682555 input_key_build: 0x400000010e26e (Up[C]) is \033OA
+1760594965.682556 input_key_build: 0x400000010e26f (Down[C]) is \033OB
+1760594965.682557 input_key_build: 0x400000010e270 (Left[C]) is \033OD
+1760594965.682558 input_key_build: 0x400000010e271 (Right[C]) is \033OC
+1760594965.682559 input_key_build: 0x800000010e003 (PasteStart[I]) is \033[200~
+1760594965.682560 input_key_build: 0x800000010e004 (PasteEnd[I]) is \033[201~
+1760594965.682561 input_key_build: 0x810000010e25b (M-F1[I]) is \033[1;3P
+1760594965.682562 input_key_build: 0x810000010e25c (M-F2[I]) is \033[1;3Q
+1760594965.682563 input_key_build: 0x810000010e25d (M-F3[I]) is \033[1;3R
+1760594965.682563 input_key_build: 0x810000010e25e (M-F4[I]) is \033[1;3S
+1760594965.682564 input_key_build: 0x810000010e25f (M-F5[I]) is \033[15;3~
+1760594965.682565 input_key_build: 0x810000010e260 (M-F6[I]) is \033[17;3~
+1760594965.682566 input_key_build: 0x810000010e261 (M-F7[I]) is \033[18;3~
+1760594965.682567 input_key_build: 0x810000010e262 (M-F8[I]) is \033[19;3~
+1760594965.682568 input_key_build: 0x810000010e263 (M-F9[I]) is \033[20;3~
+1760594965.682569 input_key_build: 0x810000010e264 (M-F10[I]) is \033[21;3~
+1760594965.682570 input_key_build: 0x810000010e265 (M-F11[I]) is \033[23;3~
+1760594965.682571 input_key_build: 0x810000010e266 (M-F12[I]) is \033[24;3~
+1760594965.682571 input_key_build: 0x810000010e267 (M-IC[I]) is \033[2;3~
+1760594965.682572 input_key_build: 0x810000010e268 (M-DC[I]) is \033[3;3~
+1760594965.682573 input_key_build: 0x810000010e269 (M-Home[I]) is \033[1;3H
+1760594965.682574 input_key_build: 0x810000010e26a (M-End[I]) is \033[1;3F
+1760594965.682575 input_key_build: 0x810000010e26b (M-NPage[I]) is \033[6;3~
+1760594965.682576 input_key_build: 0x810000010e26c (M-PPage[I]) is \033[5;3~
+1760594965.682577 input_key_build: 0x810000010e26e (M-Up[I]) is \033[1;3A
+1760594965.682578 input_key_build: 0x810000010e26f (M-Down[I]) is \033[1;3B
+1760594965.682579 input_key_build: 0x810000010e270 (M-Left[I]) is \033[1;3D
+1760594965.682579 input_key_build: 0x810000010e271 (M-Right[I]) is \033[1;3C
+1760594965.682581 input_key_build: 0x830000010e25b (C-M-F1[I]) is \033[1;7P
+1760594965.682582 input_key_build: 0x830000010e25c (C-M-F2[I]) is \033[1;7Q
+1760594965.682583 input_key_build: 0x830000010e25d (C-M-F3[I]) is \033[1;7R
+1760594965.682584 input_key_build: 0x830000010e25e (C-M-F4[I]) is \033[1;7S
+1760594965.682585 input_key_build: 0x830000010e25f (C-M-F5[I]) is \033[15;7~
+1760594965.682585 input_key_build: 0x830000010e260 (C-M-F6[I]) is \033[17;7~
+1760594965.682586 input_key_build: 0x830000010e261 (C-M-F7[I]) is \033[18;7~
+1760594965.682587 input_key_build: 0x830000010e262 (C-M-F8[I]) is \033[19;7~
+1760594965.682588 input_key_build: 0x830000010e263 (C-M-F9[I]) is \033[20;7~
+1760594965.682589 input_key_build: 0x830000010e264 (C-M-F10[I]) is \033[21;7~
+1760594965.682590 input_key_build: 0x830000010e265 (C-M-F11[I]) is \033[23;7~
+1760594965.682591 input_key_build: 0x830000010e266 (C-M-F12[I]) is \033[24;7~
+1760594965.682592 input_key_build: 0x830000010e267 (C-M-IC[I]) is \033[2;7~
+1760594965.682593 input_key_build: 0x830000010e268 (C-M-DC[I]) is \033[3;7~
+1760594965.682594 input_key_build: 0x830000010e269 (C-M-Home[I]) is \033[1;7H
+1760594965.682595 input_key_build: 0x830000010e26a (C-M-End[I]) is \033[1;7F
+1760594965.682596 input_key_build: 0x830000010e26b (C-M-NPage[I]) is \033[6;7~
+1760594965.682597 input_key_build: 0x830000010e26c (C-M-PPage[I]) is \033[5;7~
+1760594965.682598 input_key_build: 0x830000010e26e (C-M-Up[I]) is \033[1;7A
+1760594965.682599 input_key_build: 0x830000010e26f (C-M-Down[I]) is \033[1;7B
+1760594965.682600 input_key_build: 0x830000010e270 (C-M-Left[I]) is \033[1;7D
+1760594965.682601 input_key_build: 0x830000010e271 (C-M-Right[I]) is \033[1;7C
+1760594965.682602 input_key_build: 0x850000010e25b (M-S-F1[I]) is \033[1;4P
+1760594965.682603 input_key_build: 0x850000010e25c (M-S-F2[I]) is \033[1;4Q
+1760594965.682604 input_key_build: 0x850000010e25d (M-S-F3[I]) is \033[1;4R
+1760594965.682605 input_key_build: 0x850000010e25e (M-S-F4[I]) is \033[1;4S
+1760594965.682606 input_key_build: 0x850000010e25f (M-S-F5[I]) is \033[15;4~
+1760594965.682607 input_key_build: 0x850000010e260 (M-S-F6[I]) is \033[17;4~
+1760594965.682608 input_key_build: 0x850000010e261 (M-S-F7[I]) is \033[18;4~
+1760594965.682608 input_key_build: 0x850000010e262 (M-S-F8[I]) is \033[19;4~
+1760594965.682609 input_key_build: 0x850000010e263 (M-S-F9[I]) is \033[20;4~
+1760594965.682610 input_key_build: 0x850000010e264 (M-S-F10[I]) is \033[21;4~
+1760594965.682611 input_key_build: 0x850000010e265 (M-S-F11[I]) is \033[23;4~
+1760594965.682612 input_key_build: 0x850000010e266 (M-S-F12[I]) is \033[24;4~
+1760594965.682613 input_key_build: 0x850000010e267 (M-S-IC[I]) is \033[2;4~
+1760594965.682614 input_key_build: 0x850000010e268 (M-S-DC[I]) is \033[3;4~
+1760594965.682615 input_key_build: 0x850000010e269 (M-S-Home[I]) is \033[1;4H
+1760594965.682616 input_key_build: 0x850000010e26a (M-S-End[I]) is \033[1;4F
+1760594965.682616 input_key_build: 0x850000010e26b (M-S-NPage[I]) is \033[6;4~
+1760594965.682617 input_key_build: 0x850000010e26c (M-S-PPage[I]) is \033[5;4~
+1760594965.682618 input_key_build: 0x850000010e26e (M-S-Up[I]) is \033[1;4A
+1760594965.682619 input_key_build: 0x850000010e26f (M-S-Down[I]) is \033[1;4B
+1760594965.682620 input_key_build: 0x850000010e270 (M-S-Left[I]) is \033[1;4D
+1760594965.682621 input_key_build: 0x850000010e271 (M-S-Right[I]) is \033[1;4C
+1760594965.682622 input_key_build: 0x870000010e25b (C-M-S-F1[I]) is \033[1;8P
+1760594965.682623 input_key_build: 0x870000010e25c (C-M-S-F2[I]) is \033[1;8Q
+1760594965.682624 input_key_build: 0x870000010e25d (C-M-S-F3[I]) is \033[1;8R
+1760594965.682625 input_key_build: 0x870000010e25e (C-M-S-F4[I]) is \033[1;8S
+1760594965.682626 input_key_build: 0x870000010e25f (C-M-S-F5[I]) is \033[15;8~
+1760594965.682627 input_key_build: 0x870000010e260 (C-M-S-F6[I]) is \033[17;8~
+1760594965.682628 input_key_build: 0x870000010e261 (C-M-S-F7[I]) is \033[18;8~
+1760594965.682629 input_key_build: 0x870000010e262 (C-M-S-F8[I]) is \033[19;8~
+1760594965.682630 input_key_build: 0x870000010e263 (C-M-S-F9[I]) is \033[20;8~
+1760594965.682630 input_key_build: 0x870000010e264 (C-M-S-F10[I]) is \033[21;8~
+1760594965.682631 input_key_build: 0x870000010e265 (C-M-S-F11[I]) is \033[23;8~
+1760594965.682632 input_key_build: 0x870000010e266 (C-M-S-F12[I]) is \033[24;8~
+1760594965.682633 input_key_build: 0x870000010e267 (C-M-S-IC[I]) is \033[2;8~
+1760594965.682634 input_key_build: 0x870000010e268 (C-M-S-DC[I]) is \033[3;8~
+1760594965.682635 input_key_build: 0x870000010e269 (C-M-S-Home[I]) is \033[1;8H
+1760594965.682636 input_key_build: 0x870000010e26a (C-M-S-End[I]) is \033[1;8F
+1760594965.682637 input_key_build: 0x870000010e26b (C-M-S-NPage[I]) is \033[6;8~
+1760594965.682638 input_key_build: 0x870000010e26c (C-M-S-PPage[I]) is \033[5;8~
+1760594965.682639 input_key_build: 0x870000010e26e (C-M-S-Up[I]) is \033[1;8A
+1760594965.682640 input_key_build: 0x870000010e26f (C-M-S-Down[I]) is \033[1;8B
+1760594965.682641 input_key_build: 0x870000010e270 (C-M-S-Left[I]) is \033[1;8D
+1760594965.682642 input_key_build: 0x870000010e271 (C-M-S-Right[I]) is \033[1;8C
+1760594965.682662 yylex_token: end at WS
+1760594965.682663 yylex_token: bind
+1760594965.682665 yylex_token: end at WS
+1760594965.682665 yylex_token: -N
+1760594965.682667 yylex_token: end at WS
+1760594965.682667 yylex_token: Send the prefix key
+1760594965.682668 yylex_token: end at WS
+1760594965.682669 yylex_token: C-b
+1760594965.682670 yylex_token: end at WS
+1760594965.682671 yylex_token: send-prefix
+1760594965.682674 cmd_parse_build_commands 0:0: bind
+1760594965.682675 cmd_parse_build_commands 0:1: -N
+1760594965.682676 cmd_parse_build_commands 0:2: Send the prefix key
+1760594965.682677 cmd_parse_build_commands 0:3: C-b
+1760594965.682678 cmd_parse_build_commands 0:4 0:0: send-prefix
+1760594965.682685 cmd_parse_build_commands 0:0: send-prefix
+1760594965.682688 args_parse: flags end at 1 of 1
+1760594965.682690 cmd_parse_build_commands: send-prefix
+1760594965.682691 args_parse_flags: next -N
+1760594965.682692 args_parse_flag_argument: -N = Send the prefix key
+1760594965.682693 args_parse_flags: next C-b
+1760594965.682694 args_parse: flags end at 3 of 5
+1760594965.682695 args_parse: 3 = C-b (type STRING)
+1760594965.682697 args_parse: 4 = send-prefix (type COMMANDS)
+1760594965.682701 cmd_parse_build_commands: bind-key -N "Send the prefix key" C-b { send-prefix }
+1760594965.682703 cmdq_get_command: [bind-key/0x563599a9be70] group 10
+1760594965.682704 cmdq_append <global>: [bind-key/0x563599a9be70]
+1760594965.682705 yylex_token: end at WS
+1760594965.682705 yylex_token: bind
+1760594965.682706 yylex_token: end at WS
+1760594965.682707 yylex_token: -N
+1760594965.682708 yylex_token: end at WS
+1760594965.682709 yylex_token: Rotate through the panes
+1760594965.682710 yylex_token: end at WS
+1760594965.682710 yylex_token: C-o
+1760594965.682711 yylex_token: end at WS
+1760594965.682712 yylex_token: rotate-window
+1760594965.682713 cmd_parse_build_commands 0:0: bind
+1760594965.682714 cmd_parse_build_commands 0:1: -N
+1760594965.682715 cmd_parse_build_commands 0:2: Rotate through the panes
+1760594965.682716 cmd_parse_build_commands 0:3: C-o
+1760594965.682717 cmd_parse_build_commands 0:4 0:0: rotate-window
+1760594965.682718 cmd_parse_build_commands 0:0: rotate-window
+1760594965.682720 args_parse: flags end at 1 of 1
+1760594965.682721 cmd_parse_build_commands: rotate-window
+1760594965.682721 args_parse_flags: next -N
+1760594965.682722 args_parse_flag_argument: -N = Rotate through the panes
+1760594965.682723 args_parse_flags: next C-o
+1760594965.682724 args_parse: flags end at 3 of 5
+1760594965.682725 args_parse: 3 = C-o (type STRING)
+1760594965.682726 args_parse: 4 = rotate-window (type COMMANDS)
+1760594965.682735 cmd_parse_build_commands: bind-key -N "Rotate through the panes" C-o { rotate-window }
+1760594965.682737 cmdq_get_command: [bind-key/0x563599a9c620] group 18
+1760594965.682738 cmdq_append <global>: [bind-key/0x563599a9c620]
+1760594965.682738 yylex_token: end at WS
+1760594965.682739 yylex_token: bind
+1760594965.682740 yylex_token: end at WS
+1760594965.682741 yylex_token: -N
+1760594965.682742 yylex_token: end at WS
+1760594965.682742 yylex_token: Suspend the current client
+1760594965.682743 yylex_token: end at WS
+1760594965.682744 yylex_token: C-z
+1760594965.682745 yylex_token: end at WS
+1760594965.682746 yylex_token: suspend-client
+1760594965.682747 cmd_parse_build_commands 0:0: bind
+1760594965.682748 cmd_parse_build_commands 0:1: -N
+1760594965.682748 cmd_parse_build_commands 0:2: Suspend the current client
+1760594965.682749 cmd_parse_build_commands 0:3: C-z
+1760594965.682750 cmd_parse_build_commands 0:4 0:0: suspend-client
+1760594965.682751 cmd_parse_build_commands 0:0: suspend-client
+1760594965.682753 args_parse: flags end at 1 of 1
+1760594965.682754 cmd_parse_build_commands: suspend-client
+1760594965.682755 args_parse_flags: next -N
+1760594965.682756 args_parse_flag_argument: -N = Suspend the current client
+1760594965.682757 args_parse_flags: next C-z
+1760594965.682758 args_parse: flags end at 3 of 5
+1760594965.682759 args_parse: 3 = C-z (type STRING)
+1760594965.682760 args_parse: 4 = suspend-client (type COMMANDS)
+1760594965.682762 cmd_parse_build_commands: bind-key -N "Suspend the current client" C-z { suspend-client }
+1760594965.682763 cmdq_get_command: [bind-key/0x563599a9d3b0] group 26
+1760594965.682764 cmdq_append <global>: [bind-key/0x563599a9d3b0]
+1760594965.682765 yylex_token: end at WS
+1760594965.682765 yylex_token: bind
+1760594965.682766 yylex_token: end at WS
+1760594965.682767 yylex_token: -N
+1760594965.682768 yylex_token: end at WS
+1760594965.682769 yylex_token: Select next layout
+1760594965.682770 yylex_token: end at WS
+1760594965.682771 yylex_token: Space
+1760594965.682772 yylex_token: end at WS
+1760594965.682773 yylex_token: next-layout
+1760594965.682774 cmd_parse_build_commands 0:0: bind
+1760594965.682774 cmd_parse_build_commands 0:1: -N
+1760594965.682775 cmd_parse_build_commands 0:2: Select next layout
+1760594965.682776 cmd_parse_build_commands 0:3: Space
+1760594965.682777 cmd_parse_build_commands 0:4 0:0: next-layout
+1760594965.682778 cmd_parse_build_commands 0:0: next-layout
+1760594965.682779 args_parse: flags end at 1 of 1
+1760594965.682781 cmd_parse_build_commands: next-layout
+1760594965.682781 args_parse_flags: next -N
+1760594965.682782 args_parse_flag_argument: -N = Select next layout
+1760594965.682783 args_parse_flags: next Space
+1760594965.682784 args_parse: flags end at 3 of 5
+1760594965.682785 args_parse: 3 = Space (type STRING)
+1760594965.682786 args_parse: 4 = next-layout (type COMMANDS)
+1760594965.682788 cmd_parse_build_commands: bind-key -N "Select next layout" Space { next-layout }
+1760594965.682789 cmdq_get_command: [bind-key/0x563599a9d900] group 34
+1760594965.682790 cmdq_append <global>: [bind-key/0x563599a9d900]
+1760594965.682791 yylex_token: end at WS
+1760594965.682792 yylex_token: bind
+1760594965.682792 yylex_token: end at WS
+1760594965.682793 yylex_token: -N
+1760594965.682794 yylex_token: end at WS
+1760594965.682795 yylex_token: Break pane to a new window
+1760594965.682796 yylex_token: end at WS
+1760594965.682797 yylex_token: !
+1760594965.682797 yylex_token: end at WS
+1760594965.682798 yylex_token: break-pane
+1760594965.682799 cmd_parse_build_commands 0:0: bind
+1760594965.682800 cmd_parse_build_commands 0:1: -N
+1760594965.682801 cmd_parse_build_commands 0:2: Break pane to a new window
+1760594965.682802 cmd_parse_build_commands 0:3: !
+1760594965.682803 cmd_parse_build_commands 0:4 0:0: break-pane
+1760594965.682804 cmd_parse_build_commands 0:0: break-pane
+1760594965.682805 args_parse: flags end at 1 of 1
+1760594965.682806 cmd_parse_build_commands: break-pane
+1760594965.682807 args_parse_flags: next -N
+1760594965.682808 args_parse_flag_argument: -N = Break pane to a new window
+1760594965.682808 args_parse_flags: next !
+1760594965.682809 args_parse: flags end at 3 of 5
+1760594965.682810 args_parse: 3 = ! (type STRING)
+1760594965.682811 args_parse: 4 = break-pane (type COMMANDS)
+1760594965.682813 cmd_parse_build_commands: bind-key -N "Break pane to a new window" ! { break-pane }
+1760594965.682814 cmdq_get_command: [bind-key/0x563599a9dd80] group 42
+1760594965.682815 cmdq_append <global>: [bind-key/0x563599a9dd80]
+1760594965.682816 yylex_token: end at WS
+1760594965.682816 yylex_token: bind
+1760594965.682817 yylex_token: end at WS
+1760594965.682818 yylex_token: -N
+1760594965.682819 yylex_token: end at WS
+1760594965.682820 yylex_token: Split window vertically
+1760594965.682820 yylex_token: end at WS
+1760594965.682821 yylex_token: "
+1760594965.682822 yylex_token: end at WS
+1760594965.682823 yylex_token: split-window
+1760594965.682824 cmd_parse_build_commands 0:0: bind
+1760594965.682825 cmd_parse_build_commands 0:1: -N
+1760594965.682826 cmd_parse_build_commands 0:2: Split window vertically
+1760594965.682826 cmd_parse_build_commands 0:3: "
+1760594965.682827 cmd_parse_build_commands 0:4 0:0: split-window
+1760594965.682829 cmd_parse_build_commands 0:0: split-window
+1760594965.682830 args_parse: flags end at 1 of 1
+1760594965.682831 cmd_parse_build_commands: split-window
+1760594965.682832 args_parse_flags: next -N
+1760594965.682833 args_parse_flag_argument: -N = Split window vertically
+1760594965.682834 args_parse_flags: next "
+1760594965.682835 args_parse: flags end at 3 of 5
+1760594965.682836 args_parse: 3 = " (type STRING)
+1760594965.682836 args_parse: 4 = split-window (type COMMANDS)
+1760594965.682839 cmd_parse_build_commands: bind-key -N "Split window vertically" \\" { split-window }
+1760594965.682840 cmdq_get_command: [bind-key/0x563599a9e120] group 50
+1760594965.682841 cmdq_append <global>: [bind-key/0x563599a9e120]
+1760594965.682843 yylex_token: end at WS
+1760594965.682844 yylex_token: bind
+1760594965.682845 yylex_token: end at WS
+1760594965.682845 yylex_token: -N
+1760594965.682846 yylex_token: end at WS
+1760594965.682847 yylex_token: List all paste buffers
+1760594965.682848 yylex_token: end at WS
+1760594965.682849 yylex_token: #
+1760594965.682849 yylex_token: end at WS
+1760594965.682850 yylex_token: list-buffers
+1760594965.682851 cmd_parse_build_commands 0:0: bind
+1760594965.682852 cmd_parse_build_commands 0:1: -N
+1760594965.682853 cmd_parse_build_commands 0:2: List all paste buffers
+1760594965.682854 cmd_parse_build_commands 0:3: #
+1760594965.682855 cmd_parse_build_commands 0:4 0:0: list-buffers
+1760594965.682856 cmd_parse_build_commands 0:0: list-buffers
+1760594965.682857 args_parse: flags end at 1 of 1
+1760594965.682858 cmd_parse_build_commands: list-buffers
+1760594965.682859 args_parse_flags: next -N
+1760594965.682860 args_parse_flag_argument: -N = List all paste buffers
+1760594965.682861 args_parse_flags: next #
+1760594965.682861 args_parse: flags end at 3 of 5
+1760594965.682862 args_parse: 3 = # (type STRING)
+1760594965.682863 args_parse: 4 = list-buffers (type COMMANDS)
+1760594965.682865 cmd_parse_build_commands: bind-key -N "List all paste buffers" \\# { list-buffers }
+1760594965.682866 cmdq_get_command: [bind-key/0x563599a9e7e0] group 58
+1760594965.682867 cmdq_append <global>: [bind-key/0x563599a9e7e0]
+1760594965.682868 yylex_token: end at WS
+1760594965.682868 yylex_token: bind
+1760594965.682869 yylex_token: end at WS
+1760594965.682870 yylex_token: -N
+1760594965.682871 yylex_token: end at WS
+1760594965.682872 yylex_token: Rename current session
+1760594965.682872 yylex_token: end at WS
+1760594965.682873 yylex_token: $
+1760594965.682874 yylex_token: end at WS
+1760594965.682875 yylex_token: command-prompt
+1760594965.682876 yylex_token: end at WS
+1760594965.682876 yylex_token: -I#S
+1760594965.682877 yylex_token: end at WS
+1760594965.682878 yylex_token: rename-session
+1760594965.682879 yylex_token: end at WS
+1760594965.682879 yylex_token: --
+1760594965.682880 yylex_token: end at WS
+1760594965.682881 yylex_token: %%
+1760594965.682882 cmd_parse_build_commands 0:0: bind
+1760594965.682883 cmd_parse_build_commands 0:1: -N
+1760594965.682884 cmd_parse_build_commands 0:2: Rename current session
+1760594965.682885 cmd_parse_build_commands 0:3: $
+1760594965.682886 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.682887 cmd_parse_build_commands 0:4 0:1: -I#S
+1760594965.682888 cmd_parse_build_commands 0:4 0:2 0:0: rename-session
+1760594965.682889 cmd_parse_build_commands 0:4 0:2 0:1: --
+1760594965.682889 cmd_parse_build_commands 0:4 0:2 0:2: %%
+1760594965.682891 cmd_parse_build_commands 0:0: command-prompt
+1760594965.682891 cmd_parse_build_commands 0:1: -I#S
+1760594965.682893 cmd_parse_build_commands 0:2 0:0: rename-session
+1760594965.682894 cmd_parse_build_commands 0:2 0:1: --
+1760594965.682895 cmd_parse_build_commands 0:2 0:2: %%
+1760594965.682896 cmd_parse_build_commands 0:0: rename-session
+1760594965.682897 cmd_parse_build_commands 0:1: --
+1760594965.682897 cmd_parse_build_commands 0:2: %%
+1760594965.682899 args_parse_flags: next --
+1760594965.682900 args_parse: flags end at 2 of 3
+1760594965.682900 args_parse: 2 = %% (type STRING)
+1760594965.682902 cmd_parse_build_commands: rename-session "%%"
+1760594965.682903 args_parse_flags: next -I#S
+1760594965.682904 args_parse_flag_argument: -I = #S
+1760594965.682905 args_parse: flags end at 2 of 3
+1760594965.682906 args_parse: 2 = rename-session "%%" (type COMMANDS)
+1760594965.682908 cmd_parse_build_commands: command-prompt -I "#S" { rename-session "%%" }
+1760594965.682909 args_parse_flags: next -N
+1760594965.682910 args_parse_flag_argument: -N = Rename current session
+1760594965.682911 args_parse_flags: next $
+1760594965.682911 args_parse: flags end at 3 of 5
+1760594965.682912 args_parse: 3 = $ (type STRING)
+1760594965.682914 args_parse: 4 = command-prompt -I "#S" { rename-session "%%" } (type COMMANDS)
+1760594965.682916 cmd_parse_build_commands: bind-key -N "Rename current session" \\$ { command-prompt -I "#S" { rename-session "%%" } }
+1760594965.682919 cmdq_get_command: [bind-key/0x563599a9f010] group 66
+1760594965.682920 cmdq_append <global>: [bind-key/0x563599a9f010]
+1760594965.682921 yylex_token: end at WS
+1760594965.682921 yylex_token: bind
+1760594965.682922 yylex_token: end at WS
+1760594965.682923 yylex_token: -N
+1760594965.682924 yylex_token: end at WS
+1760594965.682925 yylex_token: Split window horizontally
+1760594965.682926 yylex_get_word: %
+1760594965.682926 yylex_token: end at WS
+1760594965.682927 yylex_token: split-window
+1760594965.682928 yylex_token: end at WS
+1760594965.682929 yylex_token: -h
+1760594965.682930 cmd_parse_build_commands 0:0: bind
+1760594965.682931 cmd_parse_build_commands 0:1: -N
+1760594965.682932 cmd_parse_build_commands 0:2: Split window horizontally
+1760594965.682932 cmd_parse_build_commands 0:3: %
+1760594965.682933 cmd_parse_build_commands 0:4 0:0: split-window
+1760594965.682934 cmd_parse_build_commands 0:4 0:1: -h
+1760594965.682935 cmd_parse_build_commands 0:0: split-window
+1760594965.682936 cmd_parse_build_commands 0:1: -h
+1760594965.682937 args_parse_flags: next -h
+1760594965.682938 args_parse_flags: -h
+1760594965.682939 args_parse: flags end at 2 of 2
+1760594965.682940 cmd_parse_build_commands: split-window -h
+1760594965.682941 args_parse_flags: next -N
+1760594965.682942 args_parse_flag_argument: -N = Split window horizontally
+1760594965.682943 args_parse_flags: next %
+1760594965.682944 args_parse: flags end at 3 of 5
+1760594965.682945 args_parse: 3 = % (type STRING)
+1760594965.682946 args_parse: 4 = split-window -h (type COMMANDS)
+1760594965.682948 cmd_parse_build_commands: bind-key -N "Split window horizontally" \\% { split-window -h }
+1760594965.682949 cmdq_get_command: [bind-key/0x563599a9f680] group 78
+1760594965.682950 cmdq_append <global>: [bind-key/0x563599a9f680]
+1760594965.682951 yylex_token: end at WS
+1760594965.682951 yylex_token: bind
+1760594965.682952 yylex_token: end at WS
+1760594965.682953 yylex_token: -N
+1760594965.682954 yylex_token: end at WS
+1760594965.682954 yylex_token: Kill current window
+1760594965.682955 yylex_token: end at WS
+1760594965.682956 yylex_token: &
+1760594965.682957 yylex_token: end at WS
+1760594965.682957 yylex_token: confirm-before
+1760594965.682958 yylex_token: end at WS
+1760594965.682959 yylex_token: -pkill-window #W? (y/n)
+1760594965.682960 yylex_token: end at WS
+1760594965.682961 yylex_token: kill-window
+1760594965.682962 cmd_parse_build_commands 0:0: bind
+1760594965.682963 cmd_parse_build_commands 0:1: -N
+1760594965.682964 cmd_parse_build_commands 0:2: Kill current window
+1760594965.682964 cmd_parse_build_commands 0:3: &
+1760594965.682965 cmd_parse_build_commands 0:4 0:0: confirm-before
+1760594965.682966 cmd_parse_build_commands 0:4 0:1: -pkill-window #W? (y/n)
+1760594965.682967 cmd_parse_build_commands 0:4 0:2: kill-window
+1760594965.682968 cmd_parse_build_commands 0:0: confirm-before
+1760594965.682969 cmd_parse_build_commands 0:1: -pkill-window #W? (y/n)
+1760594965.682970 cmd_parse_build_commands 0:2: kill-window
+1760594965.682971 args_parse_flags: next -pkill-window #W? (y/n)
+1760594965.682972 args_parse_flag_argument: -p = kill-window #W? (y/n)
+1760594965.682973 args_parse_flags: next kill-window
+1760594965.682974 args_parse: flags end at 2 of 3
+1760594965.682975 args_parse: 2 = kill-window (type STRING)
+1760594965.682977 cmd_parse_build_commands: confirm-before -p "kill-window #W? (y/n)" kill-window
+1760594965.682978 args_parse_flags: next -N
+1760594965.682979 args_parse_flag_argument: -N = Kill current window
+1760594965.682979 args_parse_flags: next &
+1760594965.682980 args_parse: flags end at 3 of 5
+1760594965.682981 args_parse: 3 = & (type STRING)
+1760594965.682983 args_parse: 4 = confirm-before -p "kill-window #W? (y/n)" kill-window (type COMMANDS)
+1760594965.682985 cmd_parse_build_commands: bind-key -N "Kill current window" & { confirm-before -p "kill-window #W? (y/n)" kill-window }
+1760594965.682987 cmdq_get_command: [bind-key/0x563599a9fb90] group 86
+1760594965.682987 cmdq_append <global>: [bind-key/0x563599a9fb90]
+1760594965.682989 yylex_token: end at WS
+1760594965.682990 yylex_token: bind
+1760594965.682990 yylex_token: end at WS
+1760594965.682991 yylex_token: -N
+1760594965.682992 yylex_token: end at WS
+1760594965.682993 yylex_token: Prompt for window index to select
+1760594965.682994 yylex_token: end at WS
+1760594965.682995 yylex_token: '
+1760594965.682995 yylex_token: end at WS
+1760594965.682996 yylex_token: command-prompt
+1760594965.682997 yylex_token: end at WS
+1760594965.682998 yylex_token: -T
+1760594965.682999 yylex_token: end at WS
+1760594965.682999 yylex_token: window-target
+1760594965.683000 yylex_token: end at WS
+1760594965.683001 yylex_token: -pindex
+1760594965.683002 yylex_token: end at WS
+1760594965.683002 yylex_token: select-window
+1760594965.683003 yylex_token: end at WS
+1760594965.683004 yylex_token: -t
+1760594965.683005 yylex_token: end at WS
+1760594965.683005 yylex_token: :%%
+1760594965.683007 cmd_parse_build_commands 0:0: bind
+1760594965.683007 cmd_parse_build_commands 0:1: -N
+1760594965.683009 cmd_parse_build_commands 0:2: Prompt for window index to select
+1760594965.683009 cmd_parse_build_commands 0:3: '
+1760594965.683010 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683011 cmd_parse_build_commands 0:4 0:1: -T
+1760594965.683012 cmd_parse_build_commands 0:4 0:2: window-target
+1760594965.683013 cmd_parse_build_commands 0:4 0:3: -pindex
+1760594965.683014 cmd_parse_build_commands 0:4 0:4 0:0: select-window
+1760594965.683015 cmd_parse_build_commands 0:4 0:4 0:1: -t
+1760594965.683016 cmd_parse_build_commands 0:4 0:4 0:2: :%%
+1760594965.683017 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683018 cmd_parse_build_commands 0:1: -T
+1760594965.683019 cmd_parse_build_commands 0:2: window-target
+1760594965.683020 cmd_parse_build_commands 0:3: -pindex
+1760594965.683021 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683021 cmd_parse_build_commands 0:4 0:1: -t
+1760594965.683022 cmd_parse_build_commands 0:4 0:2: :%%
+1760594965.683023 cmd_parse_build_commands 0:0: select-window
+1760594965.683024 cmd_parse_build_commands 0:1: -t
+1760594965.683025 cmd_parse_build_commands 0:2: :%%
+1760594965.683026 args_parse_flags: next -t
+1760594965.683027 args_parse_flag_argument: -t = :%%
+1760594965.683028 args_parse: flags end at 3 of 3
+1760594965.683030 cmd_parse_build_commands: select-window -t ":%%"
+1760594965.683031 args_parse_flags: next -T
+1760594965.683032 args_parse_flag_argument: -T = window-target
+1760594965.683032 args_parse_flags: next -pindex
+1760594965.683033 args_parse_flag_argument: -p = index
+1760594965.683034 args_parse: flags end at 4 of 5
+1760594965.683036 args_parse: 4 = select-window -t ":%%" (type COMMANDS)
+1760594965.683038 cmd_parse_build_commands: command-prompt -T window-target -p index { select-window -t ":%%" }
+1760594965.683039 args_parse_flags: next -N
+1760594965.683040 args_parse_flag_argument: -N = Prompt for window index to select
+1760594965.683040 args_parse_flags: next '
+1760594965.683041 args_parse: flags end at 3 of 5
+1760594965.683042 args_parse: 3 = ' (type STRING)
+1760594965.683044 args_parse: 4 = command-prompt -T window-target -p index { select-window -t ":%%" } (type COMMANDS)
+1760594965.683047 cmd_parse_build_commands: bind-key -N "Prompt for window index to select" \\' { command-prompt -T window-target -p index { select-window -t ":%%" } }
+1760594965.683049 cmdq_get_command: [bind-key/0x563599aa0890] group 94
+1760594965.683050 cmdq_append <global>: [bind-key/0x563599aa0890]
+1760594965.683050 yylex_token: end at WS
+1760594965.683051 yylex_token: bind
+1760594965.683052 yylex_token: end at WS
+1760594965.683053 yylex_token: -N
+1760594965.683054 yylex_token: end at WS
+1760594965.683054 yylex_token: Switch to previous client
+1760594965.683055 yylex_token: end at WS
+1760594965.683056 yylex_token: (
+1760594965.683057 yylex_token: end at WS
+1760594965.683057 yylex_token: switch-client
+1760594965.683058 yylex_token: end at WS
+1760594965.683059 yylex_token: -p
+1760594965.683060 cmd_parse_build_commands 0:0: bind
+1760594965.683061 cmd_parse_build_commands 0:1: -N
+1760594965.683062 cmd_parse_build_commands 0:2: Switch to previous client
+1760594965.683063 cmd_parse_build_commands 0:3: (
+1760594965.683064 cmd_parse_build_commands 0:4 0:0: switch-client
+1760594965.683065 cmd_parse_build_commands 0:4 0:1: -p
+1760594965.683066 cmd_parse_build_commands 0:0: switch-client
+1760594965.683067 cmd_parse_build_commands 0:1: -p
+1760594965.683069 args_parse_flags: next -p
+1760594965.683069 args_parse_flags: -p
+1760594965.683070 args_parse: flags end at 2 of 2
+1760594965.683071 cmd_parse_build_commands: switch-client -p
+1760594965.683072 args_parse_flags: next -N
+1760594965.683073 args_parse_flag_argument: -N = Switch to previous client
+1760594965.683074 args_parse_flags: next (
+1760594965.683075 args_parse: flags end at 3 of 5
+1760594965.683075 args_parse: 3 = ( (type STRING)
+1760594965.683077 args_parse: 4 = switch-client -p (type COMMANDS)
+1760594965.683079 cmd_parse_build_commands: bind-key -N "Switch to previous client" ( { switch-client -p }
+1760594965.683080 cmdq_get_command: [bind-key/0x563599aa0560] group 106
+1760594965.683081 cmdq_append <global>: [bind-key/0x563599aa0560]
+1760594965.683082 yylex_token: end at WS
+1760594965.683082 yylex_token: bind
+1760594965.683083 yylex_token: end at WS
+1760594965.683084 yylex_token: -N
+1760594965.683085 yylex_token: end at WS
+1760594965.683085 yylex_token: Switch to next client
+1760594965.683086 yylex_token: end at WS
+1760594965.683087 yylex_token: )
+1760594965.683088 yylex_token: end at WS
+1760594965.683088 yylex_token: switch-client
+1760594965.683089 yylex_token: end at WS
+1760594965.683090 yylex_token: -n
+1760594965.683091 cmd_parse_build_commands 0:0: bind
+1760594965.683092 cmd_parse_build_commands 0:1: -N
+1760594965.683093 cmd_parse_build_commands 0:2: Switch to next client
+1760594965.683093 cmd_parse_build_commands 0:3: )
+1760594965.683094 cmd_parse_build_commands 0:4 0:0: switch-client
+1760594965.683095 cmd_parse_build_commands 0:4 0:1: -n
+1760594965.683096 cmd_parse_build_commands 0:0: switch-client
+1760594965.683097 cmd_parse_build_commands 0:1: -n
+1760594965.683098 args_parse_flags: next -n
+1760594965.683099 args_parse_flags: -n
+1760594965.683100 args_parse: flags end at 2 of 2
+1760594965.683101 cmd_parse_build_commands: switch-client -n
+1760594965.683102 args_parse_flags: next -N
+1760594965.683103 args_parse_flag_argument: -N = Switch to next client
+1760594965.683103 args_parse_flags: next )
+1760594965.683104 args_parse: flags end at 3 of 5
+1760594965.683105 args_parse: 3 = ) (type STRING)
+1760594965.683106 args_parse: 4 = switch-client -n (type COMMANDS)
+1760594965.683108 cmd_parse_build_commands: bind-key -N "Switch to next client" ) { switch-client -n }
+1760594965.683109 cmdq_get_command: [bind-key/0x563599aa0d80] group 114
+1760594965.683110 cmdq_append <global>: [bind-key/0x563599aa0d80]
+1760594965.683111 yylex_token: end at WS
+1760594965.683112 yylex_token: bind
+1760594965.683112 yylex_token: end at WS
+1760594965.683113 yylex_token: -N
+1760594965.683114 yylex_token: end at WS
+1760594965.683115 yylex_token: Rename current window
+1760594965.683115 yylex_token: end at WS
+1760594965.683116 yylex_token: ,
+1760594965.683117 yylex_token: end at WS
+1760594965.683118 yylex_token: command-prompt
+1760594965.683119 yylex_token: end at WS
+1760594965.683119 yylex_token: -I#W
+1760594965.683120 yylex_token: end at WS
+1760594965.683121 yylex_token: rename-window
+1760594965.683122 yylex_token: end at WS
+1760594965.683122 yylex_token: --
+1760594965.683123 yylex_token: end at WS
+1760594965.683124 yylex_token: %%
+1760594965.683125 cmd_parse_build_commands 0:0: bind
+1760594965.683126 cmd_parse_build_commands 0:1: -N
+1760594965.683127 cmd_parse_build_commands 0:2: Rename current window
+1760594965.683128 cmd_parse_build_commands 0:3: ,
+1760594965.683128 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683129 cmd_parse_build_commands 0:4 0:1: -I#W
+1760594965.683130 cmd_parse_build_commands 0:4 0:2 0:0: rename-window
+1760594965.683131 cmd_parse_build_commands 0:4 0:2 0:1: --
+1760594965.683132 cmd_parse_build_commands 0:4 0:2 0:2: %%
+1760594965.683133 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683135 cmd_parse_build_commands 0:1: -I#W
+1760594965.683136 cmd_parse_build_commands 0:2 0:0: rename-window
+1760594965.683137 cmd_parse_build_commands 0:2 0:1: --
+1760594965.683138 cmd_parse_build_commands 0:2 0:2: %%
+1760594965.683139 cmd_parse_build_commands 0:0: rename-window
+1760594965.683140 cmd_parse_build_commands 0:1: --
+1760594965.683141 cmd_parse_build_commands 0:2: %%
+1760594965.683142 args_parse_flags: next --
+1760594965.683143 args_parse: flags end at 2 of 3
+1760594965.683144 args_parse: 2 = %% (type STRING)
+1760594965.683145 cmd_parse_build_commands: rename-window "%%"
+1760594965.683146 args_parse_flags: next -I#W
+1760594965.683147 args_parse_flag_argument: -I = #W
+1760594965.683148 args_parse: flags end at 2 of 3
+1760594965.683149 args_parse: 2 = rename-window "%%" (type COMMANDS)
+1760594965.683150 cmd_parse_build_commands: command-prompt -I "#W" { rename-window "%%" }
+1760594965.683151 args_parse_flags: next -N
+1760594965.683152 args_parse_flag_argument: -N = Rename current window
+1760594965.683153 args_parse_flags: next ,
+1760594965.683154 args_parse: flags end at 3 of 5
+1760594965.683154 args_parse: 3 = , (type STRING)
+1760594965.683156 args_parse: 4 = command-prompt -I "#W" { rename-window "%%" } (type COMMANDS)
+1760594965.683158 cmd_parse_build_commands: bind-key -N "Rename current window" , { command-prompt -I "#W" { rename-window "%%" } }
+1760594965.683160 cmdq_get_command: [bind-key/0x563599aa1190] group 122
+1760594965.683160 cmdq_append <global>: [bind-key/0x563599aa1190]
+1760594965.683161 yylex_token: end at WS
+1760594965.683162 yylex_token: bind
+1760594965.683163 yylex_token: end at WS
+1760594965.683163 yylex_token: -N
+1760594965.683164 yylex_token: end at WS
+1760594965.683165 yylex_token: Delete the most recent paste buffer
+1760594965.683166 yylex_token: end at WS
+1760594965.683167 yylex_token: -
+1760594965.683168 yylex_token: end at WS
+1760594965.683168 yylex_token: delete-buffer
+1760594965.683169 cmd_parse_build_commands 0:0: bind
+1760594965.683170 cmd_parse_build_commands 0:1: -N
+1760594965.683171 cmd_parse_build_commands 0:2: Delete the most recent paste buffer
+1760594965.683172 cmd_parse_build_commands 0:3: -
+1760594965.683173 cmd_parse_build_commands 0:4 0:0: delete-buffer
+1760594965.683174 cmd_parse_build_commands 0:0: delete-buffer
+1760594965.683175 args_parse: flags end at 1 of 1
+1760594965.683176 cmd_parse_build_commands: delete-buffer
+1760594965.683177 args_parse_flags: next -N
+1760594965.683178 args_parse_flag_argument: -N = Delete the most recent paste buffer
+1760594965.683179 args_parse_flags: next -
+1760594965.683179 args_parse: flags end at 3 of 5
+1760594965.683180 args_parse: 3 = - (type STRING)
+1760594965.683181 args_parse: 4 = delete-buffer (type COMMANDS)
+1760594965.683184 cmd_parse_build_commands: bind-key -N "Delete the most recent paste buffer" - { delete-buffer }
+1760594965.683185 cmdq_get_command: [bind-key/0x563599aa1820] group 134
+1760594965.683186 cmdq_append <global>: [bind-key/0x563599aa1820]
+1760594965.683187 yylex_token: end at WS
+1760594965.683187 yylex_token: bind
+1760594965.683188 yylex_token: end at WS
+1760594965.683189 yylex_token: -N
+1760594965.683190 yylex_token: end at WS
+1760594965.683190 yylex_token: Move the current window
+1760594965.683191 yylex_token: end at WS
+1760594965.683192 yylex_token: .
+1760594965.683193 yylex_token: end at WS
+1760594965.683194 yylex_token: command-prompt
+1760594965.683194 yylex_token: end at WS
+1760594965.683195 yylex_token: -T
+1760594965.683196 yylex_token: end at WS
+1760594965.683197 yylex_token: target
+1760594965.683197 yylex_token: end at WS
+1760594965.683198 yylex_token: move-window
+1760594965.683199 yylex_token: end at WS
+1760594965.683200 yylex_token: -t
+1760594965.683200 yylex_token: end at WS
+1760594965.683201 yylex_token: %%
+1760594965.683202 cmd_parse_build_commands 0:0: bind
+1760594965.683203 cmd_parse_build_commands 0:1: -N
+1760594965.683204 cmd_parse_build_commands 0:2: Move the current window
+1760594965.683205 cmd_parse_build_commands 0:3: .
+1760594965.683206 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683209 cmd_parse_build_commands 0:4 0:1: -T
+1760594965.683211 cmd_parse_build_commands 0:4 0:2: target
+1760594965.683212 cmd_parse_build_commands 0:4 0:3 0:0: move-window
+1760594965.683213 cmd_parse_build_commands 0:4 0:3 0:1: -t
+1760594965.683214 cmd_parse_build_commands 0:4 0:3 0:2: %%
+1760594965.683215 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683215 cmd_parse_build_commands 0:1: -T
+1760594965.683216 cmd_parse_build_commands 0:2: target
+1760594965.683217 cmd_parse_build_commands 0:3 0:0: move-window
+1760594965.683218 cmd_parse_build_commands 0:3 0:1: -t
+1760594965.683219 cmd_parse_build_commands 0:3 0:2: %%
+1760594965.683220 cmd_parse_build_commands 0:0: move-window
+1760594965.683221 cmd_parse_build_commands 0:1: -t
+1760594965.683222 cmd_parse_build_commands 0:2: %%
+1760594965.683223 args_parse_flags: next -t
+1760594965.683224 args_parse_flag_argument: -t = %%
+1760594965.683225 args_parse: flags end at 3 of 3
+1760594965.683226 cmd_parse_build_commands: move-window -t "%%"
+1760594965.683227 args_parse_flags: next -T
+1760594965.683228 args_parse_flag_argument: -T = target
+1760594965.683228 args_parse: flags end at 3 of 4
+1760594965.683230 args_parse: 3 = move-window -t "%%" (type COMMANDS)
+1760594965.683231 cmd_parse_build_commands: command-prompt -T target { move-window -t "%%" }
+1760594965.683232 args_parse_flags: next -N
+1760594965.683233 args_parse_flag_argument: -N = Move the current window
+1760594965.683234 args_parse_flags: next .
+1760594965.683235 args_parse: flags end at 3 of 5
+1760594965.683235 args_parse: 3 = . (type STRING)
+1760594965.683237 args_parse: 4 = command-prompt -T target { move-window -t "%%" } (type COMMANDS)
+1760594965.683239 cmd_parse_build_commands: bind-key -N "Move the current window" . { command-prompt -T target { move-window -t "%%" } }
+1760594965.683241 cmdq_get_command: [bind-key/0x563599aa2000] group 142
+1760594965.683241 cmdq_append <global>: [bind-key/0x563599aa2000]
+1760594965.683242 yylex_token: end at WS
+1760594965.683243 yylex_token: bind
+1760594965.683244 yylex_token: end at WS
+1760594965.683244 yylex_token: -N
+1760594965.683245 yylex_token: end at WS
+1760594965.683246 yylex_token: Describe key binding
+1760594965.683247 yylex_token: end at WS
+1760594965.683247 yylex_token: /
+1760594965.683248 yylex_token: end at WS
+1760594965.683249 yylex_token: command-prompt
+1760594965.683250 yylex_token: end at WS
+1760594965.683251 yylex_token: -kpkey
+1760594965.683251 yylex_token: end at WS
+1760594965.683252 yylex_token: list-keys
+1760594965.683253 yylex_token: end at WS
+1760594965.683254 yylex_token: -1N
+1760594965.683254 yylex_token: end at WS
+1760594965.683255 yylex_token: %%
+1760594965.683256 cmd_parse_build_commands 0:0: bind
+1760594965.683257 cmd_parse_build_commands 0:1: -N
+1760594965.683258 cmd_parse_build_commands 0:2: Describe key binding
+1760594965.683259 cmd_parse_build_commands 0:3: /
+1760594965.683260 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683260 cmd_parse_build_commands 0:4 0:1: -kpkey
+1760594965.683261 cmd_parse_build_commands 0:4 0:2 0:0: list-keys
+1760594965.683262 cmd_parse_build_commands 0:4 0:2 0:1: -1N
+1760594965.683263 cmd_parse_build_commands 0:4 0:2 0:2: %%
+1760594965.683264 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683265 cmd_parse_build_commands 0:1: -kpkey
+1760594965.683266 cmd_parse_build_commands 0:2 0:0: list-keys
+1760594965.683267 cmd_parse_build_commands 0:2 0:1: -1N
+1760594965.683267 cmd_parse_build_commands 0:2 0:2: %%
+1760594965.683268 cmd_parse_build_commands 0:0: list-keys
+1760594965.683269 cmd_parse_build_commands 0:1: -1N
+1760594965.683270 cmd_parse_build_commands 0:2: %%
+1760594965.683271 args_parse_flags: next -1N
+1760594965.683272 args_parse_flags: -1
+1760594965.683273 args_parse_flags: -N
+1760594965.683273 args_parse_flags: next %%
+1760594965.683274 args_parse: flags end at 2 of 3
+1760594965.683275 args_parse: 2 = %% (type STRING)
+1760594965.683276 cmd_parse_build_commands: list-keys -1N "%%"
+1760594965.683277 args_parse_flags: next -kpkey
+1760594965.683279 args_parse_flags: -k
+1760594965.683280 args_parse_flag_argument: -p = key
+1760594965.683281 args_parse: flags end at 2 of 3
+1760594965.683282 args_parse: 2 = list-keys -1N "%%" (type COMMANDS)
+1760594965.683284 cmd_parse_build_commands: command-prompt -k -p key { list-keys -1N "%%" }
+1760594965.683285 args_parse_flags: next -N
+1760594965.683286 args_parse_flag_argument: -N = Describe key binding
+1760594965.683286 args_parse_flags: next /
+1760594965.683287 args_parse: flags end at 3 of 5
+1760594965.683288 args_parse: 3 = / (type STRING)
+1760594965.683290 args_parse: 4 = command-prompt -k -p key { list-keys -1N "%%" } (type COMMANDS)
+1760594965.683292 cmd_parse_build_commands: bind-key -N "Describe key binding" / { command-prompt -k -p key { list-keys -1N "%%" } }
+1760594965.683294 cmdq_get_command: [bind-key/0x563599aa2a00] group 154
+1760594965.683294 cmdq_append <global>: [bind-key/0x563599aa2a00]
+1760594965.683295 yylex_token: end at WS
+1760594965.683296 yylex_token: bind
+1760594965.683297 yylex_token: end at WS
+1760594965.683297 yylex_token: -N
+1760594965.683298 yylex_token: end at WS
+1760594965.683299 yylex_token: Select window 0
+1760594965.683300 yylex_token: end at WS
+1760594965.683300 yylex_token: 0
+1760594965.683301 yylex_token: end at WS
+1760594965.683302 yylex_token: select-window
+1760594965.683303 yylex_token: end at WS
+1760594965.683303 yylex_token: -t:=0
+1760594965.683304 cmd_parse_build_commands 0:0: bind
+1760594965.683305 cmd_parse_build_commands 0:1: -N
+1760594965.683306 cmd_parse_build_commands 0:2: Select window 0
+1760594965.683307 cmd_parse_build_commands 0:3: 0
+1760594965.683308 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683309 cmd_parse_build_commands 0:4 0:1: -t:=0
+1760594965.683310 cmd_parse_build_commands 0:0: select-window
+1760594965.683311 cmd_parse_build_commands 0:1: -t:=0
+1760594965.683312 args_parse_flags: next -t:=0
+1760594965.683313 args_parse_flag_argument: -t = :=0
+1760594965.683314 args_parse: flags end at 2 of 2
+1760594965.683315 cmd_parse_build_commands: select-window -t :=0
+1760594965.683316 args_parse_flags: next -N
+1760594965.683317 args_parse_flag_argument: -N = Select window 0
+1760594965.683318 args_parse_flags: next 0
+1760594965.683319 args_parse: flags end at 3 of 5
+1760594965.683320 args_parse: 3 = 0 (type STRING)
+1760594965.683321 args_parse: 4 = select-window -t :=0 (type COMMANDS)
+1760594965.683323 cmd_parse_build_commands: bind-key -N "Select window 0" 0 { select-window -t :=0 }
+1760594965.683324 cmdq_get_command: [bind-key/0x563599aa26d0] group 166
+1760594965.683325 cmdq_append <global>: [bind-key/0x563599aa26d0]
+1760594965.683326 yylex_token: end at WS
+1760594965.683327 yylex_token: bind
+1760594965.683327 yylex_token: end at WS
+1760594965.683328 yylex_token: -N
+1760594965.683329 yylex_token: end at WS
+1760594965.683330 yylex_token: Select window 1
+1760594965.683331 yylex_token: end at WS
+1760594965.683331 yylex_token: 1
+1760594965.683332 yylex_token: end at WS
+1760594965.683333 yylex_token: select-window
+1760594965.683334 yylex_token: end at WS
+1760594965.683335 yylex_token: -t:=1
+1760594965.683335 cmd_parse_build_commands 0:0: bind
+1760594965.683336 cmd_parse_build_commands 0:1: -N
+1760594965.683337 cmd_parse_build_commands 0:2: Select window 1
+1760594965.683338 cmd_parse_build_commands 0:3: 1
+1760594965.683339 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683340 cmd_parse_build_commands 0:4 0:1: -t:=1
+1760594965.683341 cmd_parse_build_commands 0:0: select-window
+1760594965.683341 cmd_parse_build_commands 0:1: -t:=1
+1760594965.683343 args_parse_flags: next -t:=1
+1760594965.683344 args_parse_flag_argument: -t = :=1
+1760594965.683345 args_parse: flags end at 2 of 2
+1760594965.683346 cmd_parse_build_commands: select-window -t :=1
+1760594965.683347 args_parse_flags: next -N
+1760594965.683347 args_parse_flag_argument: -N = Select window 1
+1760594965.683348 args_parse_flags: next 1
+1760594965.683349 args_parse: flags end at 3 of 5
+1760594965.683350 args_parse: 3 = 1 (type STRING)
+1760594965.683351 args_parse: 4 = select-window -t :=1 (type COMMANDS)
+1760594965.683354 cmd_parse_build_commands: bind-key -N "Select window 1" 1 { select-window -t :=1 }
+1760594965.683355 cmdq_get_command: [bind-key/0x563599aa31c0] group 174
+1760594965.683356 cmdq_append <global>: [bind-key/0x563599aa31c0]
+1760594965.683357 yylex_token: end at WS
+1760594965.683357 yylex_token: bind
+1760594965.683358 yylex_token: end at WS
+1760594965.683359 yylex_token: -N
+1760594965.683360 yylex_token: end at WS
+1760594965.683361 yylex_token: Select window 2
+1760594965.683361 yylex_token: end at WS
+1760594965.683362 yylex_token: 2
+1760594965.683363 yylex_token: end at WS
+1760594965.683364 yylex_token: select-window
+1760594965.683364 yylex_token: end at WS
+1760594965.683365 yylex_token: -t:=2
+1760594965.683366 cmd_parse_build_commands 0:0: bind
+1760594965.683367 cmd_parse_build_commands 0:1: -N
+1760594965.683368 cmd_parse_build_commands 0:2: Select window 2
+1760594965.683369 cmd_parse_build_commands 0:3: 2
+1760594965.683369 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683370 cmd_parse_build_commands 0:4 0:1: -t:=2
+1760594965.683371 cmd_parse_build_commands 0:0: select-window
+1760594965.683372 cmd_parse_build_commands 0:1: -t:=2
+1760594965.683374 args_parse_flags: next -t:=2
+1760594965.683374 args_parse_flag_argument: -t = :=2
+1760594965.683375 args_parse: flags end at 2 of 2
+1760594965.683376 cmd_parse_build_commands: select-window -t :=2
+1760594965.683377 args_parse_flags: next -N
+1760594965.683378 args_parse_flag_argument: -N = Select window 2
+1760594965.683379 args_parse_flags: next 2
+1760594965.683380 args_parse: flags end at 3 of 5
+1760594965.683380 args_parse: 3 = 2 (type STRING)
+1760594965.683382 args_parse: 4 = select-window -t :=2 (type COMMANDS)
+1760594965.683383 cmd_parse_build_commands: bind-key -N "Select window 2" 2 { select-window -t :=2 }
+1760594965.683385 cmdq_get_command: [bind-key/0x563599aa3670] group 182
+1760594965.683385 cmdq_append <global>: [bind-key/0x563599aa3670]
+1760594965.683386 yylex_token: end at WS
+1760594965.683387 yylex_token: bind
+1760594965.683388 yylex_token: end at WS
+1760594965.683388 yylex_token: -N
+1760594965.683389 yylex_token: end at WS
+1760594965.683390 yylex_token: Select window 3
+1760594965.683391 yylex_token: end at WS
+1760594965.683391 yylex_token: 3
+1760594965.683392 yylex_token: end at WS
+1760594965.683393 yylex_token: select-window
+1760594965.683394 yylex_token: end at WS
+1760594965.683395 yylex_token: -t:=3
+1760594965.683395 cmd_parse_build_commands 0:0: bind
+1760594965.683396 cmd_parse_build_commands 0:1: -N
+1760594965.683397 cmd_parse_build_commands 0:2: Select window 3
+1760594965.683398 cmd_parse_build_commands 0:3: 3
+1760594965.683399 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683400 cmd_parse_build_commands 0:4 0:1: -t:=3
+1760594965.683401 cmd_parse_build_commands 0:0: select-window
+1760594965.683401 cmd_parse_build_commands 0:1: -t:=3
+1760594965.683403 args_parse_flags: next -t:=3
+1760594965.683403 args_parse_flag_argument: -t = :=3
+1760594965.683404 args_parse: flags end at 2 of 2
+1760594965.683405 cmd_parse_build_commands: select-window -t :=3
+1760594965.683406 args_parse_flags: next -N
+1760594965.683407 args_parse_flag_argument: -N = Select window 3
+1760594965.683408 args_parse_flags: next 3
+1760594965.683409 args_parse: flags end at 3 of 5
+1760594965.683409 args_parse: 3 = 3 (type STRING)
+1760594965.683411 args_parse: 4 = select-window -t :=3 (type COMMANDS)
+1760594965.683414 cmd_parse_build_commands: bind-key -N "Select window 3" 3 { select-window -t :=3 }
+1760594965.683416 cmdq_get_command: [bind-key/0x563599aa3a50] group 190
+1760594965.683417 cmdq_append <global>: [bind-key/0x563599aa3a50]
+1760594965.683418 yylex_token: end at WS
+1760594965.683419 yylex_token: bind
+1760594965.683420 yylex_token: end at WS
+1760594965.683423 yylex_token: -N
+1760594965.683424 yylex_token: end at WS
+1760594965.683425 yylex_token: Select window 4
+1760594965.683426 yylex_token: end at WS
+1760594965.683427 yylex_token: 4
+1760594965.683427 yylex_token: end at WS
+1760594965.683428 yylex_token: select-window
+1760594965.683429 yylex_token: end at WS
+1760594965.683430 yylex_token: -t:=4
+1760594965.683431 cmd_parse_build_commands 0:0: bind
+1760594965.683432 cmd_parse_build_commands 0:1: -N
+1760594965.683433 cmd_parse_build_commands 0:2: Select window 4
+1760594965.683434 cmd_parse_build_commands 0:3: 4
+1760594965.683435 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683436 cmd_parse_build_commands 0:4 0:1: -t:=4
+1760594965.683437 cmd_parse_build_commands 0:0: select-window
+1760594965.683437 cmd_parse_build_commands 0:1: -t:=4
+1760594965.683439 args_parse_flags: next -t:=4
+1760594965.683439 args_parse_flag_argument: -t = :=4
+1760594965.683440 args_parse: flags end at 2 of 2
+1760594965.683442 cmd_parse_build_commands: select-window -t :=4
+1760594965.683442 args_parse_flags: next -N
+1760594965.683443 args_parse_flag_argument: -N = Select window 4
+1760594965.683444 args_parse_flags: next 4
+1760594965.683445 args_parse: flags end at 3 of 5
+1760594965.683445 args_parse: 3 = 4 (type STRING)
+1760594965.683447 args_parse: 4 = select-window -t :=4 (type COMMANDS)
+1760594965.683448 cmd_parse_build_commands: bind-key -N "Select window 4" 4 { select-window -t :=4 }
+1760594965.683450 cmdq_get_command: [bind-key/0x563599aa3e30] group 198
+1760594965.683451 cmdq_append <global>: [bind-key/0x563599aa3e30]
+1760594965.683452 yylex_token: end at WS
+1760594965.683452 yylex_token: bind
+1760594965.683453 yylex_token: end at WS
+1760594965.683454 yylex_token: -N
+1760594965.683455 yylex_token: end at WS
+1760594965.683455 yylex_token: Select window 5
+1760594965.683456 yylex_token: end at WS
+1760594965.683457 yylex_token: 5
+1760594965.683458 yylex_token: end at WS
+1760594965.683458 yylex_token: select-window
+1760594965.683459 yylex_token: end at WS
+1760594965.683460 yylex_token: -t:=5
+1760594965.683461 cmd_parse_build_commands 0:0: bind
+1760594965.683462 cmd_parse_build_commands 0:1: -N
+1760594965.683463 cmd_parse_build_commands 0:2: Select window 5
+1760594965.683463 cmd_parse_build_commands 0:3: 5
+1760594965.683464 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683465 cmd_parse_build_commands 0:4 0:1: -t:=5
+1760594965.683466 cmd_parse_build_commands 0:0: select-window
+1760594965.683467 cmd_parse_build_commands 0:1: -t:=5
+1760594965.683468 args_parse_flags: next -t:=5
+1760594965.683469 args_parse_flag_argument: -t = :=5
+1760594965.683470 args_parse: flags end at 2 of 2
+1760594965.683471 cmd_parse_build_commands: select-window -t :=5
+1760594965.683472 args_parse_flags: next -N
+1760594965.683472 args_parse_flag_argument: -N = Select window 5
+1760594965.683473 args_parse_flags: next 5
+1760594965.683474 args_parse: flags end at 3 of 5
+1760594965.683475 args_parse: 3 = 5 (type STRING)
+1760594965.683476 args_parse: 4 = select-window -t :=5 (type COMMANDS)
+1760594965.683478 cmd_parse_build_commands: bind-key -N "Select window 5" 5 { select-window -t :=5 }
+1760594965.683479 cmdq_get_command: [bind-key/0x563599aa4370] group 206
+1760594965.683479 cmdq_append <global>: [bind-key/0x563599aa4370]
+1760594965.683480 yylex_token: end at WS
+1760594965.683481 yylex_token: bind
+1760594965.683482 yylex_token: end at WS
+1760594965.683482 yylex_token: -N
+1760594965.683483 yylex_token: end at WS
+1760594965.683484 yylex_token: Select window 6
+1760594965.683485 yylex_token: end at WS
+1760594965.683485 yylex_token: 6
+1760594965.683486 yylex_token: end at WS
+1760594965.683487 yylex_token: select-window
+1760594965.683488 yylex_token: end at WS
+1760594965.683488 yylex_token: -t:=6
+1760594965.683489 cmd_parse_build_commands 0:0: bind
+1760594965.683490 cmd_parse_build_commands 0:1: -N
+1760594965.683491 cmd_parse_build_commands 0:2: Select window 6
+1760594965.683492 cmd_parse_build_commands 0:3: 6
+1760594965.683493 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683494 cmd_parse_build_commands 0:4 0:1: -t:=6
+1760594965.683495 cmd_parse_build_commands 0:0: select-window
+1760594965.683496 cmd_parse_build_commands 0:1: -t:=6
+1760594965.683497 args_parse_flags: next -t:=6
+1760594965.683498 args_parse_flag_argument: -t = :=6
+1760594965.683499 args_parse: flags end at 2 of 2
+1760594965.683501 cmd_parse_build_commands: select-window -t :=6
+1760594965.683502 args_parse_flags: next -N
+1760594965.683503 args_parse_flag_argument: -N = Select window 6
+1760594965.683504 args_parse_flags: next 6
+1760594965.683504 args_parse: flags end at 3 of 5
+1760594965.683505 args_parse: 3 = 6 (type STRING)
+1760594965.683506 args_parse: 4 = select-window -t :=6 (type COMMANDS)
+1760594965.683508 cmd_parse_build_commands: bind-key -N "Select window 6" 6 { select-window -t :=6 }
+1760594965.683509 cmdq_get_command: [bind-key/0x563599aa4710] group 214
+1760594965.683510 cmdq_append <global>: [bind-key/0x563599aa4710]
+1760594965.683511 yylex_token: end at WS
+1760594965.683512 yylex_token: bind
+1760594965.683512 yylex_token: end at WS
+1760594965.683513 yylex_token: -N
+1760594965.683514 yylex_token: end at WS
+1760594965.683515 yylex_token: Select window 7
+1760594965.683515 yylex_token: end at WS
+1760594965.683516 yylex_token: 7
+1760594965.683517 yylex_token: end at WS
+1760594965.683518 yylex_token: select-window
+1760594965.683519 yylex_token: end at WS
+1760594965.683519 yylex_token: -t:=7
+1760594965.683520 cmd_parse_build_commands 0:0: bind
+1760594965.683521 cmd_parse_build_commands 0:1: -N
+1760594965.683522 cmd_parse_build_commands 0:2: Select window 7
+1760594965.683523 cmd_parse_build_commands 0:3: 7
+1760594965.683524 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683525 cmd_parse_build_commands 0:4 0:1: -t:=7
+1760594965.683526 cmd_parse_build_commands 0:0: select-window
+1760594965.683526 cmd_parse_build_commands 0:1: -t:=7
+1760594965.683528 args_parse_flags: next -t:=7
+1760594965.683529 args_parse_flag_argument: -t = :=7
+1760594965.683529 args_parse: flags end at 2 of 2
+1760594965.683531 cmd_parse_build_commands: select-window -t :=7
+1760594965.683531 args_parse_flags: next -N
+1760594965.683532 args_parse_flag_argument: -N = Select window 7
+1760594965.683533 args_parse_flags: next 7
+1760594965.683534 args_parse: flags end at 3 of 5
+1760594965.683535 args_parse: 3 = 7 (type STRING)
+1760594965.683536 args_parse: 4 = select-window -t :=7 (type COMMANDS)
+1760594965.683538 cmd_parse_build_commands: bind-key -N "Select window 7" 7 { select-window -t :=7 }
+1760594965.683539 cmdq_get_command: [bind-key/0x563599aa4b70] group 222
+1760594965.683539 cmdq_append <global>: [bind-key/0x563599aa4b70]
+1760594965.683540 yylex_token: end at WS
+1760594965.683541 yylex_token: bind
+1760594965.683542 yylex_token: end at WS
+1760594965.683543 yylex_token: -N
+1760594965.683543 yylex_token: end at WS
+1760594965.683544 yylex_token: Select window 8
+1760594965.683545 yylex_token: end at WS
+1760594965.683546 yylex_token: 8
+1760594965.683546 yylex_token: end at WS
+1760594965.683547 yylex_token: select-window
+1760594965.683548 yylex_token: end at WS
+1760594965.683549 yylex_token: -t:=8
+1760594965.683550 cmd_parse_build_commands 0:0: bind
+1760594965.683550 cmd_parse_build_commands 0:1: -N
+1760594965.683551 cmd_parse_build_commands 0:2: Select window 8
+1760594965.683552 cmd_parse_build_commands 0:3: 8
+1760594965.683553 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683554 cmd_parse_build_commands 0:4 0:1: -t:=8
+1760594965.683555 cmd_parse_build_commands 0:0: select-window
+1760594965.683556 cmd_parse_build_commands 0:1: -t:=8
+1760594965.683557 args_parse_flags: next -t:=8
+1760594965.683558 args_parse_flag_argument: -t = :=8
+1760594965.683559 args_parse: flags end at 2 of 2
+1760594965.683560 cmd_parse_build_commands: select-window -t :=8
+1760594965.683561 args_parse_flags: next -N
+1760594965.683562 args_parse_flag_argument: -N = Select window 8
+1760594965.683563 args_parse_flags: next 8
+1760594965.683563 args_parse: flags end at 3 of 5
+1760594965.683564 args_parse: 3 = 8 (type STRING)
+1760594965.683565 args_parse: 4 = select-window -t :=8 (type COMMANDS)
+1760594965.683567 cmd_parse_build_commands: bind-key -N "Select window 8" 8 { select-window -t :=8 }
+1760594965.683568 cmdq_get_command: [bind-key/0x563599aa4e60] group 230
+1760594965.683569 cmdq_append <global>: [bind-key/0x563599aa4e60]
+1760594965.683570 yylex_token: end at WS
+1760594965.683571 yylex_token: bind
+1760594965.683572 yylex_token: end at WS
+1760594965.683573 yylex_token: -N
+1760594965.683574 yylex_token: end at WS
+1760594965.683575 yylex_token: Select window 9
+1760594965.683575 yylex_token: end at WS
+1760594965.683576 yylex_token: 9
+1760594965.683577 yylex_token: end at WS
+1760594965.683578 yylex_token: select-window
+1760594965.683579 yylex_token: end at WS
+1760594965.683579 yylex_token: -t:=9
+1760594965.683580 cmd_parse_build_commands 0:0: bind
+1760594965.683581 cmd_parse_build_commands 0:1: -N
+1760594965.683582 cmd_parse_build_commands 0:2: Select window 9
+1760594965.683583 cmd_parse_build_commands 0:3: 9
+1760594965.683584 cmd_parse_build_commands 0:4 0:0: select-window
+1760594965.683584 cmd_parse_build_commands 0:4 0:1: -t:=9
+1760594965.683585 cmd_parse_build_commands 0:0: select-window
+1760594965.683586 cmd_parse_build_commands 0:1: -t:=9
+1760594965.683587 args_parse_flags: next -t:=9
+1760594965.683588 args_parse_flag_argument: -t = :=9
+1760594965.683589 args_parse: flags end at 2 of 2
+1760594965.683590 cmd_parse_build_commands: select-window -t :=9
+1760594965.683591 args_parse_flags: next -N
+1760594965.683592 args_parse_flag_argument: -N = Select window 9
+1760594965.683593 args_parse_flags: next 9
+1760594965.683594 args_parse: flags end at 3 of 5
+1760594965.683594 args_parse: 3 = 9 (type STRING)
+1760594965.683596 args_parse: 4 = select-window -t :=9 (type COMMANDS)
+1760594965.683597 cmd_parse_build_commands: bind-key -N "Select window 9" 9 { select-window -t :=9 }
+1760594965.683599 cmdq_get_command: [bind-key/0x563599aa55f0] group 238
+1760594965.683599 cmdq_append <global>: [bind-key/0x563599aa55f0]
+1760594965.683600 yylex_token: end at WS
+1760594965.683601 yylex_token: bind
+1760594965.683602 yylex_token: end at WS
+1760594965.683602 yylex_token: -N
+1760594965.683603 yylex_token: end at WS
+1760594965.683604 yylex_token: Prompt for a command
+1760594965.683605 yylex_token: end at WS
+1760594965.683606 yylex_token: :
+1760594965.683606 yylex_token: end at WS
+1760594965.683607 yylex_token: command-prompt
+1760594965.683608 cmd_parse_build_commands 0:0: bind
+1760594965.683609 cmd_parse_build_commands 0:1: -N
+1760594965.683610 cmd_parse_build_commands 0:2: Prompt for a command
+1760594965.683610 cmd_parse_build_commands 0:3: :
+1760594965.683612 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683613 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683614 args_parse: flags end at 1 of 1
+1760594965.683615 cmd_parse_build_commands: command-prompt
+1760594965.683615 args_parse_flags: next -N
+1760594965.683616 args_parse_flag_argument: -N = Prompt for a command
+1760594965.683617 args_parse_flags: next :
+1760594965.683618 args_parse: flags end at 3 of 5
+1760594965.683619 args_parse: 3 = : (type STRING)
+1760594965.683620 args_parse: 4 = command-prompt (type COMMANDS)
+1760594965.683621 cmd_parse_build_commands: bind-key -N "Prompt for a command" : { command-prompt }
+1760594965.683622 cmdq_get_command: [bind-key/0x563599aa5920] group 246
+1760594965.683623 cmdq_append <global>: [bind-key/0x563599aa5920]
+1760594965.683624 yylex_token: end at WS
+1760594965.683625 yylex_token: bind
+1760594965.683626 yylex_token: end at WS
+1760594965.683626 yylex_token: -N
+1760594965.683627 yylex_token: end at WS
+1760594965.683628 yylex_token: Move to the previously active pane
+1760594965.683629 yylex_token: end at WS
+1760594965.683630 yylex_token: ;
+1760594965.683630 yylex_token: end at WS
+1760594965.683631 yylex_token: last-pane
+1760594965.683632 cmd_parse_build_commands 0:0: bind
+1760594965.683633 cmd_parse_build_commands 0:1: -N
+1760594965.683634 cmd_parse_build_commands 0:2: Move to the previously active pane
+1760594965.683635 cmd_parse_build_commands 0:3: ;
+1760594965.683636 cmd_parse_build_commands 0:4 0:0: last-pane
+1760594965.683637 cmd_parse_build_commands 0:0: last-pane
+1760594965.683638 args_parse: flags end at 1 of 1
+1760594965.683639 cmd_parse_build_commands: last-pane
+1760594965.683640 args_parse_flags: next -N
+1760594965.683641 args_parse_flag_argument: -N = Move to the previously active pane
+1760594965.683643 args_parse_flags: next ;
+1760594965.683644 args_parse: flags end at 3 of 5
+1760594965.683645 args_parse: 3 = ; (type STRING)
+1760594965.683646 args_parse: 4 = last-pane (type COMMANDS)
+1760594965.683648 cmd_parse_build_commands: bind-key -N "Move to the previously active pane" \\; { last-pane }
+1760594965.683649 cmdq_get_command: [bind-key/0x563599aa5e00] group 254
+1760594965.683650 cmdq_append <global>: [bind-key/0x563599aa5e00]
+1760594965.683650 yylex_token: end at WS
+1760594965.683651 yylex_token: bind
+1760594965.683652 yylex_token: end at WS
+1760594965.683653 yylex_token: -N
+1760594965.683654 yylex_token: end at WS
+1760594965.683655 yylex_token: Choose a paste buffer from a list
+1760594965.683656 yylex_token: end at WS
+1760594965.683657 yylex_token: =
+1760594965.683658 yylex_token: end at WS
+1760594965.683658 yylex_token: choose-buffer
+1760594965.683659 yylex_token: end at WS
+1760594965.683660 yylex_token: -Z
+1760594965.683661 cmd_parse_build_commands 0:0: bind
+1760594965.683661 cmd_parse_build_commands 0:1: -N
+1760594965.683662 cmd_parse_build_commands 0:2: Choose a paste buffer from a list
+1760594965.683663 cmd_parse_build_commands 0:3: =
+1760594965.683664 cmd_parse_build_commands 0:4 0:0: choose-buffer
+1760594965.683665 cmd_parse_build_commands 0:4 0:1: -Z
+1760594965.683666 cmd_parse_build_commands 0:0: choose-buffer
+1760594965.683667 cmd_parse_build_commands 0:1: -Z
+1760594965.683668 args_parse_flags: next -Z
+1760594965.683669 args_parse_flags: -Z
+1760594965.683669 args_parse: flags end at 2 of 2
+1760594965.683670 cmd_parse_build_commands: choose-buffer -Z
+1760594965.683671 args_parse_flags: next -N
+1760594965.683672 args_parse_flag_argument: -N = Choose a paste buffer from a list
+1760594965.683673 args_parse_flags: next =
+1760594965.683674 args_parse: flags end at 3 of 5
+1760594965.683675 args_parse: 3 = = (type STRING)
+1760594965.683676 args_parse: 4 = choose-buffer -Z (type COMMANDS)
+1760594965.683678 cmd_parse_build_commands: bind-key -N "Choose a paste buffer from a list" = { choose-buffer -Z }
+1760594965.683679 cmdq_get_command: [bind-key/0x563599aa64e0] group 262
+1760594965.683680 cmdq_append <global>: [bind-key/0x563599aa64e0]
+1760594965.683680 yylex_token: end at WS
+1760594965.683681 yylex_token: bind
+1760594965.683682 yylex_token: end at WS
+1760594965.683683 yylex_token: -N
+1760594965.683684 yylex_token: end at WS
+1760594965.683684 yylex_token: Show keybind cheatsheet
+1760594965.683685 yylex_token: end at WS
+1760594965.683686 yylex_token: ?
+1760594965.683687 yylex_token: end at WS
+1760594965.683687 yylex_token: show-keys
+1760594965.683688 cmd_parse_build_commands 0:0: bind
+1760594965.683689 cmd_parse_build_commands 0:1: -N
+1760594965.683690 cmd_parse_build_commands 0:2: Show keybind cheatsheet
+1760594965.683691 cmd_parse_build_commands 0:3: ?
+1760594965.683692 cmd_parse_build_commands 0:4 0:0: show-keys
+1760594965.683693 cmd_parse_build_commands 0:0: show-keys
+1760594965.683694 args_parse: flags end at 1 of 1
+1760594965.683695 cmd_parse_build_commands: show-keys
+1760594965.683696 args_parse_flags: next -N
+1760594965.683697 args_parse_flag_argument: -N = Show keybind cheatsheet
+1760594965.683698 args_parse_flags: next ?
+1760594965.683699 args_parse: flags end at 3 of 5
+1760594965.683699 args_parse: 3 = ? (type STRING)
+1760594965.683700 args_parse: 4 = show-keys (type COMMANDS)
+1760594965.683702 cmd_parse_build_commands: bind-key -N "Show keybind cheatsheet" ? { show-keys }
+1760594965.683703 cmdq_get_command: [bind-key/0x563599aa67a0] group 270
+1760594965.683704 cmdq_append <global>: [bind-key/0x563599aa67a0]
+1760594965.683705 yylex_token: end at WS
+1760594965.683706 yylex_token: bind
+1760594965.683707 yylex_token: end at WS
+1760594965.683707 yylex_token: -N
+1760594965.683708 yylex_token: end at WS
+1760594965.683709 yylex_token: Create new project
+1760594965.683710 yylex_token: end at WS
+1760594965.683710 yylex_token: P
+1760594965.683711 yylex_token: end at WS
+1760594965.683712 yylex_token: command-prompt
+1760594965.683713 yylex_token: end at WS
+1760594965.683714 yylex_token: -pproject name:
+1760594965.683715 yylex_token: end at WS
+1760594965.683716 yylex_token: new-project
+1760594965.683717 yylex_token: end at WS
+1760594965.683718 yylex_token: -n
+1760594965.683718 yylex_token: end at WS
+1760594965.683719 yylex_token: %%
+1760594965.683720 cmd_parse_build_commands 0:0: bind
+1760594965.683721 cmd_parse_build_commands 0:1: -N
+1760594965.683722 cmd_parse_build_commands 0:2: Create new project
+1760594965.683723 cmd_parse_build_commands 0:3: P
+1760594965.683724 cmd_parse_build_commands 0:4 0:0: command-prompt
+1760594965.683725 cmd_parse_build_commands 0:4 0:1: -pproject name:
+1760594965.683726 cmd_parse_build_commands 0:4 0:2 0:0: new-project
+1760594965.683726 cmd_parse_build_commands 0:4 0:2 0:1: -n
+1760594965.683727 cmd_parse_build_commands 0:4 0:2 0:2: %%
+1760594965.683728 cmd_parse_build_commands 0:0: command-prompt
+1760594965.683729 cmd_parse_build_commands 0:1: -pproject name:
+1760594965.683730 cmd_parse_build_commands 0:2 0:0: new-project
+1760594965.683731 cmd_parse_build_commands 0:2 0:1: -n
+1760594965.683732 cmd_parse_build_commands 0:2 0:2: %%
+1760594965.683733 cmd_parse_build_commands 0:0: new-project
+1760594965.683733 cmd_parse_build_commands 0:1: -n
+1760594965.683734 cmd_parse_build_commands 0:2: %%
+1760594965.683736 args_parse_flags: next -n
+1760594965.683737 args_parse_flag_argument: -n = %%
+1760594965.683738 args_parse: flags end at 3 of 3
+1760594965.683739 cmd_parse_build_commands: new-project -n "%%"
+1760594965.683740 args_parse_flags: next -pproject name:
+1760594965.683741 args_parse_flag_argument: -p = project name:
+1760594965.683741 args_parse: flags end at 2 of 3
+1760594965.683743 args_parse: 2 = new-project -n "%%" (type COMMANDS)
+1760594965.683745 cmd_parse_build_commands: command-prompt -p "project name:" { new-project -n "%%" }
+1760594965.683745 args_parse_flags: next -N
+1760594965.683746 args_parse_flag_argument: -N = Create new project
+1760594965.683747 args_parse_flags: next P
+1760594965.683748 args_parse: flags end at 3 of 5
+1760594965.683749 args_parse: 3 = P (type STRING)
+1760594965.683750 args_parse: 4 = command-prompt -p "project name:" { new-project -n "%%" } (type COMMANDS)
+1760594965.683753 cmd_parse_build_commands: bind-key -N "Create new project" P { command-prompt -p "project name:" { new-project -n "%%" } }
+1760594965.683754 cmdq_get_command: [bind-key/0x563599aa7490] group 278
+1760594965.683755 cmdq_append <global>: [bind-key/0x563599aa7490]
+1760594965.683756 yylex_token: end at WS
+1760594965.683756 yylex_token: bind
+1760594965.683757 yylex_token: end at WS
+1760594965.683758 yylex_token: -N
+1760594965.683759 yylex_token: end at WS
+1760594965.683759 yylex_token: List projects (interactive)
+1760594965.683760 yylex_token: end at WS
+1760594965.683761 yylex_token: C-p
+1760594965.683762 yylex_token: end at WS
+1760594965.683763 yylex_token: choose-tree
+1760594965.683763 yylex_token: end at WS
+1760594965.683764 yylex_token: -Zp
+1760594965.683765 cmd_parse_build_commands 0:0: bind
+1760594965.683766 cmd_parse_build_commands 0:1: -N
+1760594965.683767 cmd_parse_build_commands 0:2: List projects (interactive)
+1760594965.683768 cmd_parse_build_commands 0:3: C-p
+1760594965.683769 cmd_parse_build_commands 0:4 0:0: choose-tree
+1760594965.683769 cmd_parse_build_commands 0:4 0:1: -Zp
+1760594965.683770 cmd_parse_build_commands 0:0: choose-tree
+1760594965.683771 cmd_parse_build_commands 0:1: -Zp
+1760594965.683772 args_parse_flags: next -Zp
+1760594965.683773 args_parse_flags: -Z
+1760594965.683775 command choose-tree: unknown flag -p
+1760594965.683776 fatal: bad default key: bind -N 'List projects (interactive)' C-p { choose-tree -Zp }

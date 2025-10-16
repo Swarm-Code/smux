@@ -1,0 +1,17 @@
+Breakpoint 1 at 0x6b491: file format.c, line 5678.
+¶–f	lU
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+Àô_iU
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.archlinux.org>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/libthread_db.so.1".
+[Detaching after fork from child process 2468772]
+[Inferior 1 (process 2468769) exited normally]
+
+=== Command completed successfully ===

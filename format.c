@@ -33,6 +33,7 @@
 #include <unistd.h>
 
 #include "tmux.h"
+#include "debug-trace.h"
 
 /*
  * Build a list of key-value pairs and use them to expand #{key} entries in a
@@ -5500,7 +5501,7 @@ format_expand1(struct format_expand_state *es, const char *fmt)
 	const char		*ptr, *s, *style_end = NULL;
 	size_t			 off, len, n, outlen;
 	int			 ch, brackets;
-	char			 expanded[8192];
+	char			 expanded[65536];  /* Increased from 8192 to 65536 for complex project formats */
 
 	if (fmt == NULL || *fmt == '\0')
 		return (xstrdup(""));
@@ -5677,11 +5678,15 @@ char *
 format_expand(struct format_tree *ft, const char *fmt)
 {
 	struct format_expand_state	es;
+	char				*result;
 
+	DEBUG_FORMAT_START(fmt ? fmt : "(null)");
 	memset(&es, 0, sizeof es);
 	es.ft = ft;
 	es.flags = 0;
-	return (format_expand1(&es, fmt));
+	result = format_expand1(&es, fmt);
+	DEBUG_FORMAT_END(result ? result : "(null)");
+	return (result);
 }
 
 /* Expand a single string. */

@@ -3430,8 +3430,11 @@ server_client_command_done(struct cmdq_item *item, __unused void *data)
 {
 	struct client	*c = cmdq_get_client(item);
 
-	if (~c->flags & CLIENT_ATTACHED)
+	if (~c->flags & CLIENT_ATTACHED) {
 		c->flags |= CLIENT_EXIT;
+		/* Send exit message immediately to prevent client hang */
+		server_client_check_exit(c);
+	}
 	else if (~c->flags & CLIENT_EXIT) {
 		if (c->flags & CLIENT_CONTROL)
 			control_ready(c);

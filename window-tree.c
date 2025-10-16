@@ -501,6 +501,8 @@ window_tree_build_project(struct project *p, void *modedata,
 	format_add(ft, "project_name", "%s", p->name);
 	format_add(ft, "project_sessions", "%u", n_sessions);
 	text = format_expand(ft, data->format);
+
+
 	format_free(ft);
 
 	/* Projects are expanded by default to show sessions */
@@ -509,6 +511,10 @@ window_tree_build_project(struct project *p, void *modedata,
 
 	/* Build all sessions in this project as children. */
 	RB_FOREACH(s, sessions, &p->sessions) {
+		/* Data consistency check: skip sessions that don't actually belong to this project */
+		if (s->project != p) {
+			continue;
+		}
 		window_tree_build_session(s, modedata, sort_crit, filter, mti);
 	}
 }
@@ -586,8 +592,8 @@ window_tree_build(void *modedata, struct mode_tree_sort_criteria *sort_crit,
 	data->item_list = NULL;
 	data->item_size = 0;
 
-	/* Phase 1: Build all projects with their sessions (if not filtering to window/pane only) */
-	if (data->type == WINDOW_TREE_NONE || data->type == WINDOW_TREE_SESSION || data->type == WINDOW_TREE_PROJECT) {
+	/* Phase 1: Build all projects with their sessions (include PANE mode for complete tree) */
+	if (data->type == WINDOW_TREE_NONE || data->type == WINDOW_TREE_SESSION || data->type == WINDOW_TREE_PROJECT || data->type == WINDOW_TREE_PANE) {
 		struct project *p, **pl;
 		u_int pn;
 
@@ -608,16 +614,19 @@ window_tree_build(void *modedata, struct mode_tree_sort_criteria *sort_crit,
 	/* Phase 2: Build orphan sessions (sessions without project) */
 	l = NULL;
 	n = 0;
+
 	RB_FOREACH(s, sessions, &sessions) {
 		/* Skip sessions that belong to a project (already built in Phase 1) */
-		if (s->project != NULL)
+		if (s->project != NULL) {
 			continue;
+		}
 
 		if (data->squash_groups &&
 		    (sg = session_group_contains(s)) != NULL) {
 			if ((sg == current && s != data->fs.s) ||
-			    (sg != current && s != TAILQ_FIRST(&sg->sessions)))
+			    (sg != current && s != TAILQ_FIRST(&sg->sessions))) {
 				continue;
+			}
 		}
 		l = xreallocarray(l, n + 1, sizeof *l);
 		l[n++] = s;
@@ -625,8 +634,9 @@ window_tree_build(void *modedata, struct mode_tree_sort_criteria *sort_crit,
 	window_tree_sort = sort_crit;
 	qsort(l, n, sizeof *l, window_tree_cmp_session);
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++) {
 		window_tree_build_session(l[i], modedata, sort_crit, filter, NULL);
+	}
 	free(l);
 
 	switch (data->type) {

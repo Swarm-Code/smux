@@ -22,6 +22,7 @@
 #include <sys/utsname.h>
 
 #include <errno.h>
+#include <fcntl.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
@@ -368,7 +369,9 @@ proc_fork_and_daemon(int *fd)
 	switch (pid) {
 	case -1:
 		fatal("fork failed");
-	case 0:
+	case 0: {
+		pid_t daemon_pid;
+
 		close(pair[0]);
 		*fd = pair[1];
 
@@ -376,13 +379,23 @@ proc_fork_and_daemon(int *fd)
 		if (setsid() == -1)
 			fatal("setsid failed");
 
-		pid_t daemon_pid = fork();
+		daemon_pid = fork();
 		if (daemon_pid < 0)
 			fatal("second fork failed");
 		if (daemon_pid > 0)
 			exit(0); /* First child exits */
 
+		/* Redirect stdin/stdout/stderr to /dev/null */
+		close(STDIN_FILENO);
+		close(STDOUT_FILENO);
+		close(STDERR_FILENO);
+		if (open("/dev/null", O_RDWR) != 0)
+			_exit(1);
+		dup2(0, STDOUT_FILENO);
+		dup2(0, STDERR_FILENO);
+
 		return (0);
+	}
 	default:
 		close(pair[1]);
 		*fd = pair[0];
