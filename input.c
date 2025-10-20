@@ -1286,6 +1286,22 @@ input_c0_dispatch(struct input_ctx *ictx)
 	case '\012':	/* LF */
 	case '\013':	/* VT */
 	case '\014':	/* FF */
+		/* LINEFEED COUNTING FOR DEBUGGING */
+		{
+			static u_int linefeed_count = 0;
+			static FILE *linefeed_log = NULL;
+
+			if (linefeed_log == NULL)
+				linefeed_log = fopen("/tmp/smux_linefeed.log", "a");
+
+			if (linefeed_log != NULL) {
+				struct timeval tv;
+				gettimeofday(&tv, NULL);
+				fprintf(linefeed_log, "[%ld.%06ld] LF#%u char=\\x%02x\n",
+						tv.tv_sec, tv.tv_usec, ++linefeed_count, ictx->ch);
+				fflush(linefeed_log);
+			}
+		}
 		screen_write_linefeed(sctx, 0, ictx->cell.cell.bg);
 		if (s->mode & MODE_CRLF)
 			screen_write_carriagereturn(sctx);

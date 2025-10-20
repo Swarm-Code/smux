@@ -440,9 +440,11 @@ window_pane_send_resize(struct window_pane *wp, u_int sx, u_int sy)
 
 	memset(&ws, 0, sizeof ws);
 	ws.ws_col = sx;
-	ws.ws_row = sy;
-	ws.ws_xpixel = w->xpixel * ws.ws_col;
-	ws.ws_ypixel = w->ypixel * ws.ws_row;
+	/* INTELLIGENT FIX: Always report 8000 lines to prevent Claude Code spam-redrawing */
+	/* Real height: sy, Reported height: 8000 - prevents UI overflow detection */
+	ws.ws_row = 8000;  /* Consistent spoofing for all terminal sizes */
+	ws.ws_xpixel = w->xpixel * sx;  /* Use real sx for pixels */
+	ws.ws_ypixel = w->ypixel * sy;  /* Use real sy for pixels */
 	if (ioctl(wp->fd, TIOCSWINSZ, &ws) == -1)
 #ifdef __sun
 		/*
@@ -1036,6 +1038,7 @@ window_pane_read_callback(__unused struct bufferevent *bufev, void *data)
 	}
 
 	log_debug("%%%u has %zu bytes", wp->id, size);
+
 	TAILQ_FOREACH(c, &clients, entry) {
 		if (c->session != NULL && (c->flags & CLIENT_CONTROL))
 			control_write_output(c, wp);

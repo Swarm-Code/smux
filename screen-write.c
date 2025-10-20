@@ -23,6 +23,15 @@
 
 #include "tmux.h"
 
+/* Global state for scroll batching during redraw cycles */
+static struct {
+	struct timeval last_clear_time;
+	int in_redraw_cycle;
+	u_int pending_scrolls;
+	u_int pending_bg;
+	struct screen_write_ctx *pending_ctx;
+} redraw_batch_state = {0};
+
 static struct screen_write_citem *screen_write_collect_trim(
 		    struct screen_write_ctx *, u_int, u_int, u_int, int *);
 static void	screen_write_collect_clear(struct screen_write_ctx *, u_int,
@@ -1434,6 +1443,9 @@ screen_write_linefeed(struct screen_write_ctx *ctx, int wrapped, u_int bg)
 	int			 redraw = 0;
 #endif
 	u_int			 rupper = s->rupper, rlower = s->rlower;
+	struct timeval		 now;
+	int			 in_batch_window;
+	long			 delta_us;
 
 	gl = grid_get_line(gd, gd->hsize + s->cy);
 	if (wrapped)
@@ -1448,17 +1460,106 @@ screen_write_linefeed(struct screen_write_ctx *ctx, int wrapped, u_int bg)
 	}
 
 	if (s->cy == s->rlower) {
+		/* Intelligent burst detection - batch ANY rapid scrolling */
+		gettimeofday(&now, NULL);
+
+		/* Calculate time since last clear screen OR last scroll */
+		delta_us = (now.tv_sec - redraw_batch_state.last_clear_time.tv_sec) * 1000000 +
+				   (now.tv_usec - redraw_batch_state.last_clear_time.tv_usec);
+
+		/* If we had a clear screen recently OR we're in an active burst, batch */
+		in_batch_window = 0;
+		if (delta_us < 100000) {  /* 100ms window after clear screen */
+			in_batch_window = 1;
+			redraw_batch_state.in_redraw_cycle = 1;
+		} else if (redraw_batch_state.in_redraw_cycle && delta_us < 500000) {
+			/* Continue batching if we're in a burst and it's been < 500ms */
+			in_batch_window = 1;
+		} else {
+			/* Burst ended */
+			redraw_batch_state.in_redraw_cycle = 0;
+		}
+
+		/* Update last scroll time to extend burst window */
+		if (in_batch_window) {
+			redraw_batch_state.last_clear_time = now;
+		}
+
+		/* SCROLL TRIGGER LOGGING FOR DEBUGGING */
+		{
+			static FILE *scroll_trigger_log = NULL;
+			static u_int scroll_trigger_count = 0;
+
+			if (scroll_trigger_log == NULL)
+				scroll_trigger_log = fopen("/tmp/smux_scroll_trigger.log", "a");
+
+			if (scroll_trigger_log != NULL) {
+				fprintf(scroll_trigger_log,
+						"[%ld.%06ld] SCROLL_TRIGGER#%u cy=%u rlower=%u rupper=%u sy=%u wrapped=%d batched=%d\n",
+						now.tv_sec, now.tv_usec, ++scroll_trigger_count,
+						s->cy, s->rlower, s->rupper, screen_size_y(s), wrapped, in_batch_window);
+				fflush(scroll_trigger_log);
+			}
+		}
+
+		if (in_batch_window && redraw_batch_state.pending_scrolls < 300) {
+			/* Batch this scroll - don't execute yet */
+			redraw_batch_state.pending_scrolls++;
+			redraw_batch_state.pending_ctx = ctx;
+
+			/* Still need to execute the grid scroll to maintain state */
+			grid_view_scroll_region_up(gd, s->rupper, s->rlower, bg);
+			ctx->scrolled++;
+
+			/* Log batching */
+			{
+				static FILE *batch_log = NULL;
+				if (batch_log == NULL)
+					batch_log = fopen("/tmp/smux_scroll_batch.log", "a");
+
+				if (batch_log != NULL) {
+					fprintf(batch_log,
+							"[%ld.%06ld] BATCHED_SCROLL: count=%u (within redraw cycle)\n",
+							now.tv_sec, now.tv_usec,
+							redraw_batch_state.pending_scrolls);
+					fflush(batch_log);
+				}
+			}
+		} else {
+			/* Normal execution or batch full/expired */
+			if (redraw_batch_state.pending_scrolls > 0) {
+				/* Log batch execution */
+				{
+					static FILE *batch_log = NULL;
+					if (batch_log == NULL)
+						batch_log = fopen("/tmp/smux_scroll_batch.log", "a");
+
+					if (batch_log != NULL) {
+						fprintf(batch_log,
+								"[%ld.%06ld] BATCH_EXECUTE: %u scrolls batched, executing with current\n",
+								now.tv_sec, now.tv_usec,
+								redraw_batch_state.pending_scrolls);
+						fflush(batch_log);
+					}
+				}
+
+				/* Reset batch */
+				redraw_batch_state.pending_scrolls = 0;
+				redraw_batch_state.in_redraw_cycle = 0;
+			}
+
 #ifdef ENABLE_SIXEL
-		if (rlower == screen_size_y(s) - 1)
-			redraw = image_scroll_up(s, 1);
-		else
-			redraw = image_check_line(s, rupper, rlower - rupper);
-		if (redraw && ctx->wp != NULL)
-			ctx->wp->flags |= PANE_REDRAW;
+			if (rlower == screen_size_y(s) - 1)
+				redraw = image_scroll_up(s, 1);
+			else
+				redraw = image_check_line(s, rupper, rlower - rupper);
+			if (redraw && ctx->wp != NULL)
+				ctx->wp->flags |= PANE_REDRAW;
 #endif
-		grid_view_scroll_region_up(gd, s->rupper, s->rlower, bg);
-		screen_write_collect_scroll(ctx, bg);
-		ctx->scrolled++;
+			grid_view_scroll_region_up(gd, s->rupper, s->rlower, bg);
+			screen_write_collect_scroll(ctx, bg);
+			ctx->scrolled++;
+		}
 	} else if (s->cy < screen_size_y(s) - 1)
 		screen_write_set_cursor(ctx, -1, s->cy + 1);
 }
@@ -1619,6 +1720,31 @@ screen_write_clearscreen(struct screen_write_ctx *ctx, u_int bg)
 
 	screen_write_collect_clear(ctx, 0, sy);
 	tty_write(tty_cmd_clearscreen, &ttyctx);
+
+	/* Mark the start of a redraw cycle for scroll batching */
+	gettimeofday(&redraw_batch_state.last_clear_time, NULL);
+	redraw_batch_state.in_redraw_cycle = 1;
+	redraw_batch_state.pending_scrolls = 0;
+	redraw_batch_state.pending_bg = bg;
+	redraw_batch_state.pending_ctx = ctx;
+
+	/* CLEAR SCREEN LOGGING */
+	{
+		static FILE *clear_log = NULL;
+		static u_int clear_count = 0;
+
+		if (clear_log == NULL)
+			clear_log = fopen("/tmp/smux_clear_screen.log", "a");
+
+		if (clear_log != NULL) {
+			fprintf(clear_log,
+					"[%ld.%06ld] CLEAR_SCREEN#%u - Starting redraw cycle batch\n",
+					redraw_batch_state.last_clear_time.tv_sec,
+					redraw_batch_state.last_clear_time.tv_usec,
+					++clear_count);
+			fflush(clear_log);
+		}
+	}
 }
 
 /* Clear entire history. */
