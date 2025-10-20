@@ -398,6 +398,7 @@ key_bindings_init(void)
 		"bind -N 'Redraw the current client' r { refresh-client }",
 		"bind -N 'Choose a session from a list' s { choose-tree -Zs }",
 		"bind -N 'Show a clock' t { clock-mode }",
+		"bind -N 'Toggle terminal size spoofing (8000 lines fix)' T { set-option -g terminal-size-spoofing #{?terminal-size-spoofing,0,1} }",
 		"bind -N 'Choose a window from a list' w { choose-tree -Zw }",
 		"bind -N 'Kill the active pane' x { confirm-before -p\"kill-pane #P? (y/n)\" kill-pane }",
 		"bind -N 'Zoom the active pane' z { resize-pane -Z }",

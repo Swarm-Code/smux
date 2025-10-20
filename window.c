@@ -440,9 +440,13 @@ window_pane_send_resize(struct window_pane *wp, u_int sx, u_int sy)
 
 	memset(&ws, 0, sizeof ws);
 	ws.ws_col = sx;
-	/* INTELLIGENT FIX: Always report 8000 lines to prevent Claude Code spam-redrawing */
-	/* Real height: sy, Reported height: 8000 - prevents UI overflow detection */
-	ws.ws_row = 8000;  /* Consistent spoofing for all terminal sizes */
+	/* INTELLIGENT FIX: Optionally report 8000 lines to prevent Claude Code spam-redrawing */
+	/* Toggle via "terminal-size-spoofing" option (Ctrl-b T to toggle) */
+	/* When enabled: Real height=sy, Reported height=8000 - prevents UI overflow detection */
+	if (options_get_number(global_options, "terminal-size-spoofing"))
+		ws.ws_row = 8000;  /* Spoofing enabled: report 8000 lines */
+	else
+		ws.ws_row = sy;    /* Spoofing disabled: report real height */
 	ws.ws_xpixel = w->xpixel * sx;  /* Use real sx for pixels */
 	ws.ws_ypixel = w->ypixel * sy;  /* Use real sy for pixels */
 	if (ioctl(wp->fd, TIOCSWINSZ, &ws) == -1)

@@ -537,6 +537,15 @@ const struct options_table_entry options_table[] = {
 		  "wide character."
 	},
 
+	{ .name = "terminal-size-spoofing",
+	  .type = OPTIONS_TABLE_FLAG,
+	  .scope = OPTIONS_TABLE_SERVER,
+	  .default_num = 1,
+	  .text = "Whether to report a larger terminal height (8000 lines) to "
+		  "prevent applications like Claude Code from spam-redrawing. "
+		  "Disable to report actual terminal size."
+	},
+
 	/* Session options. */
 	{ .name = "activity-action",
 	  .type = OPTIONS_TABLE_CHOICE,
@@ -887,7 +896,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "status-right",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_SESSION,
-	  .default_str = " #[bg=#0B0E14,fg=#565B66]   ⏰ %H:%M   ",
+	  .default_str = " #[bg=#0B0E14,fg=#565B66]#{?terminal-size-spoofing,#[fg=#95E6CB][S]#[fg=#565B66] ,}   ⏰ %H:%M   ",
 	  .text = "Contents of the right side of the status line."
 
 	},
