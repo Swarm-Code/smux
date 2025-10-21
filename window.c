@@ -440,9 +440,11 @@ window_pane_send_resize(struct window_pane *wp, u_int sx, u_int sy)
 
 	memset(&ws, 0, sizeof ws);
 	ws.ws_col = sx;
-	ws.ws_row = sy;
-	ws.ws_xpixel = w->xpixel * ws.ws_col;
-	ws.ws_ypixel = w->ypixel * ws.ws_row;
+	/* Terminal height spoofing: Report 3000 lines to prevent Claude Code spam-redrawing */
+	/* Real height: sy, Reported height: 3000 - prevents UI overflow detection */
+	ws.ws_row = 3000;  /* Spoofed height for all terminal sizes */
+	ws.ws_xpixel = w->xpixel * sx;  /* Use real sx for pixels */
+	ws.ws_ypixel = w->ypixel * sy;  /* Use real sy for pixels */
 	if (ioctl(wp->fd, TIOCSWINSZ, &ws) == -1)
 #ifdef __sun
 		/*
