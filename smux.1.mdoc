@@ -138,7 +138,7 @@ Specify an alternative configuration file.
 By default,
 .Nm
 loads the system configuration file from
-.Pa @SYSCONFDIR@/smux.conf ,
+.Pa /usr/local/etc/smux.conf ,
 if present, then looks for a user configuration file at
 .Pa \[ti]/.smux.conf
 or
@@ -7861,14 +7861,14 @@ and
 options.
 .El
 .Sh FILES
-.Bl -tag -width "@SYSCONFDIR@/smux.confXXX" -compact
+.Bl -tag -width "/usr/local/etc/smux.confXXX" -compact
 .It Pa \[ti]/.smux.conf
 .It Pa $XDG_CONFIG_HOME/smux/smux.conf
 .It Pa \[ti]/.config/smux/smux.conf
 Default
 .Nm
 configuration file.
-.It Pa @SYSCONFDIR@/smux.conf
+.It Pa /usr/local/etc/smux.conf
 System-wide configuration file.
 .El
 .Sh EXAMPLES
