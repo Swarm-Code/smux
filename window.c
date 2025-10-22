@@ -430,20 +430,41 @@ window_resize(struct window *w, u_int sx, u_int sy, int xpixel, int ypixel)
 void
 window_pane_send_resize(struct window_pane *wp, u_int sx, u_int sy)
 {
-	struct window	*w = wp->window;
+	struct window	*w;
 	struct winsize	 ws;
+
+	/* FIX: Add NULL check for window pane pointer */
+	if (wp == NULL) {
+		log_debug("%s: wp is NULL", __func__);
+		return;
+	}
 
 	if (wp->fd == -1)
 		return;
 
-	log_debug("%s: %%%u resize to %u,%u", __func__, wp->id, sx, sy);
+	/* FIX: Add NULL check for window pointer before dereferencing */
+	w = wp->window;
+	if (w == NULL) {
+		log_debug("%s: %%%u window is NULL", __func__, wp->id);
+		return;
+	}
+
+	/* FIX: Enhanced logging with file descriptor and pixel information */
+	log_debug("%s: %%%u resize to %u,%u (fd=%d, xpixel=%u, ypixel=%u)",
+	    __func__, wp->id, sx, sy, wp->fd, w->xpixel, w->ypixel);
 
 	memset(&ws, 0, sizeof ws);
 	ws.ws_col = sx;
 	ws.ws_row = sy;
 	ws.ws_xpixel = w->xpixel * ws.ws_col;
 	ws.ws_ypixel = w->ypixel * ws.ws_row;
-	if (ioctl(wp->fd, TIOCSWINSZ, &ws) == -1)
+
+	/* FIX: Handle ioctl failures gracefully instead of fatal termination */
+	if (ioctl(wp->fd, TIOCSWINSZ, &ws) == -1) {
+		/* Log the error but don't kill the entire server */
+		log_debug("%s: %%%u ioctl(TIOCSWINSZ) failed: %s",
+		    __func__, wp->id, strerror(errno));
+
 #ifdef __sun
 		/*
 		 * Some versions of Solaris apparently can return an error when
@@ -451,9 +472,27 @@ window_pane_send_resize(struct window_pane *wp, u_int sx, u_int sy)
 		 * other platforms and ignoring it doesn't seem to cause any
 		 * issues.
 		 */
-		if (errno != EINVAL && errno != ENXIO)
+		if (errno == EINVAL || errno == ENXIO)
+			return;
 #endif
-		fatal("ioctl failed");
+
+		/*
+		 * Close the pane on serious terminal errors (bad fd, I/O
+		 * error, or not a terminal). This handles terminal disconnects
+		 * gracefully without crashing the entire server.
+		 */
+		if (errno == EBADF || errno == EIO || errno == ENOTTY) {
+			log_debug("%s: %%%u marking pane as exited due to "
+			    "terminal error (%s)", __func__, wp->id,
+			    strerror(errno));
+			wp->flags |= PANE_EXITED;
+			close(wp->fd);
+			wp->fd = -1;
+		}
+
+		/* Return instead of calling fatal() - keep server alive */
+		return;
+	}
 }
 
 int

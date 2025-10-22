@@ -494,7 +494,7 @@ main(int argc, char **argv)
 		case 'h':
 			usage(0);
 		case 'V':
-			printf("tmux %s\n", getversion());
+			printf("smux %s\n", getversion());
 			exit(0);
 		case 'l':
 			flags |= CLIENT_LOGIN;
